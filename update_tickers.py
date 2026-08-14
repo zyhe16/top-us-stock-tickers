@@ -20,7 +20,7 @@ HEADERS = {
     "Accept": "application/json",
 }
 SP500_SYMBOL_PATTERN = re.compile(
-    r"^\|\{\{(?:NyseSymbol|NasdaqSymbol|BZX link)\|([^}|]+)",
+    r"^\|+\s*\{\{(?:NyseSymbol|NasdaqSymbol|BZX link)\|([^}|]+)",
     re.MULTILINE,
 )
 
@@ -28,6 +28,30 @@ SP500_SYMBOL_PATTERN = re.compile(
 def normalize_symbol(symbol):
     """Normalize symbol formatting across data sources."""
     return symbol.strip().upper().replace(".", "/")
+
+
+def parse_sp500_symbols(content):
+    """Parse S&P 500 constituent tickers from Wikipedia wikitext."""
+    start_marker = "== S&P 500 component stocks =="
+    end_marker = "== Selected changes to the list of S&P 500 components =="
+
+    if start_marker not in content:
+        raise ValueError("Wikipedia page format changed: missing constituents section")
+
+    section = content.split(start_marker, 1)[1]
+    if end_marker in section:
+        section = section.split(end_marker, 1)[0]
+
+    symbols = []
+    seen = set()
+    for symbol in SP500_SYMBOL_PATTERN.findall(section):
+        normalized = normalize_symbol(symbol)
+        if not normalized or normalized in seen:
+            continue
+        seen.add(normalized)
+        symbols.append(symbol.strip().upper())
+
+    return symbols
 
 
 def fetch_sp500_symbols():
@@ -40,25 +64,7 @@ def fetch_sp500_symbols():
         response = requests.get(WIKIPEDIA_SP500_RAW_URL, headers=HEADERS, timeout=30)
         response.raise_for_status()
 
-        content = response.text
-        start_marker = "== S&P 500 component stocks =="
-        end_marker = "== Selected changes to the list of S&P 500 components =="
-
-        if start_marker not in content:
-            raise ValueError("Wikipedia page format changed: missing constituents section")
-
-        section = content.split(start_marker, 1)[1]
-        if end_marker in section:
-            section = section.split(end_marker, 1)[0]
-
-        symbols = []
-        seen = set()
-        for symbol in SP500_SYMBOL_PATTERN.findall(section):
-            normalized = normalize_symbol(symbol)
-            if not normalized or normalized in seen:
-                continue
-            seen.add(normalized)
-            symbols.append(symbol.strip().upper())
+        symbols = parse_sp500_symbols(response.text)
 
         if len(symbols) < 450:
             raise ValueError(f"Wikipedia parse returned too few symbols: {len(symbols)}")
