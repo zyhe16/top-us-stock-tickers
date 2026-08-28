@@ -1,0 +1,16 @@
+.git
+.github
+.pytest_cache
+__pycache__
+*.pyc
+.env
+.env.*
+tests
+tickers
+by_industry
+manifest.json
+CHANGELOG.md
+DATA_CONTRACT.md
+DATA_LICENSE.md
+LICENSE
+README.md

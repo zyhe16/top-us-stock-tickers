@@ -36,8 +36,8 @@ jobs:
           git config --global user.name "GitHub Actions Bot"
           git config --global user.email "actions@github.com"
           
-          # Add all generated CSV files from both folders
-          git add tickers/ by_industry/
+          # Add the complete published snapshot and its metadata
+          git add -A -- tickers/ by_industry/ data/v2/ manifest.json
           
           # Check for changes before committing to avoid empty commit errors
           if git diff --staged --quiet; then

@@ -1,107 +1,146 @@
 # Top US Stock Tickers
 
-Automatically updated CSV lists of US-listed stocks from NASDAQ (grouped by industry), plus a daily S&P 500 constituent list matched against the NASDAQ universe and sorted by market capitalization.
+[![CI](https://github.com/zyhe16/top-us-stock-tickers/actions/workflows/ci.yml/badge.svg)](https://github.com/zyhe16/top-us-stock-tickers/actions/workflows/ci.yml)
 
-## Folder Structure
+Daily ticker data from the Nasdaq stock screener, with S&P 500 membership matched from Wikipedia.
 
-```
-├── tickers/           # General ticker lists
-│   ├── all.csv        # All US stocks (~5,300+)
-│   ├── sp500.csv      # Current S&P 500 constituents
-│   ├── top_50.csv     # Top 50 by market cap
-│   ├── top_100.csv    # Top 100 by market cap
-│   └── top_200.csv    # Top 200 by market cap
-│
-└── by_industry/       # Tickers grouped by industry
-    ├── technology.csv
-    ├── health_care.csv
-    ├── finance.csv
-    ├── uncategorized.csv
-    └── ...            # One file per industry
-```
+Version 2 adds a richer dataset and a query API.
 
-## Update Schedule
+**Already using v1? Don't worry.** The old CSV paths and columns are still here. We now call that contract legacy v1. Existing scripts do not need to migrate until you want the new fields or the API.
 
-Data is automatically updated **daily at 10:00 UTC** (before US market open) via GitHub Actions.
-
-## Data Fields
-
-| Column | Description |
-|--------|-------------|
-| `symbol` | Stock ticker symbol (e.g., AAPL) |
-| `name` | Company name |
-| `price` | Last market price |
-| `marketCap` | Market capitalization (USD) |
-| `volume` | Trading volume |
-| `industry` | Sector/industry |
-
-**All files are sorted by market cap (largest first).**
-
-## Data Sources
-
-- `tickers/all.csv`, `tickers/top_50.csv`, `tickers/top_100.csv`, `tickers/top_200.csv`, and `by_industry/*.csv` are generated from the NASDAQ Stock Screener API.
-- `tickers/sp500.csv` uses Wikipedia only for S&P 500 membership and then matches those symbols back to NASDAQ rows for the output fields.
-- `tickers/sp500.csv` currently contains all matched constituent tickers, which can be more than 500 rows because the index can include multiple share classes.
-
-## How to Use the Data
-
-Other people can use this repo in a few simple ways:
-
-1. Consume the CSVs directly from the raw GitHub URLs without cloning the repository.
-2. Use the generated files as static datasets in scripts, notebooks, dashboards, or screeners.
-3. Read only the specific file you need, such as the full list, the S&P 500 list, or an industry slice.
-
-Common starting points:
-
-- `tickers/all.csv`: all US tickers in this dataset
-- `tickers/sp500.csv`: current S&P 500 constituent tickers
-- `tickers/top_50.csv`, `tickers/top_100.csv`, `tickers/top_200.csv`: largest names by market cap
-- `by_industry/*.csv`: sector-grouped subsets
-- `by_industry/uncategorized.csv`: rows where NASDAQ does not provide a sector value
-
-Raw GitHub URL examples:
+## Project layout
 
 ```text
-https://raw.githubusercontent.com/Ate329/top-us-stock-tickers/main/tickers/all.csv
-https://raw.githubusercontent.com/Ate329/top-us-stock-tickers/main/tickers/sp500.csv
-https://raw.githubusercontent.com/Ate329/top-us-stock-tickers/main/tickers/top_50.csv
-https://raw.githubusercontent.com/Ate329/top-us-stock-tickers/main/by_industry/technology.csv
+.
+|-- api.py                    FastAPI application
+|-- contracts.py              Shared columns and symbol normalization
+|-- update_tickers.py         Source fetch, validation, and publication
+|-- tickers/                  Legacy v1 ticker lists
+|-- by_industry/              Legacy v1 grouped lists
+|-- manifest.json             Legacy v1 snapshot metadata
+|-- data/v2/
+|   |-- tickers.csv           V2 dataset
+|   `-- manifest.json         V2 snapshot metadata
+|-- tests/                    Updater, publication, and HTTP tests
+|-- .github/workflows/        CI and weekday data updates
+|-- Dockerfile                Railway API image
+|-- requirements-api.txt      Production API dependencies
+|-- requirements.txt          Updater and test dependencies
+|-- API.md                    API guide
+|-- DATA_CONTRACT.md          Dataset rules
+|-- DATA_LICENSE.md           Source and reuse notes
+|-- RAILWAY.md                Deployment guide
+`-- CHANGELOG.md              Release history
 ```
 
-Example with Python:
+## What is in v2
+
+[`data/v2/tickers.csv`](data/v2/tickers.csv) contains every unique symbol returned by the Nasdaq screener. It adds fields that legacy v1 discarded:
+
+- Country, sector, and detailed industry.
+- IPO year.
+- Price change and percentage change.
+- A link to the security's Nasdaq page.
+- `is_us_domiciled` and `is_sp500` flags.
+
+The checked-in v2 snapshot contains 7,103 rows. Of those, 5,354 have `United States` in the source country field and 503 match the current S&P 500 membership list. See [`data/v2/manifest.json`](data/v2/manifest.json) for timestamps, counts, and the file checksum.
+
+The values describe one source snapshot. Nasdaq does not supply a reliable quote timestamp through this endpoint, so do not treat `price`, `price_change`, or `percent_change` as real-time prices.
+
+## API
+
+The read-only API supports symbol lookup, text search, filters, sorting, and pagination:
+
+```text
+GET /api/v2/tickers/AAPL
+GET /api/v2/tickers?collection=us&sector=Technology&limit=25
+GET /api/v2/tickers?collection=sp500&sort=market_cap&order=desc
+GET /api/v2/sectors
+GET /api/v2/countries
+GET /api/v2/industries
+GET /api/v2/meta
+```
+
+FastAPI generates the API reference from the routes, query parameters, and response models in `api.py`. Swagger UI is available at `/docs`, ReDoc at `/redoc`, and the raw OpenAPI document at `/openapi.json`. These pages update when the API code changes. Nothing needs to generate or commit a separate documentation bundle.
+
+`API.md` is different. It is the hand-written guide for people reading the repository, so it explains behavior and examples without requiring a running server.
+
+Successful API responses include an ETag, a five-minute cache policy, the dataset contract version, and the v2 manifest hash. Read [API.md](API.md) for the request and response contract. Read [RAILWAY.md](RAILWAY.md) for deployment instructions. Railway supplies HTTPS for both its generated domain and custom domains.
+
+## Legacy v1 is still here
+
+Current consumers can keep using these paths and columns without a migration:
+
+```text
+tickers/all.csv
+tickers/sp500.csv
+tickers/top_50.csv
+tickers/top_100.csv
+tickers/top_200.csv
+by_industry/*.csv
+```
+
+Every legacy v1 file keeps this column order:
+
+```text
+symbol,name,price,marketCap,volume,industry
+```
+
+The legacy v1 `industry` column contains Nasdaq's broader `sector` value. The name is inaccurate, but changing it would break existing consumers. V2 publishes both `sector` and the detailed source `industry` field under the correct names.
+
+Read [DATA_CONTRACT.md](DATA_CONTRACT.md) for the full legacy v1 and v2 contracts.
+
+## Update schedule
+
+GitHub Actions fetches and validates the data on weekdays at 10:00 UTC. One successful run publishes:
+
+- The compatible legacy v1 CSV collection and root `manifest.json`.
+- `data/v2/tickers.csv` and `data/v2/manifest.json`.
+
+The updater stages and validates legacy v1 and v2 together, then replaces them as one rollback-safe release. It rejects implausible source counts, duplicate normalized symbols, incomplete S&P matching, broken top lists, incorrect grouped files, and checksum mismatches.
+
+When Railway watches the `main` branch, the resulting data commit triggers an API deployment. The API validates the v2 manifest during startup. A corrupt snapshot prevents the service from becoming healthy.
+
+## Use the files directly
 
 ```python
 import pandas as pd
 
-df = pd.read_csv(
-    "https://raw.githubusercontent.com/Ate329/top-us-stock-tickers/main/tickers/sp500.csv"
+v2 = pd.read_csv(
+    "https://raw.githubusercontent.com/zyhe16/top-us-stock-tickers/main/data/v2/tickers.csv",
+    keep_default_na=False,
 )
-print(df.head())
+
+us_technology = v2[
+    (v2["is_us_domiciled"] == True)
+    & (v2["sector"] == "Technology")
+]
+print(us_technology.head())
 ```
 
-Example with the standard library:
+Use `keep_default_na=False` when symbols are important. `NA` is a valid ticker in this dataset, and pandas otherwise interprets it as a missing value.
 
-```python
-import csv
-import urllib.request
+The legacy v1 raw URLs still work:
 
-url = "https://raw.githubusercontent.com/Ate329/top-us-stock-tickers/main/tickers/top_50.csv"
-with urllib.request.urlopen(url) as response:
-    rows = list(csv.DictReader(line.decode("utf-8") for line in response))
-
-print(rows[0])
+```text
+https://raw.githubusercontent.com/zyhe16/top-us-stock-tickers/main/tickers/all.csv
+https://raw.githubusercontent.com/zyhe16/top-us-stock-tickers/main/tickers/sp500.csv
 ```
 
-## Local Development
+## Run locally
 
 ```bash
+python -m venv .venv
+. .venv/bin/activate
 python -m pip install -r requirements.txt
-python update_tickers.py
+python -m unittest discover -s tests -v
+python api.py
 ```
 
-## Notes
+Open `http://127.0.0.1:8000/docs` for local API documentation. Production traffic uses Railway's HTTPS domain.
 
-- NASDAQ provides the output fields used in every generated CSV: `symbol`, `name`, `price`, `marketCap`, `volume`, `industry`.
-- Wikipedia is used only to determine current S&P 500 membership.
-- Symbol normalization is required for some share classes, such as `BRK.B` <-> `BRK/B` and `BF.B` <-> `BF/B`.
-- The GitHub Actions workflow runs the update automatically on weekdays.
+## Data rights
+
+The MIT license covers this repository's code and documentation. It does not grant rights to third-party data. Read [DATA_LICENSE.md](DATA_LICENSE.md) before redistributing the files or exposing the API publicly.
+
+See [CHANGELOG.md](CHANGELOG.md) for the v2 release notes.
