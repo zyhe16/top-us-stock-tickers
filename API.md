@@ -135,7 +135,7 @@ curl "https://top-us-stock-tickers.zyhe.me/api/v2/tickers/BRK.B"
 
 ## Caching and browser access
 
-Every `/api/v2` response includes:
+Every successful `/api/v2` response includes:
 
 ```text
 Cache-Control: public, max-age=300

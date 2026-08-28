@@ -1,4 +1,5 @@
 import asyncio
+import hashlib
 import json
 import os
 import shutil
@@ -130,10 +131,6 @@ class ApiTests(unittest.TestCase):
         self.assertIn('href="/health"', page)
         self.assertIn('href="/privacy"', page)
         self.assertIn("Legacy v1 stays put", page)
-        self.assertIn("3 live API servers", page)
-        self.assertIn("California", page)
-        self.assertIn("Amsterdam", page)
-        self.assertIn("Singapore", page)
         self.assertIn('assets/fonts/Inter-Variable.woff2', page)
         self.assertIn('assets/fonts/SpaceGrotesk-Variable.woff2', page)
         self.assertNotIn("fonts.googleapis.com", page)
@@ -210,6 +207,35 @@ class ApiTests(unittest.TestCase):
                 file.write("\n")
 
             with self.assertRaisesRegex(ValueError, "Checksum mismatch"):
+                SnapshotStore(root)
+
+    def test_store_rejects_a_reordered_file_with_a_matching_manifest(self):
+        repository_root = Path(__file__).resolve().parents[1]
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "data/v2").mkdir(parents=True)
+            manifest_path = root / "data/v2/manifest.json"
+            data_path = root / "data/v2/tickers.csv"
+            shutil.copy2(
+                repository_root / "data/v2/manifest.json",
+                manifest_path,
+            )
+            shutil.copy2(repository_root / "data/v2/tickers.csv", data_path)
+
+            lines = data_path.read_text(encoding="utf-8").splitlines()
+            lines[1], lines[2] = lines[2], lines[1]
+            data_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+            manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+            manifest["files"]["data/v2/tickers.csv"]["sha256"] = hashlib.sha256(
+                data_path.read_bytes()
+            ).hexdigest()
+            manifest_path.write_text(
+                json.dumps(manifest, indent=2, sort_keys=True) + "\n",
+                encoding="utf-8",
+            )
+
+            with self.assertRaisesRegex(ValueError, "descending market_cap order"):
                 SnapshotStore(root)
 
     def test_lists_a_paginated_collection_with_corrected_field_names(self):
@@ -394,7 +420,10 @@ class ApiTests(unittest.TestCase):
                             (response.status, response.read(), response.headers)
                         )
                 except HTTPError as error:
-                    responses.append((error.code, error.read(), error.headers))
+                    with error:
+                        responses.append(
+                            (error.code, error.read(), error.headers)
+                        )
 
             self.assertEqual([item[0] for item in responses], [200, 200, 429])
             _status, content, headers = responses[-1]

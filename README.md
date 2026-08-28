@@ -13,11 +13,12 @@ Version 2 adds a richer dataset and a query API.
 ```text
 .
 |-- api.py                    FastAPI application
-|-- contracts.py              Shared columns and symbol normalization
+|-- contracts.py              Shared v2 artifact interpretation and validation
 |-- landing.html              Public API landing page
 |-- privacy.html              Short privacy notice
 |-- assets/fonts/             Self-hosted landing-page fonts and licenses
-|-- update_tickers.py         Source fetch, validation, and publication
+|-- update_tickers.py         Source fetch and updater command
+|-- snapshot_publication.py   Legacy v1 and v2 publication transaction
 |-- tickers/                  Legacy v1 ticker lists
 |-- by_industry/              Legacy v1 grouped lists
 |-- manifest.json             Legacy v1 snapshot metadata

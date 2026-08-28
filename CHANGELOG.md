@@ -16,6 +16,9 @@ This file records changes to the dataset contracts, API, updater, validation, an
 - The privacy notice now explains Cloudflare and Railway processing, temporary rate-limit counters, possible Cloudflare security cookies, and the external assets used by the generated API documentation.
 - Application access logs are disabled. Error logs remain available for operating the service.
 - The README and API guide now use the public HTTPS domain and include copy-paste examples for curl, Python, and browser JavaScript.
+- Legacy v1 and v2 publication now reject base datasets outside their documented descending market-cap order.
+- V2 publication and API startup now use the same artifact-validation implementation.
+- Snapshot publication now uses one transaction implementation and typed source metadata while preserving the legacy updater command and CSV contract.
 
 ## 2.0.0 - 2026-08-28
 

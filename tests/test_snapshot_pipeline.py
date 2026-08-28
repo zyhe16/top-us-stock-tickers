@@ -15,8 +15,10 @@ from update_tickers import (
     publish_release,
     publish_snapshot,
     publish_v2_snapshot,
+    validate_output_frames,
     validate_published_snapshot,
     validate_source_snapshot,
+    validate_v2_frame,
     validate_v2_published_snapshot,
 )
 
@@ -124,6 +126,31 @@ class SnapshotPublicationTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "Industry filename collision"):
             build_output_frames(rows, rows)
 
+    def test_rejects_unsorted_legacy_all_even_when_top_lists_match(self):
+        frames = build_output_frames(self.tickers, self.sp500_tickers)
+        unsorted = frames["tickers/all.csv"].iloc[[1, 0, 2]].reset_index(
+            drop=True
+        )
+        frames["tickers/all.csv"] = unsorted
+        for size in (50, 100, 200):
+            frames[f"tickers/top_{size}.csv"] = unsorted.head(size)
+
+        with self.assertRaisesRegex(ValueError, "descending marketCap order"):
+            validate_output_frames(frames)
+
+    def test_rejects_unknown_source_metadata_fields(self):
+        frames = build_output_frames(self.tickers, self.sp500_tickers)
+
+        with tempfile.TemporaryDirectory() as directory:
+            with self.assertRaisesRegex(
+                ValueError, "Unknown source metadata fields: generated"
+            ):
+                publish_snapshot(
+                    frames,
+                    directory,
+                    source_metadata={"generated": "2026-08-28T00:00:00Z"},
+                )
+
     def test_publishes_a_manifest_and_preserves_established_csv_paths(self):
         frames = build_output_frames(self.tickers, self.sp500_tickers)
 
@@ -184,7 +211,10 @@ class SnapshotPublicationTests(unittest.TestCase):
                     raise OSError("simulated replacement failure")
                 return original_replace(source, destination)
 
-            with mock.patch("update_tickers.os.replace", side_effect=fail_on_new_sp500):
+            with mock.patch(
+                "snapshot_publication.os.replace",
+                side_effect=fail_on_new_sp500,
+            ):
                 with self.assertRaisesRegex(OSError, "simulated replacement failure"):
                     publish_snapshot(
                         frames,
@@ -228,7 +258,10 @@ class SnapshotPublicationTests(unittest.TestCase):
                     raise OSError("simulated release failure")
                 return original_replace(source, destination)
 
-            with mock.patch("update_tickers.os.replace", side_effect=fail_late):
+            with mock.patch(
+                "snapshot_publication.os.replace",
+                side_effect=fail_late,
+            ):
                 with self.assertRaisesRegex(OSError, "simulated release failure"):
                     publish_release(
                         frames,
@@ -244,6 +277,30 @@ class SnapshotPublicationTests(unittest.TestCase):
 
 
 class V2PublicationTests(unittest.TestCase):
+    def test_rejects_an_empty_v2_symbol(self):
+        repository_root = Path(__file__).resolve().parents[1]
+        frame = pd.read_csv(
+            repository_root / "data/v2/tickers.csv",
+            keep_default_na=False,
+            na_values=[""],
+        )
+        frame.loc[0, "symbol"] = ""
+
+        with self.assertRaisesRegex(ValueError, "empty symbol"):
+            validate_v2_frame(frame)
+
+    def test_rejects_rows_outside_descending_market_cap_order(self):
+        repository_root = Path(__file__).resolve().parents[1]
+        frame = pd.read_csv(
+            repository_root / "data/v2/tickers.csv",
+            keep_default_na=False,
+            na_values=[""],
+        )
+        frame.iloc[[0, 1]] = frame.iloc[[1, 0]].to_numpy()
+
+        with self.assertRaisesRegex(ValueError, "descending market_cap order"):
+            validate_v2_frame(frame)
+
     def test_publishes_the_richer_schema_without_touching_v1(self):
         rows = []
         for position in range(6_000):

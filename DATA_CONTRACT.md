@@ -76,6 +76,7 @@ The updater rejects a candidate when:
 - S&P 500 matching falls below 98 percent.
 - A legacy v1 row loses a required field.
 - A top list is not the expected prefix.
+- A base dataset is not in descending market-cap order with missing values last.
 - The grouped legacy v1 files do not partition `tickers/all.csv` exactly once.
 - The v2 schema, country count, or S&P flag count is invalid.
 - A written row count or checksum differs from its manifest.

@@ -1,16 +1,14 @@
 """Read-only HTTP API for the checked-in ticker snapshot."""
 
 import asyncio
-import csv
 import hashlib
 import ipaddress
-import json
 import math
 import mimetypes
 import os
 import time
 from collections import Counter, OrderedDict, deque
-from dataclasses import dataclass
+from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Literal
 
@@ -20,21 +18,16 @@ from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, ConfigDict
 
-from contracts import V2_COLUMNS, normalize_symbol
+from contracts import load_v2_snapshot, normalize_symbol
 
 API_VERSION = "2.0.0"
 API_PREFIX = "/api/v2"
 DEFAULT_LIMIT = 100
 MAX_LIMIT = 500
 REPOSITORY_ROOT = Path(__file__).resolve().parent
-V2_DATA_PATH = "data/v2/tickers.csv"
-V2_MANIFEST_PATH = "data/v2/manifest.json"
 LANDING_PAGE_PATH = REPOSITORY_ROOT / "landing.html"
 PRIVACY_PAGE_PATH = REPOSITORY_ROOT / "privacy.html"
 ASSETS_PATH = REPOSITORY_ROOT / "assets"
-MIN_ALL_TICKERS = 6_000
-MIN_US_TICKERS = 4_000
-MIN_SP500_TICKERS = 450
 DEFAULT_MAX_CONCURRENCY = 64
 DEFAULT_RATE_LIMIT_REQUESTS = 120
 DEFAULT_RATE_LIMIT_WINDOW_SECONDS = 60
@@ -220,100 +213,18 @@ class IndustryList(BaseModel):
     total: int
 
 
-def _optional_float(value: str) -> float | None:
-    if not value:
-        return None
-    return float(value)
-
-
-def _optional_int(value: str) -> int | None:
-    if not value:
-        return None
-    return int(float(value))
-
-
-def _boolean(value: str) -> bool:
-    if value == "True":
-        return True
-    if value == "False":
-        return False
-    raise ValueError(f"Invalid boolean in v2 dataset: {value!r}")
-
-
-def _read_csv(path: Path) -> tuple[Ticker, ...]:
-    with path.open(newline="", encoding="utf-8") as file_handle:
-        reader = csv.DictReader(file_handle)
-        if tuple(reader.fieldnames or ()) != V2_COLUMNS:
-            raise ValueError("data/v2/tickers.csv has an unsupported schema")
-        tickers = tuple(
-            Ticker(
-                symbol=row["symbol"],
-                name=row["name"],
-                price=_optional_float(row["price"]),
-                price_change=_optional_float(row["price_change"]),
-                percent_change=_optional_float(row["percent_change"]),
-                market_cap=_optional_float(row["market_cap"]),
-                volume=_optional_int(row["volume"]),
-                country=row["country"],
-                sector=row["sector"],
-                industry=row["industry"],
-                ipo_year=_optional_int(row["ipo_year"]),
-                nasdaq_url=row["nasdaq_url"] or None,
-                is_us_domiciled=_boolean(row["is_us_domiciled"]),
-                is_sp500=_boolean(row["is_sp500"]),
-            )
-            for row in reader
-        )
-
-    symbols = [normalize_symbol(ticker.symbol) for ticker in tickers]
-    if len(symbols) != len(set(symbols)):
-        raise ValueError("data/v2/tickers.csv contains duplicate symbols")
-    if any(not ticker.sector.strip() for ticker in tickers):
-        raise ValueError("data/v2/tickers.csv contains an empty sector")
-    if any(not ticker.industry.strip() for ticker in tickers):
-        raise ValueError("data/v2/tickers.csv contains an empty industry")
-    if len(tickers) < MIN_ALL_TICKERS:
-        raise ValueError("data/v2/tickers.csv contains too few rows")
-    if sum(ticker.is_us_domiciled for ticker in tickers) < MIN_US_TICKERS:
-        raise ValueError("data/v2/tickers.csv contains too few US domicile rows")
-    if sum(ticker.is_sp500 for ticker in tickers) < MIN_SP500_TICKERS:
-        raise ValueError("data/v2/tickers.csv contains too few S&P 500 rows")
-    return tickers
-
-
-def _sha256(path: Path) -> str:
-    digest = hashlib.sha256()
-    with path.open("rb") as file_handle:
-        for chunk in iter(lambda: file_handle.read(1024 * 1024), b""):
-            digest.update(chunk)
-    return digest.hexdigest()
-
 
 class SnapshotStore:
     """An immutable, validated view of one published repository snapshot."""
 
     def __init__(self, root: Path):
         self.root = root
-        data_path = root / V2_DATA_PATH
-        manifest_path = root / V2_MANIFEST_PATH
-        if not data_path.exists() or not manifest_path.exists():
-            raise ValueError("The v2 dataset or manifest is missing")
-
-        manifest_bytes = manifest_path.read_bytes()
-        self.manifest = json.loads(manifest_bytes)
-        if self.manifest.get("schemaVersion") != 1:
-            raise ValueError("data/v2/manifest.json has an unsupported schema")
-        if self.manifest.get("datasetContractVersion") != "v2":
-            raise ValueError("data/v2/manifest.json has an unsupported contract")
-
-        file_metadata = self.manifest.get("files", {}).get(V2_DATA_PATH, {})
-        if _sha256(data_path) != file_metadata.get("sha256"):
-            raise ValueError("Checksum mismatch for data/v2/tickers.csv")
-        self.manifest_sha256 = hashlib.sha256(manifest_bytes).hexdigest()
-
-        all_tickers = _read_csv(data_path)
-        if len(all_tickers) != file_metadata.get("rows"):
-            raise ValueError("Row-count mismatch for data/v2/tickers.csv")
+        snapshot = load_v2_snapshot(root)
+        self.manifest = snapshot.manifest
+        self.manifest_sha256 = snapshot.manifest_sha256
+        all_tickers = tuple(
+            Ticker.model_validate(asdict(row)) for row in snapshot.rows
+        )
         us_tickers = tuple(
             ticker for ticker in all_tickers if ticker.is_us_domiciled
         )
