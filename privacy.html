@@ -188,18 +188,23 @@
 
       <div class="notice">
         <section>
-          <h2>No cookies or analytics</h2>
-          <p>The service has no accounts, forms, advertising trackers, or analytics. It does not set cookies or load fonts from a third party.</p>
+          <h2>No accounts or advertising</h2>
+          <p>The service has no user accounts, advertising, or audience analytics. The application does not set cookies. Cloudflare may set a necessary security cookie if it challenges suspicious traffic.</p>
         </section>
 
         <section>
           <h2>Request data</h2>
-          <p>Railway and its network providers receive the technical data needed to answer and secure each request. This may include your IP address, browser information, requested path, and timestamp. The application does not create a visitor database or use this data for advertising.</p>
+          <p>Cloudflare and Railway receive the technical data needed to route, answer, and secure each request. This may include your IP address, browser and request headers, requested path, and timestamp. The application does not create a visitor database or use this data for advertising.</p>
         </section>
 
         <section>
-          <h2>Hosting and retention</h2>
-          <p>Railway hosts the service and may retain infrastructure data under its <a href="https://railway.com/legal/privacy">privacy policy</a>. Its <a href="https://railway.com/legal/dpa">data processing addendum</a> describes its role when data protection law applies.</p>
+          <h2>Rate limiting</h2>
+          <p>For API requests that reach the application, the service keeps temporary counters by IP address to limit abuse. These counters stay in application memory, expire after the rate-limit window, and disappear when the process restarts. They are not written to the dataset or an application database.</p>
+        </section>
+
+        <section>
+          <h2>Service providers</h2>
+          <p><a href="https://www.cloudflare.com/privacypolicy/">Cloudflare</a> protects the public domain, and <a href="https://railway.com/legal/privacy">Railway</a> hosts the application. The generated API documentation loads interface files from <a href="https://www.jsdelivr.com/terms/privacy-policy-jsdelivr-net">jsDelivr</a>, a favicon from the FastAPI website, and fonts for ReDoc from Google Fonts. Opening those pages sends normal request data to those providers. The landing and privacy pages use self-hosted fonts.</p>
         </section>
 
         <section>

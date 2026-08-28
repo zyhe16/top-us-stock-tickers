@@ -13,6 +13,21 @@ The repository includes a Dockerfile for the API. It needs no database, volume, 
 
 Railway injects `PORT`. The container reads it and binds to `0.0.0.0`. Do not set a fixed production port.
 
+## Resource and abuse limits
+
+The application ships with conservative defaults for a small public service:
+
+| Variable | Default | Purpose |
+| --- | ---: | --- |
+| `API_MAX_CONCURRENCY` | `64` | Caps requests being processed at the same time. |
+| `API_RATE_LIMIT_REQUESTS` | `120` | Maximum `/api/v2` requests per client in one window. |
+| `API_RATE_LIMIT_WINDOW_SECONDS` | `60` | Sliding-window length in seconds. |
+| `API_RATE_LIMIT_MAX_CLIENTS` | `10000` | Bounds the number of client counters held in memory. |
+
+You do not need to add these variables unless you want different values. Each value must be a positive integer; an invalid value stops the service during startup.
+
+The rate limiter uses the `CF-Connecting-IP` header when it contains a valid IP address, then falls back to the connection address. Its counters live only in process memory. This is an application-level abuse control, not a billing quota or a durable usage record. Cloudflare's network protections remain the first layer in front of the service. Cacheable responses can be served at Cloudflare's edge without reaching the application, so those cache hits do not consume a counter.
+
 ## HTTPS
 
 The public URL is HTTPS. Railway [provisions and renews the certificate](https://docs.railway.com/networking/public-networking) for its generated domain. It does the same for a custom domain after you add the DNS records shown in the Railway dashboard.
@@ -43,7 +58,7 @@ Railway rebuilds the service when a commit reaches the connected branch. The wee
 
 If the updater later uses a GitHub App token or personal access token that does trigger CI, enable Railway's "Wait for CI" option then. With the current `GITHUB_TOKEN` workflow, enabling it can leave an updater commit without a CI result for Railway to wait on. See [GitHub's `GITHUB_TOKEN` event behavior](https://docs.github.com/en/actions/concepts/security/github_token#when-github_token-triggers-workflow-runs).
 
-The application validates `data/v2/manifest.json`, its row count, schema, and file checksum before it starts serving. Railway should keep the previous healthy deployment when a new image cannot pass `/health`.
+The application validates `data/v2/manifest.json`, its row count, schema, and file checksum before it starts serving. Railway should keep the previous healthy deployment when a new image cannot pass `/health`. Uvicorn also caps concurrent work, closes idle keep-alive connections after five seconds, and allows ten seconds for graceful shutdown.
 
 Railway uses this health check during deployment, not as continuous uptime monitoring. Add a separate uptime monitor later if you need alerts after a deployment is already live.
 

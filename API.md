@@ -26,6 +26,19 @@ The running service publishes three generated references:
 
 The examples below show paths relative to the hosted base URL.
 
+## Rate limit
+
+The application allows 120 `/api/v2` requests per client in a rolling 60-second window. The limit applies to requests that reach the application, not the landing page, privacy notice, generated documentation, or health check. Cloudflare may answer repeated cacheable requests at its edge; those requests do not reach Railway or consume an application counter.
+
+API responses include the current limit:
+
+```text
+X-RateLimit-Limit: 120
+X-RateLimit-Window: 60
+```
+
+If the limit is exceeded, the service returns `429 Too Many Requests` with `X-RateLimit-Remaining: 0`. Wait for the number of seconds in `Retry-After` before sending another request. Counters are temporary, live only in application memory, and reset when the process restarts. Successful responses omit a remaining-request count because a shared Cloudflare cache must not replay one client's counter to another client.
+
 ## Ticker fields
 
 | Field | Type | Meaning |
@@ -135,4 +148,4 @@ Send the ETag in `If-None-Match` to receive `304 Not Modified` when that request
 
 ## Errors
 
-FastAPI returns JSON errors. Invalid query values return `422`. Unknown symbols return `404`. A missing file, schema mismatch, row-count mismatch, or checksum mismatch stops the process during startup rather than exposing a partial dataset.
+FastAPI returns JSON errors. Invalid query values return `422`. Unknown symbols return `404`. Rate-limited clients receive `429` with a `Retry-After` header. A missing file, schema mismatch, row-count mismatch, or checksum mismatch stops the process during startup rather than exposing a partial dataset.

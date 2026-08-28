@@ -1,6 +1,6 @@
+import asyncio
 import json
 import os
-from pathlib import Path
 import shutil
 import socket
 import subprocess
@@ -8,11 +8,42 @@ import sys
 import tempfile
 import time
 import unittest
+from pathlib import Path
+from unittest.mock import patch
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
-from api import API_VERSION, SnapshotStore, store
+from api import API_VERSION, SlidingWindowRateLimiter, SnapshotStore, run, store
+
+
+class RateLimiterTests(unittest.IsolatedAsyncioTestCase):
+    async def test_limits_each_client_independently_and_recovers(self):
+        limiter = SlidingWindowRateLimiter(requests=2, window_seconds=10)
+
+        first = await limiter.check("client-a", now=100)
+        second = await limiter.check("client-a", now=101)
+        blocked = await limiter.check("client-a", now=102)
+        other_client = await limiter.check("client-b", now=102)
+        recovered = await limiter.check("client-a", now=111)
+
+        self.assertTrue(first.allowed)
+        self.assertEqual(first.remaining, 1)
+        self.assertTrue(second.allowed)
+        self.assertEqual(second.remaining, 0)
+        self.assertFalse(blocked.allowed)
+        self.assertEqual(blocked.retry_after, 8)
+        self.assertTrue(other_client.allowed)
+        self.assertTrue(recovered.allowed)
+
+    async def test_parallel_requests_cannot_exceed_the_limit(self):
+        limiter = SlidingWindowRateLimiter(requests=3, window_seconds=60)
+
+        decisions = await asyncio.gather(
+            *(limiter.check("same-client", now=100) for _ in range(10))
+        )
+
+        self.assertEqual(sum(decision.allowed for decision in decisions), 3)
 
 
 class ApiTests(unittest.TestCase):
@@ -104,6 +135,33 @@ class ApiTests(unittest.TestCase):
         self.assertNotIn("fonts.googleapis.com", page)
         self.assertNotIn("fonts.gstatic.com", page)
 
+    def test_responses_include_browser_security_headers(self):
+        for path in ("/", "/privacy", "/api/v2/meta", "/missing"):
+            with self.subTest(path=path):
+                _status, _content, headers = self.request(path)
+
+                self.assertEqual(headers["X-Content-Type-Options"], "nosniff")
+                self.assertEqual(headers["X-Frame-Options"], "DENY")
+                self.assertEqual(headers["Referrer-Policy"], "no-referrer")
+                self.assertEqual(
+                    headers["Permissions-Policy"],
+                    "camera=(), geolocation=(), microphone=()",
+                )
+                self.assertEqual(
+                    headers["Strict-Transport-Security"],
+                    "max-age=31536000",
+                )
+
+    def test_static_pages_have_a_content_security_policy(self):
+        for path in ("/", "/privacy"):
+            with self.subTest(path=path):
+                _status, _content, headers = self.request(path)
+
+                policy = headers["Content-Security-Policy"]
+                self.assertIn("default-src 'none'", policy)
+                self.assertIn("frame-ancestors 'none'", policy)
+                self.assertIn("font-src 'self'", policy)
+
     def test_serves_self_hosted_landing_page_fonts(self):
         for path in (
             "/assets/fonts/Inter-Variable.woff2",
@@ -122,7 +180,10 @@ class ApiTests(unittest.TestCase):
 
         self.assertEqual(status, 200)
         self.assertTrue(headers["Content-Type"].startswith("text/html"))
-        self.assertIn("No cookies or analytics", page)
+        self.assertIn("No accounts or advertising", page)
+        self.assertIn("temporary counters by IP address", page)
+        self.assertIn("security cookie", page)
+        self.assertIn("Cloudflare", page)
         self.assertIn("Railway", page)
         self.assertIn("does not create a visitor database", page)
         self.assertNotIn("fonts.googleapis.com", page)
@@ -251,6 +312,9 @@ class ApiTests(unittest.TestCase):
 
         self.assertEqual(first_status, 200)
         self.assertEqual(first_headers["X-Manifest-SHA256"], store.manifest_sha256)
+        self.assertEqual(first_headers["X-RateLimit-Limit"], "120")
+        self.assertEqual(first_headers["X-RateLimit-Window"], "60")
+        self.assertNotIn("X-RateLimit-Remaining", first_headers)
         self.assertEqual(second_status, 304)
         self.assertEqual(second_content, b"")
 
@@ -260,6 +324,93 @@ class ApiTests(unittest.TestCase):
         self.assertEqual(status, 200)
         self.assertEqual(body["info"]["version"], API_VERSION)
         self.assertIn("/api/v2/tickers", body["paths"])
+
+    def test_production_server_has_resource_limits(self):
+        with (
+            patch.dict(os.environ, {"API_MAX_CONCURRENCY": "64"}),
+            patch("uvicorn.run") as uvicorn_run,
+        ):
+            run()
+
+        _args, kwargs = uvicorn_run.call_args
+        self.assertEqual(kwargs["limit_concurrency"], 64)
+        self.assertEqual(kwargs["timeout_keep_alive"], 5)
+        self.assertEqual(kwargs["timeout_graceful_shutdown"], 10)
+
+    def test_rejects_an_invalid_concurrency_limit(self):
+        with (
+            patch.dict(os.environ, {"API_MAX_CONCURRENCY": "0"}),
+            self.assertRaisesRegex(ValueError, "API_MAX_CONCURRENCY"),
+        ):
+            run()
+
+    def test_rate_limiter_rejects_excess_requests(self):
+        repository_root = Path(__file__).resolve().parents[1]
+        with socket.socket() as probe:
+            probe.bind(("127.0.0.1", 0))
+            port = probe.getsockname()[1]
+
+        environment = os.environ.copy()
+        environment.update(
+            {
+                "PORT": str(port),
+                "API_RATE_LIMIT_REQUESTS": "2",
+                "API_RATE_LIMIT_WINDOW_SECONDS": "60",
+            }
+        )
+        server = subprocess.Popen(
+            [sys.executable, "api.py"],
+            cwd=repository_root,
+            env=environment,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            text=True,
+        )
+        base_url = f"http://127.0.0.1:{port}"
+        try:
+            deadline = time.monotonic() + 10
+            while time.monotonic() < deadline:
+                try:
+                    with urlopen(f"{base_url}/health", timeout=1):
+                        break
+                except URLError:
+                    time.sleep(0.05)
+            else:
+                self.fail("Rate-limited API did not become healthy")
+
+            request_headers = {"CF-Connecting-IP": "203.0.113.10"}
+            responses = []
+            for _index in range(3):
+                request = Request(
+                    f"{base_url}/api/v2/meta", headers=request_headers
+                )
+                try:
+                    with urlopen(request, timeout=5) as response:
+                        responses.append(
+                            (response.status, response.read(), response.headers)
+                        )
+                except HTTPError as error:
+                    responses.append((error.code, error.read(), error.headers))
+
+            self.assertEqual([item[0] for item in responses], [200, 200, 429])
+            _status, content, headers = responses[-1]
+            self.assertIn("Rate limit exceeded", content.decode("utf-8"))
+            self.assertGreaterEqual(int(headers["Retry-After"]), 1)
+            self.assertEqual(headers["Cache-Control"], "no-store")
+            self.assertEqual(headers["X-RateLimit-Remaining"], "0")
+            self.assertEqual(headers["X-Content-Type-Options"], "nosniff")
+            self.assertEqual(headers["Access-Control-Allow-Origin"], "*")
+            self.assertIn(
+                "Retry-After", headers["Access-Control-Expose-Headers"]
+            )
+        finally:
+            server.terminate()
+            try:
+                server.wait(timeout=5)
+            except subprocess.TimeoutExpired:
+                server.kill()
+                server.wait(timeout=5)
+            server.stdout.close()
 
 
 if __name__ == "__main__":

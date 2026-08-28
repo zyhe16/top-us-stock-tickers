@@ -1,22 +1,26 @@
 """Read-only HTTP API for the checked-in ticker snapshot."""
 
-from collections import Counter
+import asyncio
 import csv
 import hashlib
+import ipaddress
 import json
+import math
 import mimetypes
 import os
+import time
+from collections import Counter, OrderedDict, deque
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Literal
 
 from fastapi import FastAPI, HTTPException, Query, Request, Response
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import HTMLResponse
+from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, ConfigDict
 
 from contracts import V2_COLUMNS, normalize_symbol
-
 
 API_VERSION = "2.0.0"
 API_PREFIX = "/api/v2"
@@ -31,8 +35,130 @@ ASSETS_PATH = REPOSITORY_ROOT / "assets"
 MIN_ALL_TICKERS = 6_000
 MIN_US_TICKERS = 4_000
 MIN_SP500_TICKERS = 450
+DEFAULT_MAX_CONCURRENCY = 64
+DEFAULT_RATE_LIMIT_REQUESTS = 120
+DEFAULT_RATE_LIMIT_WINDOW_SECONDS = 60
+DEFAULT_RATE_LIMIT_MAX_CLIENTS = 10_000
+SECURITY_HEADERS = {
+    "Permissions-Policy": "camera=(), geolocation=(), microphone=()",
+    "Referrer-Policy": "no-referrer",
+    "Strict-Transport-Security": "max-age=31536000",
+    "X-Content-Type-Options": "nosniff",
+    "X-Frame-Options": "DENY",
+}
+STATIC_PAGE_CONTENT_SECURITY_POLICY = "; ".join(
+    (
+        "default-src 'none'",
+        "base-uri 'none'",
+        "form-action 'none'",
+        "frame-ancestors 'none'",
+        "img-src 'self' data:",
+        "style-src 'self' 'unsafe-inline'",
+        "font-src 'self'",
+    )
+)
 
 mimetypes.add_type("font/woff2", ".woff2")
+
+
+def _positive_environment_integer(name: str, default: int) -> int:
+    raw_value = os.environ.get(name, str(default))
+    try:
+        value = int(raw_value)
+    except ValueError as error:
+        raise ValueError(f"{name} must be a positive integer") from error
+    if value < 1:
+        raise ValueError(f"{name} must be a positive integer")
+    return value
+
+
+@dataclass(frozen=True)
+class RateLimitDecision:
+    """The result of checking one client against a sliding time window."""
+
+    allowed: bool
+    remaining: int
+    retry_after: int
+
+
+class SlidingWindowRateLimiter:
+    """A process-local, bounded sliding-window limiter keyed by client."""
+
+    def __init__(
+        self,
+        *,
+        requests: int,
+        window_seconds: int,
+        max_clients: int = DEFAULT_RATE_LIMIT_MAX_CLIENTS,
+    ):
+        if requests < 1 or window_seconds < 1 or max_clients < 1:
+            raise ValueError("Rate-limit values must be positive integers")
+        self.requests = requests
+        self.window_seconds = window_seconds
+        self.max_clients = max_clients
+        self._requests: OrderedDict[str, deque[float]] = OrderedDict()
+        self._lock = asyncio.Lock()
+        self._last_cleanup = 0.0
+
+    async def check(
+        self, client: str, *, now: float | None = None
+    ) -> RateLimitDecision:
+        current_time = time.monotonic() if now is None else now
+        cutoff = current_time - self.window_seconds
+
+        async with self._lock:
+            if current_time - self._last_cleanup >= self.window_seconds:
+                stale_clients = [
+                    key
+                    for key, timestamps in self._requests.items()
+                    if not timestamps or timestamps[-1] <= cutoff
+                ]
+                for key in stale_clients:
+                    del self._requests[key]
+                self._last_cleanup = current_time
+
+            timestamps = self._requests.get(client)
+            if timestamps is None:
+                if len(self._requests) >= self.max_clients:
+                    self._requests.popitem(last=False)
+                timestamps = deque()
+                self._requests[client] = timestamps
+            else:
+                self._requests.move_to_end(client)
+            while timestamps and timestamps[0] <= cutoff:
+                timestamps.popleft()
+
+            if len(timestamps) >= self.requests:
+                retry_after = max(
+                    1,
+                    math.ceil(
+                        timestamps[0] + self.window_seconds - current_time
+                    ),
+                )
+                return RateLimitDecision(
+                    allowed=False,
+                    remaining=0,
+                    retry_after=retry_after,
+                )
+
+            timestamps.append(current_time)
+            return RateLimitDecision(
+                allowed=True,
+                remaining=self.requests - len(timestamps),
+                retry_after=0,
+            )
+
+
+def _client_identifier(request: Request) -> str:
+    cloudflare_ip = request.headers.get("cf-connecting-ip")
+    if cloudflare_ip:
+        try:
+            return ipaddress.ip_address(cloudflare_ip.strip()).compressed
+        except ValueError:
+            pass
+    if request.client is not None:
+        return request.client.host
+    return "unknown"
 
 
 class Ticker(BaseModel):
@@ -216,6 +342,17 @@ class SnapshotStore:
 store = SnapshotStore(REPOSITORY_ROOT)
 LANDING_PAGE = LANDING_PAGE_PATH.read_text(encoding="utf-8")
 PRIVACY_PAGE = PRIVACY_PAGE_PATH.read_text(encoding="utf-8")
+rate_limiter = SlidingWindowRateLimiter(
+    requests=_positive_environment_integer(
+        "API_RATE_LIMIT_REQUESTS", DEFAULT_RATE_LIMIT_REQUESTS
+    ),
+    window_seconds=_positive_environment_integer(
+        "API_RATE_LIMIT_WINDOW_SECONDS", DEFAULT_RATE_LIMIT_WINDOW_SECONDS
+    ),
+    max_clients=_positive_environment_integer(
+        "API_RATE_LIMIT_MAX_CLIENTS", DEFAULT_RATE_LIMIT_MAX_CLIENTS
+    ),
+)
 
 app = FastAPI(
     title="Top US Stock Tickers API",
@@ -238,13 +375,63 @@ app.add_middleware(
     allow_origins=["*"],
     allow_methods=["GET"],
     allow_headers=["*"],
+    expose_headers=[
+        "ETag",
+        "Retry-After",
+        "X-Dataset-Contract",
+        "X-Manifest-SHA256",
+        "X-RateLimit-Limit",
+        "X-RateLimit-Remaining",
+        "X-RateLimit-Window",
+    ],
 )
 app.mount("/assets", StaticFiles(directory=ASSETS_PATH), name="assets")
 
 
 @app.middleware("http")
-async def add_snapshot_headers(request: Request, call_next):
+async def add_response_headers(request: Request, call_next):
+    rate_limit_decision = None
+    if request.method == "GET" and request.url.path.startswith(API_PREFIX):
+        rate_limit_decision = await rate_limiter.check(
+            _client_identifier(request)
+        )
+        if not rate_limit_decision.allowed:
+            return JSONResponse(
+                status_code=429,
+                content={
+                    "detail": (
+                        "Rate limit exceeded. Retry after "
+                        f"{rate_limit_decision.retry_after} seconds."
+                    )
+                },
+                headers={
+                    **SECURITY_HEADERS,
+                    "Access-Control-Allow-Origin": "*",
+                    "Access-Control-Expose-Headers": (
+                        "Retry-After, X-RateLimit-Limit, "
+                        "X-RateLimit-Remaining, X-RateLimit-Window"
+                    ),
+                    "Cache-Control": "no-store",
+                    "Retry-After": str(rate_limit_decision.retry_after),
+                    "X-RateLimit-Limit": str(rate_limiter.requests),
+                    "X-RateLimit-Remaining": "0",
+                    "X-RateLimit-Window": str(rate_limiter.window_seconds),
+                },
+            )
+
     response = await call_next(request)
+    response.headers.update(SECURITY_HEADERS)
+    if rate_limit_decision is not None:
+        response.headers.update(
+            {
+                "X-RateLimit-Limit": str(rate_limiter.requests),
+                "X-RateLimit-Window": str(rate_limiter.window_seconds),
+            }
+        )
+    if request.url.path in {"/", "/privacy"}:
+        response.headers["Content-Security-Policy"] = (
+            STATIC_PAGE_CONTENT_SECURITY_POLICY
+        )
     if (
         not request.url.path.startswith(API_PREFIX)
         or request.method not in {"GET", "HEAD"}
@@ -258,7 +445,15 @@ async def add_snapshot_headers(request: Request, call_next):
         "ETag": etag,
         "X-Dataset-Contract": store.manifest["datasetContractVersion"],
         "X-Manifest-SHA256": store.manifest_sha256,
+        **SECURITY_HEADERS,
     }
+    if rate_limit_decision is not None:
+        headers.update(
+            {
+                "X-RateLimit-Limit": str(rate_limiter.requests),
+                "X-RateLimit-Window": str(rate_limiter.window_seconds),
+            }
+        )
     if request.headers.get("if-none-match") == etag:
         return Response(status_code=304, headers=headers)
     response.headers.update(headers)
@@ -413,12 +608,22 @@ def metadata():
     }
 
 
-if __name__ == "__main__":
+def run():
     import uvicorn
 
     uvicorn.run(
         "api:app",
-        host="0.0.0.0",
+        # Railway requires the process to accept traffic outside the container.
+        host="0.0.0.0",  # nosec B104
         port=int(os.environ.get("PORT", "8000")),
         access_log=False,
+        limit_concurrency=_positive_environment_integer(
+            "API_MAX_CONCURRENCY", DEFAULT_MAX_CONCURRENCY
+        ),
+        timeout_keep_alive=5,
+        timeout_graceful_shutdown=10,
     )
+
+
+if __name__ == "__main__":
+    run()

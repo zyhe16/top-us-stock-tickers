@@ -58,7 +58,7 @@ The public API is available over HTTPS at:
 https://top-us-stock-tickers.zyhe.me
 ```
 
-It is read-only and does not require an API key. Start with one ticker:
+It is read-only and does not require an API key. Each client can make 120 API requests per 60-second window. A client that exceeds the limit receives `429 Too Many Requests` with a `Retry-After` header. Start with one ticker:
 
 ```bash
 curl "https://top-us-stock-tickers.zyhe.me/api/v2/tickers/AAPL"
@@ -133,7 +133,7 @@ The API reference is generated from the running FastAPI application:
 - [ReDoc](https://top-us-stock-tickers.zyhe.me/redoc) presents the same contract as a reference page.
 - [OpenAPI JSON](https://top-us-stock-tickers.zyhe.me/openapi.json) is the machine-readable contract.
 
-Successful `/api/v2` responses include an ETag, a five-minute cache policy, the dataset contract version, and the v2 manifest hash. Read [API.md](API.md) for every parameter, response field, and error. Read [RAILWAY.md](RAILWAY.md) for deployment instructions.
+Successful `/api/v2` responses include an ETag, a five-minute cache policy, the rate-limit policy, the dataset contract version, and the v2 manifest hash. Read [API.md](API.md) for every parameter, response field, and error. Read [RAILWAY.md](RAILWAY.md) for deployment instructions.
 
 ## Legacy v1 is still here
 
