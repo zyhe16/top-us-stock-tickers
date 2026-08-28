@@ -17,16 +17,18 @@ from fastapi import FastAPI, HTTPException, Query, Request, Response
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
-from contracts import V2_COLUMNS, load_v2_snapshot, normalize_symbol
+from .contracts import V2_COLUMNS, load_v2_snapshot, normalize_symbol
 
 API_VERSION = "2.0.0"
 API_PREFIX = "/api/v2"
 DEFAULT_LIMIT = 100
 MAX_LIMIT = 500
-REPOSITORY_ROOT = Path(__file__).resolve().parent
-LANDING_PAGE_PATH = REPOSITORY_ROOT / "landing.html"
-PRIVACY_PAGE_PATH = REPOSITORY_ROOT / "privacy.html"
-ASSETS_PATH = REPOSITORY_ROOT / "assets"
+PACKAGE_ROOT = Path(__file__).resolve().parent
+REPOSITORY_ROOT = PACKAGE_ROOT.parents[1]
+STATIC_ROOT = PACKAGE_ROOT / "static"
+LANDING_PAGE_PATH = STATIC_ROOT / "landing.html"
+PRIVACY_PAGE_PATH = STATIC_ROOT / "privacy.html"
+FONTS_PATH = STATIC_ROOT / "fonts"
 DEFAULT_MAX_CONCURRENCY = 64
 DEFAULT_RATE_LIMIT_REQUESTS = 120
 DEFAULT_RATE_LIMIT_WINDOW_SECONDS = 60
@@ -307,7 +309,7 @@ app = FastAPI(
         "name": "MIT for code only",
         "url": (
             "https://github.com/zyhe16/top-us-stock-tickers/"
-            "blob/main/DATA_LICENSE.md"
+            "blob/main/docs/DATA_LICENSE.md"
         ),
     },
 )
@@ -326,7 +328,11 @@ app.add_middleware(
         "X-RateLimit-Window",
     ],
 )
-app.mount("/assets", StaticFiles(directory=ASSETS_PATH), name="assets")
+app.mount(
+    "/assets/fonts",
+    StaticFiles(directory=FONTS_PATH),
+    name="fonts",
+)
 
 
 @app.middleware("http")
@@ -540,7 +546,7 @@ def run():
     import uvicorn
 
     uvicorn.run(
-        "api:app",
+        "top_us_stock_tickers.api:app",
         # Railway requires the process to accept traffic outside the container.
         host="0.0.0.0",  # nosec B104
         port=int(os.environ.get("PORT", "8000")),

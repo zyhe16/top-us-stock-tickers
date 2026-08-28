@@ -15,7 +15,13 @@ from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
-from api import API_VERSION, SlidingWindowRateLimiter, SnapshotStore, run, store
+from top_us_stock_tickers.api import (
+    API_VERSION,
+    SlidingWindowRateLimiter,
+    SnapshotStore,
+    run,
+    store,
+)
 
 
 class RateLimiterTests(unittest.IsolatedAsyncioTestCase):
@@ -59,7 +65,7 @@ class ApiTests(unittest.TestCase):
         environment["PORT"] = str(port)
         cls.base_url = f"http://127.0.0.1:{port}"
         cls.server = subprocess.Popen(
-            [sys.executable, "api.py"],
+            [sys.executable, "-m", "top_us_stock_tickers.api"],
             cwd=repository_root,
             env=environment,
             stdout=subprocess.PIPE,
@@ -419,7 +425,7 @@ class ApiTests(unittest.TestCase):
             }
         )
         server = subprocess.Popen(
-            [sys.executable, "api.py"],
+            [sys.executable, "-m", "top_us_stock_tickers.api"],
             cwd=repository_root,
             env=environment,
             stdout=subprocess.PIPE,

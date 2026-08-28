@@ -12,13 +12,12 @@ Version 2 adds a richer dataset and a query API.
 
 ```text
 .
-|-- api.py                    FastAPI application
-|-- contracts.py              Shared v2 artifact interpretation and validation
-|-- landing.html              Public API landing page
-|-- privacy.html              Short privacy notice
-|-- assets/fonts/             Self-hosted landing-page fonts and licenses
-|-- update_tickers.py         Source fetch and updater command
-|-- snapshot_publication.py   Legacy v1 and v2 publication transaction
+|-- src/top_us_stock_tickers/
+|   |-- api.py                FastAPI application
+|   |-- contracts.py          Shared v2 artifact validation
+|   |-- publication.py        Legacy v1 and v2 publication transaction
+|   |-- updater.py            Source fetch and updater command
+|   `-- static/               Landing page, privacy notice, and fonts
 |-- tickers/                  Legacy v1 ticker lists
 |-- by_industry/              Legacy v1 grouped lists
 |-- manifest.json             Legacy v1 snapshot metadata
@@ -28,12 +27,9 @@ Version 2 adds a richer dataset and a query API.
 |-- tests/                    Updater, publication, and HTTP tests
 |-- .github/workflows/        CI and weekday data updates
 |-- Dockerfile                Railway API image
-|-- requirements-api.txt      Production API dependencies
-|-- requirements.txt          Updater and test dependencies
-|-- API.md                    API guide
-|-- DATA_CONTRACT.md          Dataset rules
-|-- DATA_LICENSE.md           Source and reuse notes
-|-- RAILWAY.md                Deployment guide
+|-- requirements/             API and development dependencies
+|-- docs/                     API, data, licensing, and Railway guides
+|-- pyproject.toml            Python package metadata
 `-- CHANGELOG.md              Release history
 ```
 
@@ -136,7 +132,7 @@ The API reference is generated from the running FastAPI application:
 - [ReDoc](https://top-us-stock-tickers.zyhe.me/redoc) presents the same contract as a reference page.
 - [OpenAPI JSON](https://top-us-stock-tickers.zyhe.me/openapi.json) is the machine-readable contract.
 
-Successful `/api/v2` responses include an ETag, a five-minute cache policy, the rate-limit policy, the dataset contract version, and the v2 manifest hash. Read [API.md](API.md) for every parameter, response field, and error. Read [RAILWAY.md](RAILWAY.md) for deployment instructions.
+Successful `/api/v2` responses include an ETag, a five-minute cache policy, the rate-limit policy, the dataset contract version, and the v2 manifest hash. Read [the API guide](docs/API.md) for every parameter, response field, and error. Read [the Railway guide](docs/RAILWAY.md) for deployment instructions.
 
 ## Legacy v1 is still here
 
@@ -159,7 +155,7 @@ symbol,name,price,marketCap,volume,industry
 
 The legacy v1 `industry` column contains Nasdaq's broader `sector` value. The name is inaccurate, but changing it would break existing consumers. V2 publishes both `sector` and the detailed source `industry` field under the correct names.
 
-Read [DATA_CONTRACT.md](DATA_CONTRACT.md) for the full legacy v1 and v2 contracts.
+Read [the dataset contract](docs/DATA_CONTRACT.md) for the full legacy v1 and v2 contracts.
 
 ## Update schedule
 
@@ -203,15 +199,22 @@ https://raw.githubusercontent.com/zyhe16/top-us-stock-tickers/main/tickers/sp500
 ```bash
 python -m venv .venv
 . .venv/bin/activate
-python -m pip install -r requirements.txt
+python -m pip install -r requirements/development.txt
+python -m pip install --no-deps -e .
 python -m unittest discover -s tests -v
-python api.py
+python -m top_us_stock_tickers.api
 ```
 
 Open `http://127.0.0.1:8000/docs` for local API documentation. Production traffic uses Railway's HTTPS domain.
 
+To fetch and publish a fresh snapshot from the repository root, run:
+
+```bash
+python -m top_us_stock_tickers.updater
+```
+
 ## Data rights
 
-The MIT license covers this repository's code and documentation. It does not grant rights to third-party data. Read [DATA_LICENSE.md](DATA_LICENSE.md) before redistributing the files or exposing the API publicly.
+The MIT license covers this repository's code and documentation. It does not grant rights to third-party data. Read [the data reuse notes](docs/DATA_LICENSE.md) before redistributing the files or exposing the API publicly.
 
 See [CHANGELOG.md](CHANGELOG.md) for the v2 release notes.

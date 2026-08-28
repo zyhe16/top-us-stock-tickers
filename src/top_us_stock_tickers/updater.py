@@ -11,7 +11,7 @@ import time
 
 import requests
 
-from contracts import (
+from .contracts import (
     LEGACY_COLUMNS,
     MANIFEST_SCHEMA_VERSION,
     MIN_ALL_TICKERS,
@@ -21,7 +21,7 @@ from contracts import (
     V2_DATASET_CONTRACT_VERSION,
     normalize_symbol,
 )
-from snapshot_publication import (
+from .publication import (
     DATASET_CONTRACT_VERSION,
     NASDAQ_URL,
     TOP_LIST_SIZES,

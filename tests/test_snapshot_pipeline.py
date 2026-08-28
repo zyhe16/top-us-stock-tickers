@@ -7,7 +7,7 @@ from unittest import mock
 
 import pandas as pd
 
-from update_tickers import (
+from top_us_stock_tickers.updater import (
     LEGACY_COLUMNS,
     V2_COLUMNS,
     build_output_frames,
@@ -212,7 +212,7 @@ class SnapshotPublicationTests(unittest.TestCase):
                 return original_replace(source, destination)
 
             with mock.patch(
-                "snapshot_publication.os.replace",
+                "top_us_stock_tickers.publication.os.replace",
                 side_effect=fail_on_new_sp500,
             ):
                 with self.assertRaisesRegex(OSError, "simulated replacement failure"):
@@ -259,7 +259,7 @@ class SnapshotPublicationTests(unittest.TestCase):
                 return original_replace(source, destination)
 
             with mock.patch(
-                "snapshot_publication.os.replace",
+                "top_us_stock_tickers.publication.os.replace",
                 side_effect=fail_late,
             ):
                 with self.assertRaisesRegex(OSError, "simulated release failure"):

@@ -23,13 +23,15 @@ jobs:
           python-version: '3.12'
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: |
+          pip install -r requirements/development.txt
+          pip install --no-deps -e .
 
       - name: Run tests
         run: python -m unittest discover -s tests -v
 
       - name: Run update script
-        run: python update_tickers.py
+        run: python -m top_us_stock_tickers.updater
 
       - name: Commit and push changes
         run: |

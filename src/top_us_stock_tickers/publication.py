@@ -11,7 +11,7 @@ from typing import Mapping
 
 import pandas as pd
 
-from contracts import (
+from .contracts import (
     LEGACY_COLUMNS,
     MANIFEST_SCHEMA_VERSION,
     MIN_ALL_TICKERS,

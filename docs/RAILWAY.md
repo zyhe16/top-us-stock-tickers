@@ -1,6 +1,6 @@
 # Deploy v2 to Railway
 
-The repository includes a Dockerfile for the API. It needs no database, volume, secret, or scheduled Railway job. GitHub remains the data source of record and continues to run the weekday updater.
+The repository includes a Dockerfile for the API. The image starts `python -m top_us_stock_tickers.api` from the packaged `src` tree and copies only API dependencies, static pages, fonts, and the v2 dataset. It needs no database, volume, secret, or scheduled Railway job. GitHub remains the data source of record and continues to run the weekday updater.
 
 ## Create the service
 

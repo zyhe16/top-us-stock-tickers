@@ -6,6 +6,7 @@ This file records changes to the dataset contracts, API, updater, validation, an
 
 ### Changed
 
+- Python source and static API assets now live in the `top_us_stock_tickers` package, while operational guides and dependency sets have dedicated directories. Published legacy v1 and v2 data paths remain unchanged.
 - `/api/v2` now has a per-client sliding-window rate limit, response quota headers, and a bounded in-memory counter store. The default is 120 requests per 60 seconds.
 - The production server now caps concurrent requests and uses bounded keep-alive and graceful-shutdown timeouts.
 - All application responses now include browser security headers. The landing and privacy pages also use a restrictive Content Security Policy.

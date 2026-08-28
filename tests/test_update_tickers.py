@@ -1,7 +1,7 @@
 import unittest
 from unittest import mock
 
-from update_tickers import (
+from top_us_stock_tickers.updater import (
     fetch_tickers,
     parse_int,
     parse_market_cap,
@@ -51,8 +51,8 @@ class NumberParsingTests(unittest.TestCase):
 
 
 class FetchTickersTests(unittest.TestCase):
-    @mock.patch("update_tickers.time.sleep")
-    @mock.patch("update_tickers.requests.get")
+    @mock.patch("top_us_stock_tickers.updater.time.sleep")
+    @mock.patch("top_us_stock_tickers.updater.requests.get")
     def test_keeps_the_legacy_country_and_sector_semantics(self, get, _sleep):
         response = mock.Mock()
         response.raise_for_status.return_value = None
@@ -99,8 +99,8 @@ class FetchTickersTests(unittest.TestCase):
         self.assertEqual(v2_rows[0]["percent_change"], 15.0)
         self.assertTrue(v2_rows[0]["is_us_domiciled"])
 
-    @mock.patch("update_tickers.time.sleep")
-    @mock.patch("update_tickers.requests.get")
+    @mock.patch("top_us_stock_tickers.updater.time.sleep")
+    @mock.patch("top_us_stock_tickers.updater.requests.get")
     def test_rejects_duplicate_source_symbols(self, get, _sleep):
         response = mock.Mock()
         response.raise_for_status.return_value = None
