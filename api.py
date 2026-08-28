@@ -5,10 +5,11 @@ import hashlib
 import ipaddress
 import math
 import mimetypes
+from operator import attrgetter
 import os
 import time
 from collections import Counter, OrderedDict, deque
-from dataclasses import asdict, dataclass
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Literal
 
@@ -16,9 +17,7 @@ from fastapi import FastAPI, HTTPException, Query, Request, Response
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
-from pydantic import BaseModel, ConfigDict
-
-from contracts import load_v2_snapshot, normalize_symbol
+from contracts import V2_COLUMNS, load_v2_snapshot, normalize_symbol
 
 API_VERSION = "2.0.0"
 API_PREFIX = "/api/v2"
@@ -50,6 +49,7 @@ STATIC_PAGE_CONTENT_SECURITY_POLICY = "; ".join(
         "font-src 'self'",
     )
 )
+TICKER_VALUES = attrgetter(*V2_COLUMNS)
 
 mimetypes.add_type("font/woff2", ".woff2")
 
@@ -154,10 +154,9 @@ def _client_identifier(request: Request) -> str:
     return "unknown"
 
 
-class Ticker(BaseModel):
+@dataclass(frozen=True, slots=True)
+class Ticker:
     """One row from the v2 dataset."""
-
-    model_config = ConfigDict(frozen=True)
 
     symbol: str
     name: str
@@ -175,41 +174,48 @@ class Ticker(BaseModel):
     is_sp500: bool
 
 
-class Page(BaseModel):
-    items: list[Ticker]
+@dataclass(frozen=True, slots=True)
+class Page:
+    items: tuple[Ticker, ...]
     total: int
     limit: int
     offset: int
     next_offset: int | None
 
 
-class SectorCount(BaseModel):
+@dataclass(frozen=True, slots=True)
+class SectorCount:
     sector: str
     count: int
 
 
-class SectorList(BaseModel):
-    items: list[SectorCount]
+@dataclass(frozen=True, slots=True)
+class SectorList:
+    items: tuple[SectorCount, ...]
     total: int
 
 
-class CountryCount(BaseModel):
+@dataclass(frozen=True, slots=True)
+class CountryCount:
     country: str
     count: int
 
 
-class CountryList(BaseModel):
-    items: list[CountryCount]
+@dataclass(frozen=True, slots=True)
+class CountryList:
+    items: tuple[CountryCount, ...]
     total: int
 
 
-class IndustryCount(BaseModel):
+@dataclass(frozen=True, slots=True)
+class IndustryCount:
     industry: str
     count: int
 
 
-class IndustryList(BaseModel):
-    items: list[IndustryCount]
+@dataclass(frozen=True, slots=True)
+class IndustryList:
+    items: tuple[IndustryCount, ...]
     total: int
 
 
@@ -222,9 +228,7 @@ class SnapshotStore:
         snapshot = load_v2_snapshot(root)
         self.manifest = snapshot.manifest
         self.manifest_sha256 = snapshot.manifest_sha256
-        all_tickers = tuple(
-            Ticker.model_validate(asdict(row)) for row in snapshot.rows
-        )
+        all_tickers = tuple(Ticker(*TICKER_VALUES(row)) for row in snapshot.rows)
         us_tickers = tuple(
             ticker for ticker in all_tickers if ticker.is_us_domiciled
         )
@@ -239,6 +243,32 @@ class SnapshotStore:
 
         lookup = {normalize_symbol(ticker.symbol): ticker for ticker in all_tickers}
         self.by_symbol = lookup
+        sector_counts = Counter(ticker.sector for ticker in all_tickers)
+        self.sectors = SectorList(
+            items=tuple(
+                SectorCount(sector=sector, count=count)
+                for sector, count in sorted(sector_counts.items())
+            ),
+            total=len(sector_counts),
+        )
+        country_counts = Counter(
+            ticker.country or "Unspecified" for ticker in all_tickers
+        )
+        self.countries = CountryList(
+            items=tuple(
+                CountryCount(country=country, count=count)
+                for country, count in sorted(country_counts.items())
+            ),
+            total=len(country_counts),
+        )
+        industry_counts = Counter(ticker.industry for ticker in all_tickers)
+        self.industries = IndustryList(
+            items=tuple(
+                IndustryCount(industry=industry, count=count)
+                for industry, count in sorted(industry_counts.items())
+            ),
+            total=len(industry_counts),
+        )
 
     def etag_for(self, request: Request) -> str:
         resource = request.url.path
@@ -372,17 +402,17 @@ async def add_response_headers(request: Request, call_next):
 
 
 @app.get("/", response_class=HTMLResponse, include_in_schema=False)
-def root():
+async def root():
     return LANDING_PAGE
 
 
 @app.get("/privacy", response_class=HTMLResponse, include_in_schema=False)
-def privacy():
+async def privacy():
     return PRIVACY_PAGE
 
 
 @app.get("/health", tags=["service"])
-def health():
+async def health():
     return {
         "status": "ok",
         "apiVersion": API_VERSION,
@@ -405,52 +435,56 @@ def list_tickers(
     limit: int = Query(default=DEFAULT_LIMIT, ge=1, le=MAX_LIMIT),
     offset: int = Query(default=0, ge=0),
 ):
-    rows = list(store.collections[collection])
-
-    if q:
-        needle = q.casefold().strip()
-        rows = [
+    rows = store.collections[collection]
+    needle = q.casefold().strip() if q else None
+    requested_sector = sector.casefold().strip() if sector else None
+    requested_country = country.casefold().strip() if country else None
+    requested_industry = industry.casefold().strip() if industry else None
+    if (
+        needle is not None
+        or requested_sector is not None
+        or requested_country is not None
+        or requested_industry is not None
+    ):
+        rows = tuple(
             ticker
             for ticker in rows
-            if needle in ticker.symbol.casefold() or needle in ticker.name.casefold()
-        ]
+            if (
+                needle is None
+                or needle in ticker.symbol.casefold()
+                or needle in ticker.name.casefold()
+            )
+            and (
+                requested_sector is None
+                or ticker.sector.casefold() == requested_sector
+            )
+            and (
+                requested_country is None
+                or ticker.country.casefold() == requested_country
+            )
+            and (
+                requested_industry is None
+                or ticker.industry.casefold() == requested_industry
+            )
+        )
 
-    if sector:
-        requested_sector = sector.casefold().strip()
-        rows = [
-            ticker
-            for ticker in rows
-            if ticker.sector.casefold() == requested_sector
-        ]
-
-    if country:
-        requested_country = country.casefold().strip()
-        rows = [
-            ticker
-            for ticker in rows
-            if ticker.country.casefold() == requested_country
-        ]
-
-    if industry:
-        requested_industry = industry.casefold().strip()
-        rows = [
-            ticker
-            for ticker in rows
-            if ticker.industry.casefold() == requested_industry
-        ]
-
-    if sort == "market_cap":
+    if sort == "market_cap" and order == "asc":
         populated = [ticker for ticker in rows if ticker.market_cap is not None]
         missing = [ticker for ticker in rows if ticker.market_cap is None]
-        rows = sorted(
-            populated,
-            key=lambda ticker: ticker.market_cap,
-            reverse=order == "desc",
-        ) + missing
-    else:
-        rows.sort(
-            key=lambda ticker: getattr(ticker, sort).casefold(),
-            reverse=order == "desc",
+        rows = tuple(
+            sorted(
+                populated,
+                key=lambda ticker: ticker.market_cap,
+            )
+            + missing
+        )
+    elif sort != "market_cap":
+        rows = tuple(
+            sorted(
+                rows,
+                key=lambda ticker: getattr(ticker, sort).casefold(),
+                reverse=order == "desc",
+            )
         )
 
     total = len(rows)
@@ -470,7 +504,7 @@ def list_tickers(
     response_model=Ticker,
     tags=["tickers"],
 )
-def get_ticker(symbol: str):
+async def get_ticker(symbol: str):
     ticker = store.by_symbol.get(normalize_symbol(symbol))
     if ticker is None:
         raise HTTPException(status_code=404, detail=f"Ticker {symbol!r} was not found")
@@ -478,39 +512,22 @@ def get_ticker(symbol: str):
 
 
 @app.get(f"{API_PREFIX}/sectors", response_model=SectorList, tags=["reference"])
-def list_sectors():
-    counts = Counter(ticker.sector for ticker in store.collections["all"])
-    items = [
-        SectorCount(sector=sector, count=count)
-        for sector, count in sorted(counts.items())
-    ]
-    return SectorList(items=items, total=len(items))
+async def list_sectors():
+    return store.sectors
 
 
 @app.get(f"{API_PREFIX}/countries", response_model=CountryList, tags=["reference"])
-def list_countries():
-    counts = Counter(
-        ticker.country or "Unspecified" for ticker in store.collections["all"]
-    )
-    items = [
-        CountryCount(country=country, count=count)
-        for country, count in sorted(counts.items())
-    ]
-    return CountryList(items=items, total=len(items))
+async def list_countries():
+    return store.countries
 
 
 @app.get(f"{API_PREFIX}/industries", response_model=IndustryList, tags=["reference"])
-def list_industries():
-    counts = Counter(ticker.industry for ticker in store.collections["all"])
-    items = [
-        IndustryCount(industry=industry, count=count)
-        for industry, count in sorted(counts.items())
-    ]
-    return IndustryList(items=items, total=len(items))
+async def list_industries():
+    return store.industries
 
 
 @app.get(f"{API_PREFIX}/meta", tags=["reference"])
-def metadata():
+async def metadata():
     return {
         "apiVersion": API_VERSION,
         "datasetContractVersion": store.manifest["datasetContractVersion"],

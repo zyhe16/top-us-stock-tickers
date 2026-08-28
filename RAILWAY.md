@@ -62,6 +62,6 @@ The application validates `data/v2/manifest.json`, its row count, schema, and fi
 
 Railway uses this health check during deployment, not as continuous uptime monitoring. Add a separate uptime monitor later if you need alerts after a deployment is already live.
 
-[Serverless sleeping](https://docs.railway.com/deployments/serverless) is optional. It can cut idle usage, but the first request after sleep can be slow and may fail once while the service wakes. Leave it disabled if the API needs predictable availability.
+Keep [Serverless sleeping](https://docs.railway.com/deployments/serverless) disabled. This is an always-on API, and avoiding cold-start latency is an explicit deployment requirement. Runtime memory and request-path efficiency should be improved in the application instead of suspending the three replicas.
 
 This file prepares the deployment. It does not prove that a Railway service or public domain has been created.

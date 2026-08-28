@@ -6,6 +6,7 @@ import hashlib
 import json
 import math
 from pathlib import Path
+from sys import intern
 from typing import Iterable, Mapping
 
 
@@ -44,7 +45,12 @@ MIN_SP500_TICKERS = 450
 
 def normalize_symbol(symbol):
     """Normalize share-class separators across data sources and requests."""
-    return symbol.strip().upper().replace(".", "/")
+    normalized = symbol.strip()
+    if not normalized.isupper():
+        normalized = normalized.upper()
+    if "." in normalized:
+        normalized = normalized.replace(".", "/")
+    return normalized
 
 
 def sha256_file(path: Path) -> str:
@@ -102,7 +108,7 @@ def _text(value) -> str:
     return "" if _missing(value) else str(value)
 
 
-@dataclass(frozen=True)
+@dataclass(frozen=True, slots=True)
 class V2TickerRecord:
     """One typed row from the v2 dataset contract."""
 
@@ -122,7 +128,7 @@ class V2TickerRecord:
     is_sp500: bool
 
 
-@dataclass(frozen=True)
+@dataclass(frozen=True, slots=True)
 class ValidatedV2Snapshot:
     """A v2 artifact after schema, content, and manifest validation."""
 
@@ -141,9 +147,9 @@ def v2_record_from_mapping(row: Mapping) -> V2TickerRecord:
         percent_change=_optional_float(row["percent_change"]),
         market_cap=_optional_float(row["market_cap"]),
         volume=_optional_int(row["volume"]),
-        country=_text(row["country"]),
-        sector=_text(row["sector"]),
-        industry=_text(row["industry"]),
+        country=intern(_text(row["country"])),
+        sector=intern(_text(row["sector"])),
+        industry=intern(_text(row["industry"])),
         ipo_year=_optional_int(row["ipo_year"]),
         nasdaq_url=None if _missing(row["nasdaq_url"]) else str(row["nasdaq_url"]),
         is_us_domiciled=_boolean(row["is_us_domiciled"]),

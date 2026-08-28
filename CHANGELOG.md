@@ -19,6 +19,8 @@ This file records changes to the dataset contracts, API, updater, validation, an
 - Legacy v1 and v2 publication now reject base datasets outside their documented descending market-cap order.
 - V2 publication and API startup now use the same artifact-validation implementation.
 - Snapshot publication now uses one transaction implementation and typed source metadata while preserving the legacy updater command and CSV contract.
+- The always-on API now stores ticker rows and repeated classifications more compactly, reuses precomputed reference responses, and skips redundant sorting for the snapshot's native market-cap order.
+- Constant-time routes now run directly on the event loop while filtered and sorted list work remains isolated in the worker pool.
 
 ## 2.0.0 - 2026-08-28
 

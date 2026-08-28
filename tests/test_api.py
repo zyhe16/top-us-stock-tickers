@@ -250,6 +250,10 @@ class ApiTests(unittest.TestCase):
         self.assertEqual(body["offset"], 1)
         self.assertEqual(body["next_offset"], 3)
         self.assertEqual(len(body["items"]), 2)
+        self.assertEqual(
+            [item["symbol"] for item in body["items"]],
+            [ticker.symbol for ticker in store.collections["top_50"][1:3]],
+        )
         self.assertIn("market_cap", body["items"][0])
         self.assertIn("sector", body["items"][0])
         self.assertIn("industry", body["items"][0])
@@ -257,6 +261,32 @@ class ApiTests(unittest.TestCase):
         self.assertIn("ipo_year", body["items"][0])
         self.assertIn("percent_change", body["items"][0])
         self.assertNotIn("marketCap", body["items"][0])
+
+    def test_sorts_market_cap_ascending_with_missing_values_last(self):
+        _status, first_page, _headers = self.json_request(
+            "/api/v2/tickers",
+            params={"collection": "all", "limit": 1},
+        )
+        status, body, _headers = self.json_request(
+            "/api/v2/tickers",
+            params={
+                "collection": "all",
+                "sort": "market_cap",
+                "order": "asc",
+                "offset": max(0, first_page["total"] - 500),
+                "limit": 500,
+            },
+        )
+
+        self.assertEqual(status, 200)
+        market_caps = [item["market_cap"] for item in body["items"]]
+        populated = [value for value in market_caps if value is not None]
+        self.assertEqual(populated, sorted(populated))
+        if None in market_caps:
+            first_missing = market_caps.index(None)
+            self.assertTrue(
+                all(value is None for value in market_caps[first_missing:])
+            )
 
     def test_filters_by_search_and_sector(self):
         _status, apple, _headers = self.json_request("/api/v2/tickers/AAPL")
