@@ -58,7 +58,7 @@ The public API is available over HTTPS at:
 https://top-us-stock-tickers.zyhe.me
 ```
 
-The hosted API runs on three Railway replicas, one in California, one in Amsterdam, and one in Singapore.
+**The hosted API runs on three Railway replicas, one in California, one in Amsterdam, and one in Singapore.**
 
 It is read-only and does not require an API key. Each client can make 120 API requests per 60-second window. A client that exceeds the limit receives `429 Too Many Requests` with a `Retry-After` header. Start with one ticker:
 
