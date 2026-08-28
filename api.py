@@ -4,12 +4,15 @@ from collections import Counter
 import csv
 import hashlib
 import json
+import mimetypes
 import os
 from pathlib import Path
 from typing import Literal
 
 from fastapi import FastAPI, HTTPException, Query, Request, Response
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import HTMLResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, ConfigDict
 
 from contracts import V2_COLUMNS, normalize_symbol
@@ -22,9 +25,14 @@ MAX_LIMIT = 500
 REPOSITORY_ROOT = Path(__file__).resolve().parent
 V2_DATA_PATH = "data/v2/tickers.csv"
 V2_MANIFEST_PATH = "data/v2/manifest.json"
+LANDING_PAGE_PATH = REPOSITORY_ROOT / "landing.html"
+PRIVACY_PAGE_PATH = REPOSITORY_ROOT / "privacy.html"
+ASSETS_PATH = REPOSITORY_ROOT / "assets"
 MIN_ALL_TICKERS = 6_000
 MIN_US_TICKERS = 4_000
 MIN_SP500_TICKERS = 450
+
+mimetypes.add_type("font/woff2", ".woff2")
 
 
 class Ticker(BaseModel):
@@ -206,6 +214,8 @@ class SnapshotStore:
 
 
 store = SnapshotStore(REPOSITORY_ROOT)
+LANDING_PAGE = LANDING_PAGE_PATH.read_text(encoding="utf-8")
+PRIVACY_PAGE = PRIVACY_PAGE_PATH.read_text(encoding="utf-8")
 
 app = FastAPI(
     title="Top US Stock Tickers API",
@@ -229,6 +239,7 @@ app.add_middleware(
     allow_methods=["GET"],
     allow_headers=["*"],
 )
+app.mount("/assets", StaticFiles(directory=ASSETS_PATH), name="assets")
 
 
 @app.middleware("http")
@@ -254,15 +265,14 @@ async def add_snapshot_headers(request: Request, call_next):
     return response
 
 
-@app.get("/", include_in_schema=False)
+@app.get("/", response_class=HTMLResponse, include_in_schema=False)
 def root():
-    return {
-        "name": "Top US Stock Tickers API",
-        "version": API_VERSION,
-        "api": API_PREFIX,
-        "documentation": "/docs",
-        "health": "/health",
-    }
+    return LANDING_PAGE
+
+
+@app.get("/privacy", response_class=HTMLResponse, include_in_schema=False)
+def privacy():
+    return PRIVACY_PAGE
 
 
 @app.get("/health", tags=["service"])
@@ -410,4 +420,5 @@ if __name__ == "__main__":
         "api:app",
         host="0.0.0.0",
         port=int(os.environ.get("PORT", "8000")),
+        access_log=False,
     )

@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Privacy notice for the Top US Stock Tickers website and API.">
+  <meta name="theme-color" content="#f3f6fa">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%229%22 fill=%22%23172433%22/%3E%3Crect x=%227%22 y=%2217%22 width=%224%22 height=%228%22 rx=%222%22 fill=%22%23fdfefe%22 opacity=%22.65%22/%3E%3Crect x=%2214%22 y=%2212%22 width=%224%22 height=%2213%22 rx=%222%22 fill=%22%23fdfefe%22 opacity=%22.82%22/%3E%3Crect x=%2221%22 y=%227%22 width=%224%22 height=%2218%22 rx=%222%22 fill=%22%23fdfefe%22/%3E%3C/svg%3E">
+  <title>Privacy | Top US Stock Tickers</title>
+  <style>
+    @font-face {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 100 900;
+      font-display: swap;
+      src: url("assets/fonts/Inter-Variable.woff2") format("woff2");
+    }
+
+    @font-face {
+      font-family: "Space Grotesk";
+      font-style: normal;
+      font-weight: 300 700;
+      font-display: swap;
+      src: url("assets/fonts/SpaceGrotesk-Variable.woff2") format("woff2");
+    }
+
+    :root {
+      color-scheme: light;
+      --paper: #f3f6fa;
+      --ink: #172433;
+      --muted: #5a6978;
+      --line: rgba(23, 36, 51, 0.14);
+      --blue: #35658f;
+      --white: #fdfefe;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      color: var(--ink);
+      font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+      background:
+        radial-gradient(circle at 12% 12%, rgba(75, 119, 158, 0.15), transparent 26rem),
+        radial-gradient(circle at 88% 88%, rgba(70, 112, 150, 0.12), transparent 30rem),
+        var(--paper);
+    }
+
+    a {
+      color: var(--blue);
+      text-underline-offset: 0.2em;
+    }
+
+    a:focus-visible {
+      outline: 3px solid rgba(74, 119, 158, 0.45);
+      outline-offset: 3px;
+    }
+
+    .page {
+      width: min(760px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 1.6rem 0 4rem;
+    }
+
+    header {
+      padding-bottom: 1.6rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      color: var(--ink);
+      font-size: 0.88rem;
+      font-weight: 750;
+      text-decoration: none;
+    }
+
+    .mark {
+      width: 2rem;
+      height: 2rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      align-items: end;
+      gap: 0.18rem;
+      padding: 0.36rem;
+      border-radius: 0.62rem;
+      background: var(--ink);
+    }
+
+    .mark span {
+      display: block;
+      border-radius: 999px 999px 0.15rem 0.15rem;
+      background: var(--white);
+    }
+
+    .mark span:nth-child(1) { height: 42%; opacity: 0.62; }
+    .mark span:nth-child(2) { height: 72%; opacity: 0.8; }
+    .mark span:nth-child(3) { height: 100%; }
+
+    main {
+      padding-top: clamp(3.5rem, 9vw, 6rem);
+    }
+
+    .eyebrow {
+      margin: 0 0 1rem;
+      color: var(--blue);
+      font-family: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+      font-size: clamp(2.8rem, 8vw, 5rem);
+      font-weight: 600;
+      letter-spacing: -0.065em;
+      line-height: 0.98;
+    }
+
+    .intro {
+      max-width: 42rem;
+      margin: 1.4rem 0 0;
+      color: var(--muted);
+      font-size: 1.08rem;
+      line-height: 1.7;
+    }
+
+    .notice {
+      display: grid;
+      gap: 0;
+      margin-top: 2.4rem;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 1.35rem;
+      background: rgba(253, 254, 254, 0.82);
+      box-shadow: 0 24px 70px rgba(28, 58, 86, 0.11);
+    }
+
+    section {
+      padding: 1.4rem 1.5rem;
+    }
+
+    section + section {
+      border-top: 1px solid var(--line);
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    section p {
+      margin: 0.55rem 0 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.65;
+    }
+
+    footer {
+      margin-top: 2rem;
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <a class="brand" href="/" aria-label="Top US Stock Tickers home">
+        <span class="mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span>Top US Stock Tickers</span>
+      </a>
+    </header>
+
+    <main>
+      <p class="eyebrow">Privacy notice</p>
+      <h1>Small service, short notice.</h1>
+      <p class="intro">This notice covers top-us-stock-tickers.zyhe.me and its read-only API.</p>
+
+      <div class="notice">
+        <section>
+          <h2>No cookies or analytics</h2>
+          <p>The service has no accounts, forms, advertising trackers, or analytics. It does not set cookies or load fonts from a third party.</p>
+        </section>
+
+        <section>
+          <h2>Request data</h2>
+          <p>Railway and its network providers receive the technical data needed to answer and secure each request. This may include your IP address, browser information, requested path, and timestamp. The application does not create a visitor database or use this data for advertising.</p>
+        </section>
+
+        <section>
+          <h2>Hosting and retention</h2>
+          <p>Railway hosts the service and may retain infrastructure data under its <a href="https://railway.com/legal/privacy">privacy policy</a>. Its <a href="https://railway.com/legal/dpa">data processing addendum</a> describes its role when data protection law applies.</p>
+        </section>
+
+        <section>
+          <h2>Questions and requests</h2>
+          <p>The project is maintained by <a href="https://github.com/zyhe16">zyhe16</a>. Use the contact method published on that profile for a private request. Do not post personal information in a public issue.</p>
+        </section>
+      </div>
+    </main>
+
+    <footer>Last updated 28 August 2026.</footer>
+  </div>
+</body>
+</html>

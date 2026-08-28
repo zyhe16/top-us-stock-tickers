@@ -14,6 +14,9 @@ Version 2 adds a richer dataset and a query API.
 .
 |-- api.py                    FastAPI application
 |-- contracts.py              Shared columns and symbol normalization
+|-- landing.html              Public API landing page
+|-- privacy.html              Short privacy notice
+|-- assets/fonts/             Self-hosted landing-page fonts and licenses
 |-- update_tickers.py         Source fetch, validation, and publication
 |-- tickers/                  Legacy v1 ticker lists
 |-- by_industry/              Legacy v1 grouped lists
@@ -47,25 +50,90 @@ The checked-in v2 snapshot contains 7,103 rows. Of those, 5,354 have `United Sta
 
 The values describe one source snapshot. Nasdaq does not supply a reliable quote timestamp through this endpoint, so do not treat `price`, `price_change`, or `percent_change` as real-time prices.
 
-## API
+## Use the API
 
-The read-only API supports symbol lookup, text search, filters, sorting, and pagination:
+The public API is available over HTTPS at:
 
 ```text
-GET /api/v2/tickers/AAPL
-GET /api/v2/tickers?collection=us&sector=Technology&limit=25
-GET /api/v2/tickers?collection=sp500&sort=market_cap&order=desc
-GET /api/v2/sectors
-GET /api/v2/countries
-GET /api/v2/industries
-GET /api/v2/meta
+https://top-us-stock-tickers.zyhe.me
 ```
 
-FastAPI generates the API reference from the routes, query parameters, and response models in `api.py`. Swagger UI is available at `/docs`, ReDoc at `/redoc`, and the raw OpenAPI document at `/openapi.json`. These pages update when the API code changes. Nothing needs to generate or commit a separate documentation bundle.
+It is read-only and does not require an API key. Start with one ticker:
 
-`API.md` is different. It is the hand-written guide for people reading the repository, so it explains behavior and examples without requiring a running server.
+```bash
+curl "https://top-us-stock-tickers.zyhe.me/api/v2/tickers/AAPL"
+```
 
-Successful API responses include an ETag, a five-minute cache policy, the dataset contract version, and the v2 manifest hash. Read [API.md](API.md) for the request and response contract. Read [RAILWAY.md](RAILWAY.md) for deployment instructions. Railway supplies HTTPS for both its generated domain and custom domains.
+Or request a filtered page. This example returns the five largest technology securities in the current S&P 500 snapshot by Nasdaq market capitalization:
+
+```bash
+curl "https://top-us-stock-tickers.zyhe.me/api/v2/tickers?collection=sp500&sector=Technology&sort=market_cap&order=desc&limit=5"
+```
+
+The list response contains `items`, `total`, `limit`, `offset`, and `next_offset`. Pass `next_offset` back as `offset` to fetch the next page.
+
+Python's default `urllib` user agent may be rejected at the network edge. Send a descriptive user agent for your application, as shown below.
+
+```python
+import json
+from urllib.parse import urlencode
+from urllib.request import Request, urlopen
+
+base_url = "https://top-us-stock-tickers.zyhe.me"
+query = urlencode(
+    {
+        "collection": "sp500",
+        "sector": "Technology",
+        "sort": "market_cap",
+        "order": "desc",
+        "limit": 5,
+    }
+)
+
+request = Request(
+    f"{base_url}/api/v2/tickers?{query}",
+    headers={"User-Agent": "my-ticker-app/1.0"},
+)
+
+with urlopen(request) as response:
+    page = json.load(response)
+
+for ticker in page["items"]:
+    print(ticker["symbol"], ticker["market_cap"])
+```
+
+Browser applications can call the API directly:
+
+```javascript
+const response = await fetch(
+  "https://top-us-stock-tickers.zyhe.me/api/v2/tickers?collection=sp500&limit=5",
+);
+
+if (!response.ok) throw new Error(`API returned ${response.status}`);
+
+const page = await response.json();
+console.log(page.items);
+```
+
+Common endpoints:
+
+| Request | What it returns |
+| --- | --- |
+| `GET /api/v2/tickers/{symbol}` | One ticker. Symbol lookup is case-insensitive. |
+| `GET /api/v2/tickers` | A filtered, sorted, paginated ticker collection. |
+| `GET /api/v2/sectors` | Sector names and row counts. |
+| `GET /api/v2/countries` | Country values and row counts. |
+| `GET /api/v2/industries` | Detailed industry names and row counts. |
+| `GET /api/v2/meta` | API version, manifest hash, and snapshot metadata. |
+| `GET /health` | Service and loaded-snapshot status. |
+
+The API reference is generated from the running FastAPI application:
+
+- [Swagger UI](https://top-us-stock-tickers.zyhe.me/docs) lets you send requests from the browser.
+- [ReDoc](https://top-us-stock-tickers.zyhe.me/redoc) presents the same contract as a reference page.
+- [OpenAPI JSON](https://top-us-stock-tickers.zyhe.me/openapi.json) is the machine-readable contract.
+
+Successful `/api/v2` responses include an ETag, a five-minute cache policy, the dataset contract version, and the v2 manifest hash. Read [API.md](API.md) for every parameter, response field, and error. Read [RAILWAY.md](RAILWAY.md) for deployment instructions.
 
 ## Legacy v1 is still here
 

@@ -2,6 +2,30 @@
 
 The API is read-only. Version 2 lives under `/api/v2` and reads the checked-in `data/v2` snapshot into memory when the process starts.
 
+## Public service
+
+The hosted base URL is:
+
+```text
+https://top-us-stock-tickers.zyhe.me
+```
+
+The API does not require a key. It accepts `GET` requests. Try it with curl:
+
+```bash
+curl "https://top-us-stock-tickers.zyhe.me/api/v2/tickers/AAPL"
+```
+
+Automated clients should send a descriptive `User-Agent` header. The network edge may reject default client headers, including Python's `urllib` default.
+
+The running service publishes three generated references:
+
+- [Swagger UI](https://top-us-stock-tickers.zyhe.me/docs)
+- [ReDoc](https://top-us-stock-tickers.zyhe.me/redoc)
+- [OpenAPI JSON](https://top-us-stock-tickers.zyhe.me/openapi.json)
+
+The examples below show paths relative to the hosted base URL.
+
 ## Ticker fields
 
 | Field | Type | Meaning |
@@ -26,6 +50,12 @@ These fields describe securities, not deduplicated companies. Multiple share cla
 ## List tickers
 
 `GET /api/v2/tickers`
+
+Example:
+
+```bash
+curl "https://top-us-stock-tickers.zyhe.me/api/v2/tickers?collection=sp500&sector=Technology&sort=market_cap&order=desc&limit=5"
+```
 
 Query parameters:
 
@@ -77,6 +107,10 @@ Example response:
 `GET /api/v2/tickers/{symbol}`
 
 Symbol lookup is case-insensitive. It treats `.` and `/` as the same share-class separator, so both `BRK.B` and `BRK/B` resolve to the source record. Unknown symbols return `404`.
+
+```bash
+curl "https://top-us-stock-tickers.zyhe.me/api/v2/tickers/BRK.B"
+```
 
 ## Reference endpoints
 

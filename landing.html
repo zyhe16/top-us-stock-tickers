@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Versioned US stock ticker datasets and a read-only JSON API.">
+  <meta name="theme-color" content="#f3f6fa">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%229%22 fill=%22%2317211d%22/%3E%3Crect x=%227%22 y=%2217%22 width=%224%22 height=%228%22 rx=%222%22 fill=%22%23fffefa%22 opacity=%22.65%22/%3E%3Crect x=%2214%22 y=%2212%22 width=%224%22 height=%2213%22 rx=%222%22 fill=%22%23fffefa%22 opacity=%22.82%22/%3E%3Crect x=%2221%22 y=%227%22 width=%224%22 height=%2218%22 rx=%222%22 fill=%22%23fffefa%22/%3E%3C/svg%3E">
+  <title>Top US Stock Tickers</title>
+  <style>
+    @font-face {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 100 900;
+      font-display: swap;
+      src: url("assets/fonts/Inter-Variable.woff2") format("woff2");
+    }
+
+    @font-face {
+      font-family: "Space Grotesk";
+      font-style: normal;
+      font-weight: 300 700;
+      font-display: swap;
+      src: url("assets/fonts/SpaceGrotesk-Variable.woff2") format("woff2");
+    }
+
+    :root {
+      color-scheme: light;
+      --paper: #f3f6fa;
+      --paper-deep: #e1e8f0;
+      --ink: #172433;
+      --muted: #5a6978;
+      --line: rgba(23, 36, 51, 0.14);
+      --blue: #35658f;
+      --blue-dark: #244a70;
+      --blue-light: #5d82a3;
+      --white: #fdfefe;
+      --shadow: 0 30px 80px rgba(28, 58, 86, 0.14);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      min-height: 100%;
+      background: var(--paper);
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      color: var(--ink);
+      font-family: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 12% 15%, rgba(75, 119, 158, 0.14), transparent 28rem),
+        radial-gradient(circle at 88% 82%, rgba(70, 112, 150, 0.16), transparent 32rem),
+        var(--paper);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: 0.75rem;
+      left: 0.75rem;
+      z-index: 10;
+      padding: 0.7rem 1rem;
+      border-radius: 999px;
+      background: var(--ink);
+      color: white;
+      transform: translateY(-200%);
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .page {
+      width: min(1120px, calc(100% - 2rem));
+      min-height: 100vh;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header,
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    header {
+      padding: 1.6rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-size: 0.88rem;
+      font-weight: 750;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+    }
+
+    .mark {
+      width: 2rem;
+      height: 2rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      align-items: end;
+      gap: 0.18rem;
+      padding: 0.36rem;
+      border-radius: 0.62rem;
+      background: var(--ink);
+    }
+
+    .mark span {
+      display: block;
+      border-radius: 999px 999px 0.15rem 0.15rem;
+      background: var(--white);
+    }
+
+    .mark span:nth-child(1) { height: 42%; opacity: 0.62; }
+    .mark span:nth-child(2) { height: 72%; opacity: 0.8; }
+    .mark span:nth-child(3) { height: 100%; }
+
+    .version {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      color: var(--muted);
+      font-size: 0.8rem;
+      font-weight: 650;
+    }
+
+    .version::before {
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 999px;
+      background: #3c8a66;
+      box-shadow: 0 0 0 0.25rem rgba(60, 138, 102, 0.13);
+      content: "";
+    }
+
+    main {
+      flex: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(19rem, 0.8fr);
+      align-items: center;
+      gap: clamp(2.5rem, 7vw, 7rem);
+      padding: clamp(4rem, 10vh, 8rem) 0;
+    }
+
+    .eyebrow {
+      margin: 0 0 1.2rem;
+      color: var(--blue);
+      font-family: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 11ch;
+      margin: 0;
+      font-family: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+      font-size: clamp(3.6rem, 8vw, 6.7rem);
+      font-weight: 600;
+      letter-spacing: -0.07em;
+      line-height: 0.92;
+    }
+
+    .intro {
+      max-width: 40rem;
+      margin: 1.7rem 0 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 1.8vw, 1.15rem);
+      line-height: 1.75;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 2rem;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 3rem;
+      padding: 0.78rem 1.15rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 750;
+      text-decoration: none;
+      transition: transform 150ms ease, border-color 150ms ease, background 150ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button:focus-visible,
+    .route:focus-visible,
+    footer a:focus-visible {
+      outline: 3px solid rgba(74, 119, 158, 0.45);
+      outline-offset: 3px;
+    }
+
+    .button.primary {
+      border-color: var(--blue-dark);
+      background: var(--blue-dark);
+      color: var(--white);
+    }
+
+    .button.secondary {
+      background: rgba(255, 254, 250, 0.48);
+    }
+
+    .compatibility {
+      max-width: 39rem;
+      margin: 1.75rem 0 0;
+      padding-left: 1rem;
+      border-left: 2px solid rgba(53, 101, 143, 0.42);
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.65;
+    }
+
+    .compatibility strong {
+      color: var(--ink);
+    }
+
+    .directory {
+      overflow: hidden;
+      border: 1px solid rgba(23, 33, 29, 0.12);
+      border-radius: 1.5rem;
+      background: rgba(255, 254, 250, 0.78);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+
+    .directory-heading {
+      padding: 1.45rem 1.4rem 1rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .directory-heading p {
+      margin: 0;
+      color: var(--blue);
+      font-family: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.76rem;
+      font-weight: 750;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .directory-heading h2 {
+      margin: 0.35rem 0 0;
+      font-size: 1.15rem;
+      letter-spacing: -0.02em;
+    }
+
+    .routes {
+      display: grid;
+      padding: 0.55rem;
+    }
+
+    .route {
+      display: grid;
+      grid-template-columns: 2.3rem 1fr auto;
+      align-items: center;
+      gap: 0.75rem;
+      min-height: 4.4rem;
+      padding: 0.7rem 0.8rem;
+      border-radius: 1rem;
+      text-decoration: none;
+    }
+
+    .route:hover {
+      background: var(--paper);
+    }
+
+    .route-index {
+      color: var(--blue);
+      font-family: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.76rem;
+      font-weight: 800;
+    }
+
+    .route-copy strong,
+    .route-copy span {
+      display: block;
+    }
+
+    .route-copy strong {
+      font-size: 0.91rem;
+    }
+
+    .route-copy span {
+      margin-top: 0.2rem;
+      color: var(--muted);
+      font-size: 0.77rem;
+    }
+
+    .route-arrow {
+      color: var(--blue-light);
+      font-size: 1rem;
+    }
+
+    footer {
+      padding: 1.4rem 0 1.8rem;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+
+    footer nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 1rem;
+    }
+
+    footer a {
+      text-underline-offset: 0.22rem;
+    }
+
+    @media (max-width: 760px) {
+      .page {
+        width: min(100% - 1.4rem, 38rem);
+      }
+
+      main {
+        grid-template-columns: 1fr;
+        align-items: start;
+        gap: 3rem;
+        padding: 4.2rem 0;
+      }
+
+      h1 {
+        max-width: 9ch;
+        font-size: clamp(3.4rem, 17vw, 5.2rem);
+      }
+
+      footer {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      footer nav {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .button {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="page">
+    <header>
+      <a class="brand" href="/" aria-label="Top US Stock Tickers home">
+        <span class="mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span>Top US Stock Tickers</span>
+      </a>
+      <span class="version">API v2 online</span>
+    </header>
+
+    <main id="main">
+      <section aria-labelledby="page-title">
+        <p class="eyebrow">Open dataset and read-only API</p>
+        <h1 id="page-title">US ticker data, ready to query.</h1>
+        <p class="intro">Ticker lists built from the Nasdaq stock screener, with S&amp;P 500 membership matched from Wikipedia. Download the CSV files or query the versioned JSON API.</p>
+
+        <div class="actions">
+          <a class="button primary" href="/docs">Open API docs</a>
+          <a class="button secondary" href="https://github.com/zyhe16/top-us-stock-tickers">View on GitHub</a>
+        </div>
+
+        <p class="compatibility"><strong>Legacy v1 stays put.</strong> The old CSV paths and six-column format still work. Move to v2 when you need country, sector, detailed industry, or the API.</p>
+      </section>
+
+      <aside class="directory" aria-labelledby="directory-title">
+        <div class="directory-heading">
+          <p>Quick links</p>
+          <h2 id="directory-title">Pick a starting point</h2>
+        </div>
+        <nav class="routes" aria-label="API and dataset links">
+          <a class="route" href="/docs">
+            <span class="route-index">01</span>
+            <span class="route-copy"><strong>Interactive docs</strong><span>Try requests in Swagger UI</span></span>
+            <span class="route-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="route" href="/api/v2/tickers?collection=sp500&amp;limit=5">
+            <span class="route-index">02</span>
+            <span class="route-copy"><strong>Sample response</strong><span>Five S&amp;P 500 rows as JSON</span></span>
+            <span class="route-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="route" href="/openapi.json">
+            <span class="route-index">03</span>
+            <span class="route-copy"><strong>OpenAPI schema</strong><span>Machine-readable API contract</span></span>
+            <span class="route-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="route" href="/health">
+            <span class="route-index">04</span>
+            <span class="route-copy"><strong>Service health</strong><span>Snapshot and API status</span></span>
+            <span class="route-arrow" aria-hidden="true">↗</span>
+          </a>
+        </nav>
+      </aside>
+    </main>
+
+    <footer>
+      <span>Data updates weekdays at 10:00 UTC.</span>
+      <nav aria-label="Repository links">
+        <a href="https://raw.githubusercontent.com/zyhe16/top-us-stock-tickers/main/data/v2/tickers.csv">V2 CSV</a>
+        <a href="https://raw.githubusercontent.com/zyhe16/top-us-stock-tickers/main/tickers/all.csv">Legacy v1 CSV</a>
+        <a href="https://github.com/zyhe16/top-us-stock-tickers/blob/main/DATA_LICENSE.md">Data rights</a>
+        <a href="/privacy">Privacy</a>
+      </nav>
+    </footer>
+  </div>
+</body>
+</html>

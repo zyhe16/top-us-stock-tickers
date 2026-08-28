@@ -10,7 +10,8 @@ RUN pip install --no-cache-dir -r requirements-api.txt
 
 RUN useradd --create-home --uid 10001 api
 
-COPY --chown=api:api api.py contracts.py ./
+COPY --chown=api:api api.py contracts.py landing.html privacy.html ./
+COPY --chown=api:api assets ./assets
 COPY --chown=api:api data/v2 ./data/v2
 
 USER api

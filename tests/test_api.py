@@ -86,6 +86,48 @@ class ApiTests(unittest.TestCase):
         self.assertEqual(body["apiVersion"], API_VERSION)
         self.assertEqual(body["manifestSha256"], store.manifest_sha256)
 
+    def test_root_serves_a_landing_page_with_the_main_destinations(self):
+        status, content, headers = self.request("/")
+        page = content.decode("utf-8")
+
+        self.assertEqual(status, 200)
+        self.assertTrue(headers["Content-Type"].startswith("text/html"))
+        self.assertIn("Top US Stock Tickers", page)
+        self.assertIn('href="/docs"', page)
+        self.assertIn('href="/api/v2/tickers?collection=sp500&amp;limit=5"', page)
+        self.assertIn('href="/openapi.json"', page)
+        self.assertIn('href="/health"', page)
+        self.assertIn('href="/privacy"', page)
+        self.assertIn("Legacy v1 stays put", page)
+        self.assertIn('assets/fonts/Inter-Variable.woff2', page)
+        self.assertIn('assets/fonts/SpaceGrotesk-Variable.woff2', page)
+        self.assertNotIn("fonts.googleapis.com", page)
+        self.assertNotIn("fonts.gstatic.com", page)
+
+    def test_serves_self_hosted_landing_page_fonts(self):
+        for path in (
+            "/assets/fonts/Inter-Variable.woff2",
+            "/assets/fonts/SpaceGrotesk-Variable.woff2",
+        ):
+            with self.subTest(path=path):
+                status, content, headers = self.request(path)
+
+                self.assertEqual(status, 200)
+                self.assertGreater(len(content), 10_000)
+                self.assertEqual(headers["Content-Type"], "font/woff2")
+
+    def test_privacy_notice_describes_actual_service_behavior(self):
+        status, content, headers = self.request("/privacy")
+        page = content.decode("utf-8")
+
+        self.assertEqual(status, 200)
+        self.assertTrue(headers["Content-Type"].startswith("text/html"))
+        self.assertIn("No cookies or analytics", page)
+        self.assertIn("Railway", page)
+        self.assertIn("does not create a visitor database", page)
+        self.assertNotIn("fonts.googleapis.com", page)
+        self.assertNotIn("fonts.gstatic.com", page)
+
     def test_store_rejects_a_file_that_does_not_match_the_manifest(self):
         repository_root = Path(__file__).resolve().parents[1]
         with tempfile.TemporaryDirectory() as directory:

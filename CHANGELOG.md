@@ -2,6 +2,16 @@
 
 This file records changes to the dataset contracts, API, updater, validation, and deployment behavior.
 
+## Unreleased
+
+### Changed
+
+- The root URL now shows a blue landing page with links to the API docs, sample JSON, OpenAPI schema, health check, GitHub repository, and both dataset versions.
+- The landing page serves Inter and Space Grotesk from the API host. Visiting the page no longer sends a font request to Google.
+- A short privacy notice now explains the service's request handling, Railway hosting, and lack of cookies or analytics.
+- Application access logs are disabled. Error logs remain available for operating the service.
+- The README and API guide now use the public HTTPS domain and include copy-paste examples for curl, Python, and browser JavaScript.
+
 ## 2.0.0 - 2026-08-28
 
 ### Added
