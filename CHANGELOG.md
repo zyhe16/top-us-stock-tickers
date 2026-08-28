@@ -11,6 +11,7 @@ This file records changes to the dataset contracts, API, updater, validation, an
 - All application responses now include browser security headers. The landing and privacy pages also use a restrictive Content Security Policy.
 - GitHub Actions now use immutable commit references, and Dependabot checks Python and workflow dependencies each week.
 - The root URL now shows a blue landing page with links to the API docs, sample JSON, OpenAPI schema, health check, GitHub repository, and both dataset versions.
+- The landing page and README now identify the API's three Railway regions: California, Amsterdam, and Singapore.
 - The landing page serves Inter and Space Grotesk from the API host. Visiting the page no longer sends a font request to Google.
 - The privacy notice now explains Cloudflare and Railway processing, temporary rate-limit counters, possible Cloudflare security cookies, and the external assets used by the generated API documentation.
 - Application access logs are disabled. Error logs remain available for operating the service.

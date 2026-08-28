@@ -228,6 +228,43 @@
       background: rgba(255, 254, 250, 0.48);
     }
 
+    .regions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.65rem 1rem;
+      margin-top: 1.35rem;
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    .regions-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--ink);
+      font-weight: 750;
+    }
+
+    .regions-label::before {
+      width: 0.45rem;
+      height: 0.45rem;
+      border-radius: 999px;
+      background: #3c8a66;
+      content: "";
+    }
+
+    .region-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+    }
+
+    .region-list span + span {
+      padding-left: 0.55rem;
+      border-left: 1px solid var(--line);
+    }
+
     .compatibility {
       max-width: 39rem;
       margin: 1.75rem 0 0;
@@ -392,6 +429,15 @@
         <div class="actions">
           <a class="button primary" href="/docs">Open API docs</a>
           <a class="button secondary" href="https://github.com/zyhe16/top-us-stock-tickers">View on GitHub</a>
+        </div>
+
+        <div class="regions" aria-label="API deployment regions">
+          <span class="regions-label">3 live API servers</span>
+          <span class="region-list">
+            <span>California</span>
+            <span>Amsterdam</span>
+            <span>Singapore</span>
+          </span>
         </div>
 
         <p class="compatibility"><strong>Legacy v1 stays put.</strong> The old CSV paths and six-column format still work. Move to v2 when you need country, sector, detailed industry, or the API.</p>
