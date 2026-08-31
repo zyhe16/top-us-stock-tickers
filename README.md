@@ -25,7 +25,8 @@ Version 2 adds a richer dataset and a query API.
 |   |-- tickers.csv           V2 dataset
 |   `-- manifest.json         V2 snapshot metadata
 |-- tests/                    Updater, publication, and HTTP tests
-|-- .github/workflows/        CI and weekday data updates
+|-- scheduler/                Cloudflare Cron dispatcher and tests
+|-- .github/workflows/        CI and dispatch-only data update job
 |-- Dockerfile                Railway API image
 |-- requirements/             API and development dependencies
 |-- docs/                     API, data, licensing, and Railway guides
@@ -159,7 +160,10 @@ Read [the dataset contract](docs/DATA_CONTRACT.md) for the full legacy v1 and v2
 
 ## Update schedule
 
-GitHub Actions fetches and validates the data on weekdays at 10:00 UTC. One successful run publishes:
+Cloudflare checks for a successful weekday update hourly from 10:17 through
+14:17 UTC. When the current UTC day has no successful or active update, it
+dispatches the GitHub Actions updater. GitHub's own cron scheduler is not used.
+One successful run publishes:
 
 - The compatible legacy v1 CSV collection and root `manifest.json`.
 - `data/v2/tickers.csv` and `data/v2/manifest.json`.
@@ -167,6 +171,11 @@ GitHub Actions fetches and validates the data on weekdays at 10:00 UTC. One succ
 The updater stages and validates legacy v1 and v2 together, then replaces them as one rollback-safe release. It rejects implausible source counts, duplicate normalized symbols, incomplete S&P matching, broken top lists, incorrect grouped files, and checksum mismatches.
 
 When Railway watches the `main` branch, the resulting data commit triggers an API deployment. The API validates the v2 manifest during startup. A corrupt snapshot prevents the service from becoming healthy.
+
+The repeated Cloudflare checks recover from a failed or missed dispatch without
+publishing duplicate daily snapshots. See the
+[`scheduler` operations guide](scheduler/README.md) for the exact retry and
+credential behavior.
 
 ## Use the files directly
 

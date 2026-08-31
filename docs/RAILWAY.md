@@ -1,6 +1,6 @@
 # Deploy v2 to Railway
 
-The repository includes a Dockerfile for the API. The image starts `python -m top_us_stock_tickers.api` from the packaged `src` tree and copies only API dependencies, static pages, fonts, and the v2 dataset. It needs no database, volume, secret, or scheduled Railway job. GitHub remains the data source of record and continues to run the weekday updater.
+The repository includes a Dockerfile for the API. The image starts `python -m top_us_stock_tickers.api` from the packaged `src` tree and copies only API dependencies, static pages, fonts, and the v2 dataset. It needs no database, volume, secret, or scheduled Railway job. GitHub remains the data source of record. A Cloudflare Cron Trigger dispatches the weekday GitHub Actions updater.
 
 ## Create the service
 
@@ -8,7 +8,7 @@ The repository includes a Dockerfile for the API. The image starts `python -m to
 2. Select the `main` branch and leave the repository root as the service root.
 3. Railway will find the Dockerfile and build the API image.
 4. Set the [health-check path](https://docs.railway.com/deployments/healthchecks) to `/health` in the service settings.
-5. Keep ["Wait for CI"](https://docs.railway.com/deployments/github-autodeploys#wait-for-ci) disabled for the initial setup. The scheduled updater pushes with GitHub's built-in `GITHUB_TOKEN`, and GitHub does not start another workflow for that push. The updater runs the test suite and validates the legacy v1 and v2 snapshots before it pushes. Normal code changes should still go through a pull request with CI.
+5. Keep ["Wait for CI"](https://docs.railway.com/deployments/github-autodeploys#wait-for-ci) disabled for the initial setup. The dispatched updater pushes with GitHub's built-in `GITHUB_TOKEN`, and GitHub does not start another workflow for that push. The updater runs the test suite and validates the legacy v1 and v2 snapshots before it pushes. Normal code changes should still go through a pull request with CI.
 6. [Generate a public domain](https://docs.railway.com/networking/public-networking) under Networking.
 
 Railway injects `PORT`. The container reads it and binds to `0.0.0.0`. Do not set a fixed production port.
@@ -54,7 +54,7 @@ The health response should report API version `2.0.0`, dataset contract `v2`, an
 
 ## Deployment behavior
 
-Railway rebuilds the service when a commit reaches the connected branch. The weekday data update therefore refreshes the API without a separate scheduler or mutable volume.
+Railway rebuilds the service when a commit reaches the connected branch. The weekday data commit therefore refreshes the API without a Railway scheduler or mutable volume. Cloudflare owns the external schedule and dispatches the update workflow through GitHub's API.
 
 If the updater later uses a GitHub App token or personal access token that does trigger CI, enable Railway's "Wait for CI" option then. With the current `GITHUB_TOKEN` workflow, enabling it can leave an updater commit without a CI result for Railway to wait on. See [GitHub's `GITHUB_TOKEN` event behavior](https://docs.github.com/en/actions/concepts/security/github_token#when-github_token-triggers-workflow-runs).
 

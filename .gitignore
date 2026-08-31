@@ -1,5 +1,8 @@
 .venv/
 .cache/
+.wrangler/
+.dev.vars*
+node_modules/
 .ruff_cache/
 __pycache__/
 *.py[cod]

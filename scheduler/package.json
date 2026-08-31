@@ -1,0 +1,13 @@
+{
+  "name": "top-us-stock-tickers-scheduler",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev --test-scheduled",
+    "test": "node test/index.test.js"
+  },
+  "devDependencies": {
+    "wrangler": "4.127.1"
+  }
+}

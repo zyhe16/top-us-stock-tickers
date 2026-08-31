@@ -34,3 +34,32 @@ jobs:
 
       - name: Compile Python files
         run: python -m compileall -q src tests
+
+  scheduler:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: scheduler
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: scheduler/package-lock.json
+
+      - name: Install scheduler dependencies
+        run: npm ci
+
+      - name: Test scheduler
+        run: npm test
+
+      - name: Build Cloudflare Worker
+        run: npx wrangler deploy --dry-run

@@ -15,5 +15,7 @@ LICENSE
 pyproject.toml
 README.md
 requirements/development.txt
+scheduler
+scripts
 src/top_us_stock_tickers/publication.py
 src/top_us_stock_tickers/updater.py
