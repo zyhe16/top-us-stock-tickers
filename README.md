@@ -25,8 +25,7 @@ Version 2 adds a richer dataset and a query API.
 |   |-- tickers.csv           V2 dataset
 |   `-- manifest.json         V2 snapshot metadata
 |-- tests/                    Updater, publication, and HTTP tests
-|-- scheduler/                Cloudflare Cron dispatcher and tests
-|-- .github/workflows/        CI and dispatch-only data update job
+|-- .github/workflows/        CI and scheduled data update job
 |-- Dockerfile                Railway API image
 |-- requirements/             API and development dependencies
 |-- docs/                     API, data, licensing, and Railway guides
@@ -160,9 +159,10 @@ Read [the dataset contract](docs/DATA_CONTRACT.md) for the full legacy v1 and v2
 
 ## Update schedule
 
-Cloudflare checks for a successful weekday update hourly from 10:17 through
-14:17 UTC. When the current UTC day has no successful or active update, it
-dispatches the GitHub Actions updater. GitHub's own cron scheduler is not used.
+GitHub Actions runs the updater on weekdays at 10:17 and 12:47 UTC. The first
+run is the normal update and the second is a same-day fallback. Both schedules
+avoid the start of the hour, when GitHub says scheduled workflows are more
+likely to be delayed. The workflow can also be started manually.
 One successful run publishes:
 
 - The compatible legacy v1 CSV collection and root `manifest.json`.
@@ -172,10 +172,8 @@ The updater stages and validates legacy v1 and v2 together, then replaces them a
 
 When Railway watches the `main` branch, the resulting data commit triggers an API deployment. The API validates the v2 manifest during startup. A corrupt snapshot prevents the service from becoming healthy.
 
-The repeated Cloudflare checks recover from a failed or missed dispatch without
-publishing duplicate daily snapshots. See the
-[`scheduler` operations guide](scheduler/README.md) for the exact retry and
-credential behavior.
+If both scheduled runs start, the concurrency guard prevents overlap. The
+second run exits without committing when the generated snapshot is unchanged.
 
 ## Use the files directly
 

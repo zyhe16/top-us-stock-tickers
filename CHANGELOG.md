@@ -6,7 +6,7 @@ This file records changes to the dataset contracts, API, updater, validation, an
 
 ### Changed
 
-- Cloudflare Cron Triggers now own weekday update scheduling and retry dispatch hourly from 10:17 through 14:17 UTC. GitHub Actions keeps the updater job but no longer uses GitHub's lossy `schedule` event.
+- GitHub Actions now runs the weekday updater at two off-minute times, giving the daily snapshot a same-day fallback without external scheduler credentials.
 - Python source and static API assets now live in the `top_us_stock_tickers` package, while operational guides and dependency sets have dedicated directories. Published legacy v1 and v2 data paths remain unchanged.
 - `/api/v2` now has a per-client sliding-window rate limit, response quota headers, and a bounded in-memory counter store. The default is 120 requests per 60 seconds.
 - The production server now caps concurrent requests and uses bounded keep-alive and graceful-shutdown timeouts.

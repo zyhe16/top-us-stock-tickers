@@ -1,6 +1,11 @@
 name: Daily Stock Ticker Update
 
 on:
+  schedule:
+    # Use off-minute times to reduce delays during GitHub Actions peak load.
+    - cron: "17 10 * * 1-5"
+    # A second run provides a same-day fallback if the first schedule is dropped.
+    - cron: "47 12 * * 1-5"
   workflow_dispatch:
 
 permissions:
