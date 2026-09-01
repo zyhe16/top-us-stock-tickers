@@ -18,6 +18,7 @@ concurrency:
 jobs:
   update-data:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
 
     steps:
       - name: Checkout repository
@@ -36,10 +37,16 @@ jobs:
       - name: Run tests
         run: python -m unittest discover -s tests -v
 
+      - name: Check current snapshot date
+        id: freshness
+        run: echo "current=$(python -m top_us_stock_tickers.freshness data/v2/manifest.json)" >> "$GITHUB_OUTPUT"
+
       - name: Run update script
+        if: github.event.schedule != '47 12 * * 1-5' || steps.freshness.outputs.current != 'true'
         run: python -m top_us_stock_tickers.updater
 
       - name: Commit and push changes
+        if: github.event.schedule != '47 12 * * 1-5' || steps.freshness.outputs.current != 'true'
         run: |
           git config --global user.name "GitHub Actions Bot"
           git config --global user.email "actions@github.com"

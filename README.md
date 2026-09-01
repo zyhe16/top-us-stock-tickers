@@ -173,7 +173,8 @@ The updater stages and validates legacy v1 and v2 together, then replaces them a
 When Railway watches the `main` branch, the resulting data commit triggers an API deployment. The API validates the v2 manifest during startup. A corrupt snapshot prevents the service from becoming healthy.
 
 If both scheduled runs start, the concurrency guard prevents overlap. The
-second run exits without committing when the generated snapshot is unchanged.
+second run checks the committed manifest and skips the source fetch when the
+snapshot was already generated on the current UTC day.
 
 ## Use the files directly
 
