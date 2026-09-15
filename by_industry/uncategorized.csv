@@ -1,577 +1,562 @@
 symbol,name,price,marketCap,volume,industry
-BRK/A,Berkshire Hathaway Inc.,771638.62,1134983183554.0,212,Uncategorized
-BRK/B,Berkshire Hathaway Inc.,514.345,1134805222117.0,1648262,Uncategorized
-KHC,The Kraft Heinz Company Common Stock,24.54,29100115021.0,6042533,Uncategorized
-TPGXL,TPG Operating Group II L.P. 6.950% Fixed-Rate Junior Subordinated Notes due 2064,21.5,7843754163.0,8995,Uncategorized
-OTF,Blue Owl Technology Finance Corp. Common Stock,10.745,4923202005.0,777388,Uncategorized
-GEF,Greif Inc. Class A Common Stock,82.435,3805885542.0,71300,Uncategorized
-BELFB,Bel Fuse Inc. Class B Common Stock,233.955,3378181525.0,62498,Uncategorized
-BELFA,Bel Fuse Inc. Class A Common Stock,193.805,2798437607.0,22313,Uncategorized
-NMFCZ,New Mountain Finance Corporation 8.250% Notes due 2028,25.35,2696250361.0,32390,Uncategorized
-BTX,BlackRock Technology and Private Equity Term Trust Common Shares of Beneficial Interest,8.655,2040815886.0,156027,Uncategorized
-VSECU,VSE Corporation Tangible Equity Units,48.31,1355818797.0,802,Uncategorized
-CNL,Collective Mining Ltd. Common Shares,13.12,1216784316.0,64174,Uncategorized
-DEC,Diversified Energy Company Common Stock,14.88,1142133610.0,170195,Uncategorized
-KBDC,Kayne Anderson BDC Inc. Common Stock,13.07,863114177.0,148626,Uncategorized
-NCDL,Nuveen Churchill Direct Lending Corp. Common Stock,12.2648,605722475.0,74350,Uncategorized
-WHFCL,WhiteHorse Finance Inc. 7.875% Notes due 2028,25.09,583169078.0,25,Uncategorized
-TMS,Teamshares Inc. Common Stock,7.48,550980660.0,64368,Uncategorized
-PPHC,Public Policy Holding Company Inc. Common Stock,12.0,358743468.0,64645,Uncategorized
-SWKHL,SWK Holdings Corporation 9.00% Senior Notes due 2027,25.51,309879944.0,2958,Uncategorized
-NXG,NXG NextGen Infrastructure Income Fund Common Shares of Beneficial Interest,55.49,144369110.0,53206,Uncategorized
-BLUW,Blue Water Acquisition Corp. III Class A Ordinary Shares,10.37,75130650.0,131,Uncategorized
-TMSWW,Teamshares Inc. Warrants,1.0,73660516.0,13819,Uncategorized
-BLUWW,Blue Water Acquisition Corp. III Warrant.,0.3101,2246675.0,9237,Uncategorized
-GTEN,Gores Holdings X Inc. Class A ordinary shares,10.5,0.0,2958,Uncategorized
-GTENW,Gores Holdings X Inc. Warrants,0.7756,0.0,4,Uncategorized
-PWRL,Powerlaw Corp. Common Stock,10.4,0.0,76689,Uncategorized
-KRAQ,KRAKacquisition Corp Class A Ordinary Shares,10.0391,0.0,76,Uncategorized
-ARCIW,Archimedes Tech SPAC Partners III Co. Warrant,0.411,0.0,3,Uncategorized
-KRAQU,KRAKacquisition Corp Unit,10.13,0.0,34,Uncategorized
-KRAQW,KRAKacquisition Corp Warrants,0.4001,0.0,1700,Uncategorized
-ARCI,Archimedes Tech SPAC Partners III Co. Ordinary Share,10.1,0.0,7,Uncategorized
-KFII,K&F Growth Acquisition Corp. II Class A Ordinary shares,10.65,0.0,7,Uncategorized
-APACR,StoneBridge Acquisition II Corporation Rights,0.12,0.0,23,Uncategorized
-ARTCW,Art Technology Acquisition Corp. Warrants,0.3201,0.0,200,Uncategorized
-QUMSR,Quantumsphere Acquisition Corp. Rights,0.0666,0.0,2,Uncategorized
-RACD,Research Alliance Corporation IV Class A Ordinary Shares,11.72,0.0,11,Uncategorized
-DYNC,Dynamix Corporation Class A Ordinary Shares,10.91,0.0,80,Uncategorized
-DTSQ,DT Cloud Star Acquisition Corporation Ordinary Shares,11.4001,0.0,1215,Uncategorized
-PACHW,Pioneer Acquisition I Corp Warrants,0.1202,0.0,22106,Uncategorized
-LGI,Lazard Global Total Return and Income Fund Common Stock,17.4623,0.0,13173,Uncategorized
-TVA,Texas Ventures Acquisition III Corp Class A Ordinary Share,10.555,0.0,6003,Uncategorized
-TVACW,Texas Ventures Acquisition III Corp Warrants,0.2501,0.0,21517,Uncategorized
-TVAI,Thayer Ventures Acquisition Corporation II Class A Ordinary Shares,10.4,0.0,10,Uncategorized
-TVAIR,Thayer Ventures Acquisition Corporation II Rights,0.1005,0.0,4932,Uncategorized
-GPATU,GP-Act III Acquisition Corp. Units,11.01,0.0,2,Uncategorized
-GPATW,GP-Act III Acquisition Corp. Warrants,0.1501,0.0,1721,Uncategorized
-QUMS,Quantumsphere Acquisition Corp. Ordinary Shares,10.34,0.0,85,Uncategorized
-GPAC,General Purpose Acquisition Corp. Class A Ordinary Shares,10.06,0.0,6,Uncategorized
-GPACU,General Purpose Acquisition Corp. Units,10.18,0.0,100,Uncategorized
-GPAT,GP-Act III Acquisition Corp. Class A Ordinary Share,10.97,0.0,6,Uncategorized
-GSHR,Gesher Acquisition Corp. II Class A Ordinary Shares,10.55,0.0,9,Uncategorized
-DYNCW,Dynamix Corporation Warrant,0.12,0.0,447,Uncategorized
-TVIV,Texas Ventures Acquisition IV Corp Class A Ordinary Shares,9.97,0.0,28,Uncategorized
-TVIVU,Texas Ventures Acquisition IV Corp Units,10.17,0.0,3,Uncategorized
-TVIVW,Texas Ventures Acquisition IV Corp Warrant,0.2217,0.0,19020,Uncategorized
-PACH,Pioneer Acquisition I Corp Class A Ordinary Shares,10.335,0.0,7,Uncategorized
+BRK/B,Berkshire Hathaway Inc.,514.79,1135787030677.0,506290,Uncategorized
+BRK/A,Berkshire Hathaway Inc.,771781.03,1135192650720.0,63,Uncategorized
+TPGXL,TPG Operating Group II L.P. 6.950% Fixed-Rate Junior Subordinated Notes due 2064,21.3,7770789008.0,1260,Uncategorized
+OTF,Blue Owl Technology Finance Corp. Common Stock,10.575,4845310489.0,449926,Uncategorized
+GEF,Greif Inc. Class A Common Stock,81.12,3745174200.0,24392,Uncategorized
+BELFB,Bel Fuse Inc. Class B Common Stock,231.92,3348797244.0,47269,Uncategorized
+BELFA,Bel Fuse Inc. Class A Common Stock,189.22,2732232729.0,16871,Uncategorized
+NMFCZ,New Mountain Finance Corporation 8.250% Notes due 2028,25.34,2695186752.0,6557,Uncategorized
+BTX,BlackRock Technology and Private Equity Term Trust Common Shares of Beneficial Interest,8.57,2020773211.0,82899,Uncategorized
+VSECU,VSE Corporation Tangible Equity Units,47.41,1330560323.0,11684,Uncategorized
+CNL,Collective Mining Ltd. Common Shares,12.905,1196844634.0,34203,Uncategorized
+DEC,Diversified Energy Company Common Stock,14.98,1149809239.0,74317,Uncategorized
+KBDC,Kayne Anderson BDC Inc. Common Stock,12.9679,856371716.0,35356,Uncategorized
+NCDL,Nuveen Churchill Direct Lending Corp. Common Stock,12.17,601040581.0,94088,Uncategorized
+WHFCL,WhiteHorse Finance Inc. 7.875% Notes due 2028,25.0807,582952917.0,700,Uncategorized
+TMS,Teamshares Inc. Common Stock,7.4,545087818.0,13083,Uncategorized
+PPHC,Public Policy Holding Company Inc. Common Stock,11.65,348280117.0,6087,Uncategorized
+SWKHL,SWK Holdings Corporation 9.00% Senior Notes due 2027,25.57,310608788.0,410,Uncategorized
+NXG,NXG NextGen Infrastructure Income Fund Common Shares of Beneficial Interest,54.935,142925159.0,9893,Uncategorized
+TMSWW,Teamshares Inc. Warrants,1.02,75133726.0,600,Uncategorized
+BLUW,Blue Water Acquisition Corp. III Class A Ordinary Shares,10.365,75094425.0,51,Uncategorized
+PCAPU,ProCap Acquisition Corp Unit,10.45,0.0,2000,Uncategorized
+SCPQ,Social Commerce Partners Corporation Class A Ordinary Shares,10.03,0.0,7,Uncategorized
+SCPQU,Social Commerce Partners Corporation Unit,10.28,0.0,100,Uncategorized
+SCPQW,Social Commerce Partners Corporation Warrant,0.34,0.0,600,Uncategorized
+PACH,Pioneer Acquisition I Corp Class A Ordinary Shares,10.33,0.0,8,Uncategorized
 PACHU,Pioneer Acquisition I Corp Units,10.3801,0.0,1,Uncategorized
-LKSP,Lake Superior Acquisition Corp. Class A Ordinary Shares,10.23,0.0,2817,Uncategorized
-DRDB,Roman DBDR Acquisition Corp. II Ordinary shares,10.67,0.0,421,Uncategorized
-DRDBU,Roman DBDR Acquisition Corp. II Unit,10.72,0.0,10,Uncategorized
-DRDBW,Roman DBDR Acquisition Corp. II Warrants,0.17,0.0,89,Uncategorized
-OXLCI,Oxford Lane Capital Corp. 8.75% Notes due 2030,25.78,0.0,3865,Uncategorized
-LKSPR,Lake Superior Acquisition Corp. Rights,1.2,0.0,636,Uncategorized
-ATII,Archimedes Tech SPAC Partners II Co. Ordinary Shares,10.665,0.0,4100,Uncategorized
-GSRF,GSR IV Acquisition Corp. Class A ordinary share,10.23,0.0,6,Uncategorized
-HACQU,HCM IV Acquisition Corp. Unit,10.15,0.0,14,Uncategorized
-LATAU,Galata Acquisition Corp. II Units,10.3,0.0,2,Uncategorized
-DBL,DoubleLine Opportunistic Credit Fund Common Shares of Beneficial Interest,13.99,0.0,40949,Uncategorized
-POLE,Andretti Acquisition Corp. II Class A Ordinary Shares,10.72,0.0,11963,Uncategorized
-POLEW,Andretti Acquisition Corp. II Warrant,0.1401,0.0,174,Uncategorized
-HVMCW,Highview Merger Corp. Warrants,0.2599,0.0,4206,Uncategorized
-ALDF,Aldel Financial II Inc. Class A Ordinary Shares,10.82,0.0,10,Uncategorized
-ALF,Centurion Acquisition Corp. Class A Ordinary Shares,10.89,0.0,12,Uncategorized
-HVMC,Highview Merger Corp. Class A Ordinary Share,10.25,0.0,10,Uncategorized
-XTERW,Karman Line Acquisition Corp. Warrants,0.25,0.0,10,Uncategorized
-XTERU,Karman Line Acquisition Corp. Units,9.93,0.0,22,Uncategorized
-AEFC,Aegon Funding Company LLC 5.10% Subordinated Notes due 2049,17.8276,0.0,22034,Uncategorized
-AACOW,Abony Acquisition Corp. I Warrants,0.42,0.0,389,Uncategorized
-AFJKR,Aimei Health Technology Co. Ltd Right,0.15,0.0,8,Uncategorized
-WLIIU,Willow Lane Acquisition Corp. II Unit,10.4401,0.0,2,Uncategorized
-IDAC,Iron Dome Acquisition I Corp. Class A Ordinary Shares,10.0,0.0,37,Uncategorized
-IDACW,Iron Dome Acquisition I Corp. Warrant,0.367,0.0,56,Uncategorized
-AFJK,Aimei Health Technology Co. Ltd Ordinary Share,12.35,0.0,18933,Uncategorized
-XIIIU,Churchill Capital Corp XIII Units,10.6,0.0,36,Uncategorized
-PGAC,Pantages Capital Acquisition Corporation Class A Ordinary Shares,10.71,0.0,24,Uncategorized
-PLMKW,Plum Acquisition Corp. IV Warrants,0.35,0.0,50069,Uncategorized
-WENN,Wen Acquisition Corp Class A Ordinary Shares,10.4,0.0,91,Uncategorized
+PACHW,Pioneer Acquisition I Corp Warrants,0.13,0.0,13169,Uncategorized
+RNAQ,Rainier Acquisition Corporation Class A Ordinary Shares,10.22,0.0,15677,Uncategorized
 AACO,Abony Acquisition Corp. I Class A Ordinary Share,9.99,0.0,7,Uncategorized
-PLMK,Plum Acquisition Corp. IV Class A Ordinary Shares,10.65,0.0,353,Uncategorized
-VHCPW,Vine Hill Capital Investment Corp. II Warrants,0.36,0.0,81,Uncategorized
-DMIIU,Drugs Made In America Acquisition II Corp. Unit,10.1999,0.0,2,Uncategorized
-ONCHU,1RT Acquisition Corp. Units,10.42,0.0,16257,Uncategorized
-IPHXU,Inflection Point Acquisition Corp. VIII Unit,10.08,0.0,15718,Uncategorized
-DMAA,Drugs Made In America Acquisition Corp. Ordinary Shares,10.8002,0.0,163985,Uncategorized
-PTORU,Praetorian Acquisition Corp. Units,10.21,0.0,676,Uncategorized
+ADACW,American Drive Acquisition Company Warrant,0.3001,0.0,6,Uncategorized
+CEPV,Cantor Equity Partners V Inc. Class A Ordinary Shares,10.335,0.0,3,Uncategorized
+VLOS,Velos Acquisition I Corp. Class A Ordinary shares,10.67,0.0,6,Uncategorized
+CCXIW,Churchill Capital Corp XI Warrants,5.79,0.0,12014,Uncategorized
+CCCT,Columbus Circle Capital Corp III Class A Ordinary Shares,9.84,0.0,1115,Uncategorized
+CCCTU,Columbus Circle Capital Corp III Units,9.95,0.0,2908,Uncategorized
+CCCTW,Columbus Circle Capital Corp III Warrants,0.37,0.0,300,Uncategorized
+CCII,Cohen Circle Acquisition Corp. II Class A Ordinary Shares,10.31,0.0,188495,Uncategorized
+CCIIW,Cohen Circle Acquisition Corp. II Warrant,0.7,0.0,10105,Uncategorized
 CRANU,Crane Harbor Acquisition Corp. II Units,10.3378,0.0,22,Uncategorized
-KFIIR,K&F Growth Acquisition Corp. II Rights,0.1,0.0,300,Uncategorized
-VHCP,Vine Hill Capital Investment Corp. II Class A Ordinary Shares,10.07,0.0,8,Uncategorized
-UYSCU,UY Scuti Acquisition Corp. Units,11.25,0.0,112,Uncategorized
-KOYN,CSLM Digital Asset Acquisition Corp III Class A Ordinary Shares,10.23,0.0,12173,Uncategorized
-KOYNU,CSLM Digital Asset Acquisition Corp III Units,10.31,0.0,1,Uncategorized
-KOYNW,CSLM Digital Asset Acquisition Corp III Warrants,0.2249,0.0,400,Uncategorized
-HCIC,Hennessy Capital Investment Corp. VIII Class A Ordinary Shares,9.99,0.0,7,Uncategorized
-HCICR,Hennessy Capital Investment Corp. VIII Share Rights,0.1192,0.0,60700,Uncategorized
-HCMAU,HCM III Acquisition Corp. Units,10.47,0.0,1,Uncategorized
-ITHA,ITHAX Acquisition Corp III Class A Ordinary Shares,10.05,0.0,6,Uncategorized
-ITHAW,ITHAX Acquisition Corp III Warrants,0.16,0.0,20284,Uncategorized
-JONEU,Jones Ventures INTL Acquisition1 Corp Units,10.0,0.0,224,Uncategorized
-ALIS,Calisa Acquisition Corp Ordinary shares,10.34,0.0,3772,Uncategorized
-VLOS,Velos Acquisition I Corp. Class A Ordinary shares,10.67,0.0,1195,Uncategorized
-KCHV,Kochav Defense Acquisition Corp. Class A Ordinary Shares,10.45,0.0,14,Uncategorized
-KCHVU,Kochav Defense Acquisition Corp. Units,10.52,0.0,2,Uncategorized
-HLXC,Helix Acquisition Corp. III Class A Ordinary Shares,10.8,0.0,28,Uncategorized
-ALOV,Aldabra 4 Liquidity Opportunity Vehicle Inc. Class A Ordinary Shares,9.98,0.0,41,Uncategorized
-ALOVW,Aldabra 4 Liquidity Opportunity Vehicle Inc. Warrants,0.3684,0.0,1810,Uncategorized
-MSDL,Morgan Stanley Direct Lending Fund Common Stock,14.795,0.0,117758,Uncategorized
-SOCA,Solarius Capital Acquisition Corp. Class A Ordinary Share,10.345,0.0,14,Uncategorized
-SOCAW,Solarius Capital Acquisition Corp. Warrant,0.15,0.0,103391,Uncategorized
-BRTMU,B&R Technology Merger Corp. Units,9.94,0.0,721,Uncategorized
-NOEMU,CO2 Energy Transition Corp. Unit,12.65,0.0,2,Uncategorized
-CCIIW,Cohen Circle Acquisition Corp. II Warrant,0.7,0.0,21226,Uncategorized
-CCCT,Columbus Circle Capital Corp III Class A Ordinary Shares,9.8301,0.0,18732,Uncategorized
-CCCTU,Columbus Circle Capital Corp III Units,9.94,0.0,721,Uncategorized
-CCCTW,Columbus Circle Capital Corp III Warrants,0.37,0.0,266,Uncategorized
-CCII,Cohen Circle Acquisition Corp. II Class A Ordinary Shares,10.32,0.0,23711,Uncategorized
-EURK,Eureka Acquisition Corp Class A Ordinary Share,11.55,0.0,50291,Uncategorized
-SABA,Saba Capital Income & Opportunities Fund II Shares of Beneficial Interest,8.075,0.0,12257,Uncategorized
-SPEGR,Silver Pegasus Acquisition Corp Rights.,0.16,0.0,1400,Uncategorized
-SPKL,Spark I Acquisition Corp. Class A Ordinary Share,11.58,0.0,24921,Uncategorized
-SPKLW,Spark I Acquisition Corp. Warrant,0.978,0.0,1590,Uncategorized
-NOEMW,CO2 Energy Transition Corp. Warrant,0.1101,0.0,57283,Uncategorized
-SPEG,Silver Pegasus Acquisition Corp Class A Ordinary Shares,10.36,0.0,4009,Uncategorized
-FJDIU,ARC Group Securities Acquisition I Units,9.995,0.0,204,Uncategorized
-BPAC,Blueport Acquisition Ltd Class A Ordinary Shares,10.19,0.0,622,Uncategorized
-CCXIW,Churchill Capital Corp XI Warrants,5.5,0.0,280,Uncategorized
-NOEM,CO2 Energy Transition Corp. Common Stock,10.69,0.0,7,Uncategorized
-NOEMR,CO2 Energy Transition Corp. Right,0.17,0.0,7576,Uncategorized
-NSAIU,NorthStrive Acquisition Corp I. Units,10.02,0.0,4,Uncategorized
-NSAIW,NorthStrive Acquisition Corp I. Warrants,0.0497,0.0,9850,Uncategorized
-ADACW,American Drive Acquisition Company Warrant,0.3001,0.0,5,Uncategorized
-CCIIU,Cohen Circle Acquisition Corp. II Unit,10.4701,0.0,1,Uncategorized
-NHIC,NewHold Investment Corp III Class A Ordinary Shares,10.64,0.0,14132,Uncategorized
-NHICW,NewHold Investment Corp III Warrants,1.3,0.0,46,Uncategorized
-SCPQ,Social Commerce Partners Corporation Class A Ordinary Shares,10.03,0.0,9,Uncategorized
-SCPQU,Social Commerce Partners Corporation Unit,10.28,0.0,105,Uncategorized
-XCBE,X3 Acquisition Corp. Ltd. Class A Ordinary Shares,10.01,0.0,6,Uncategorized
-IEAGU,Infinite Eagle Acquisition Corp. Unit,10.37,0.0,101,Uncategorized
-ADAC,American Drive Acquisition Company Class A Ordinary Shares,10.09,0.0,211,Uncategorized
-NCO,Southern Cross Acquisition I Corp. Ordinary Shares,9.91,0.0,72,Uncategorized
-AESPU,Aeon Acquisition I Corp. Units,10.24,0.0,1210,Uncategorized
-ILLUW,Illumination Acquisition Corp I Warrant,0.37,0.0,1281,Uncategorized
-INAC,Indigo Acquisition Corp. Ordinary Shares,10.35,0.0,10011,Uncategorized
-CAPN,Cayson Acquisition Corp Ordinary shares,11.1801,0.0,11,Uncategorized
-CAQ,Cambridge Acquisition Corp. Class A Ordinary Shares,10.03,0.0,7,Uncategorized
-BURU,Nuburu Inc.,1.765,0.0,487388,Uncategorized
-SHOT,RMG ML Sports Holdings Class A Ordinary Shares,9.8999,0.0,161,Uncategorized
-SHOTU,RMG ML Sports Holdings Unit,9.94,0.0,3000,Uncategorized
-FACT,FACT II Acquisition Corp. Class A Ordinary Shares,10.7199,0.0,27,Uncategorized
-SHOTR,RMG ML Sports Holdings Rights,0.1305,0.0,5,Uncategorized
-CATLU,Catalyst Acquisition Corp. Units,9.971,0.0,2818,Uncategorized
-NCOOW,Southern Cross Acquisition I Corp. Warrants,0.0306,0.0,350,Uncategorized
-CAQUW,Cambridge Acquisition Corp. Warrants,0.399,0.0,200,Uncategorized
-SCII,SC II Acquisition Corp. Class A ordinary share,10.12,0.0,5758,Uncategorized
+VHCP,Vine Hill Capital Investment Corp. II Class A Ordinary Shares,10.09,0.0,8,Uncategorized
+VHCPW,Vine Hill Capital Investment Corp. II Warrants,0.36,0.0,80,Uncategorized
+CHAR,Charlton Aria Acquisition Corporation Class A Ordinary Shares,10.96,0.0,10,Uncategorized
+CHPG,ChampionsGate Acquisition Corporation Class A Ordinary Share,10.44,0.0,1009,Uncategorized
+CHPGR,ChampionsGate Acquisition Corporation Rights,0.15,0.0,39942,Uncategorized
+ECCU,Eagle Point Credit Company 7.75% Notes due 2030,25.19,0.0,1933,Uncategorized
+DYNC,Dynamix Corporation Class A Ordinary Shares,10.91,0.0,773,Uncategorized
+DTSQ,DT Cloud Star Acquisition Corporation Ordinary Shares,11.4001,0.0,111,Uncategorized
+OXLCI,Oxford Lane Capital Corp. 8.75% Notes due 2030,25.42,0.0,4524,Uncategorized
+EURK,Eureka Acquisition Corp Class A Ordinary Share,11.49,0.0,166,Uncategorized
+DBL,DoubleLine Opportunistic Credit Fund Common Shares of Beneficial Interest,13.955,0.0,22204,Uncategorized
+ONCH,1RT Acquisition Corp. Class A Ordinary Share,10.32,0.0,69,Uncategorized
+ONCHU,1RT Acquisition Corp. Units,10.4201,0.0,59,Uncategorized
+DRDBW,Roman DBDR Acquisition Corp. II Warrants,0.15,0.0,2200,Uncategorized
+DRDB,Roman DBDR Acquisition Corp. II Ordinary shares,10.67,0.0,8,Uncategorized
+DMAA,Drugs Made In America Acquisition Corp. Ordinary Shares,10.83,0.0,28,Uncategorized
+DRDBU,Roman DBDR Acquisition Corp. II Unit,10.72,0.0,10,Uncategorized
+ATII,Archimedes Tech SPAC Partners II Co. Ordinary Shares,10.665,0.0,61523,Uncategorized
+BEAG,Bold Eagle Acquisition Corp. Class A Ordinary Shares,10.7,0.0,1105,Uncategorized
+BEAGR,Bold Eagle Acquisition Corp. Right,0.195,0.0,62700,Uncategorized
+QUMS,Quantumsphere Acquisition Corp. Ordinary Shares,10.34,0.0,46,Uncategorized
+PTACU,Patriot Acquisition Corp. Units,10.04,0.0,1,Uncategorized
+PTORU,Praetorian Acquisition Corp. Units,10.15,0.0,2,Uncategorized
+POLE,Andretti Acquisition Corp. II Class A Ordinary Shares,10.71,0.0,19019,Uncategorized
+POLEW,Andretti Acquisition Corp. II Warrant,0.1401,0.0,174,Uncategorized
+QUMSR,Quantumsphere Acquisition Corp. Rights,0.0602,0.0,371,Uncategorized
+SABA,Saba Capital Income & Opportunities Fund II Shares of Beneficial Interest,8.02,0.0,9037,Uncategorized
+APACR,StoneBridge Acquisition II Corporation Rights,0.12,0.0,23,Uncategorized
+ALOV,Aldabra 4 Liquidity Opportunity Vehicle Inc. Class A Ordinary Shares,9.98,0.0,38,Uncategorized
+ALOVW,Aldabra 4 Liquidity Opportunity Vehicle Inc. Warrants,0.3684,0.0,6,Uncategorized
+ALIS,Calisa Acquisition Corp Ordinary shares,10.35,0.0,2756,Uncategorized
+ALDF,Aldel Financial II Inc. Class A Ordinary Shares,10.82,0.0,8,Uncategorized
+ALF,Centurion Acquisition Corp. Class A Ordinary Shares,10.89,0.0,10,Uncategorized
+XCBE,X3 Acquisition Corp. Ltd. Class A Ordinary Shares,10.01,0.0,10,Uncategorized
+ARTCW,Art Technology Acquisition Corp. Warrants,0.3201,0.0,201,Uncategorized
+ARCI,Archimedes Tech SPAC Partners III Co. Ordinary Share,10.1,0.0,7,Uncategorized
+ARCIW,Archimedes Tech SPAC Partners III Co. Warrant,0.4601,0.0,200,Uncategorized
+PWRL,Powerlaw Corp. Common Stock,10.3295,0.0,43902,Uncategorized
+XIIIU,Churchill Capital Corp XIII Units,10.6,0.0,72,Uncategorized
+XTER,Karman Line Acquisition Corp. Class A Ordinary Shares,9.8199,0.0,18,Uncategorized
+BRTMU,B&R Technology Merger Corp. Units,9.995,0.0,197,Uncategorized
+RACD,Research Alliance Corporation IV Class A Ordinary Shares,11.5927,0.0,604,Uncategorized
+BPAC,Blueport Acquisition Ltd Class A Ordinary Shares,10.19,0.0,20,Uncategorized
+PGAC,Pantages Capital Acquisition Corporation Class A Ordinary Shares,10.71,0.0,8,Uncategorized
+SCII,SC II Acquisition Corp. Class A ordinary share,10.12,0.0,7,Uncategorized
 SCIIR,SC II Acquisition Corp. Rights,0.187,0.0,1203,Uncategorized
-GECCH,Great Elm Capital Corp. 8.125% Notes Due 2029,25.21,0.0,3134,Uncategorized
-MACI,Melar Acquisition Corp. I Class A Ordinary Shares,11.0,0.0,7,Uncategorized
-GCGR,General Catalyst Global Resilience Merger Corp. Class A Ordinary Shares,10.19,0.0,35,Uncategorized
-TCGX,TCGX Acquisition Corp. Class A Ordinary Shares,13.58,0.0,13158,Uncategorized
-TDAC,Translational Development Acquisition Corp. Ordinary Shares,10.9,0.0,4248,Uncategorized
-TDACW,Translational Development Acquisition Corp. Warrants,1.6,0.0,72,Uncategorized
+ADAC,American Drive Acquisition Company Class A Ordinary Shares,10.09,0.0,202,Uncategorized
+CATLU,Catalyst Acquisition Corp. Units,9.97,0.0,4009,Uncategorized
+CAPN,Cayson Acquisition Corp Ordinary shares,11.23,0.0,8,Uncategorized
+CAQ,Cambridge Acquisition Corp. Class A Ordinary Shares,10.03,0.0,11,Uncategorized
+BIXI,Bitcoin Infrastructure Acquisition Corp Ltd. Class A Ordinary Shares,10.08,0.0,7141,Uncategorized
+BIXIW,Bitcoin Infrastructure Acquisition Corp Ltd. Warrant,0.4,0.0,2074,Uncategorized
+WENN,Wen Acquisition Corp Class A Ordinary Shares,10.4,0.0,52,Uncategorized
+BLZRU,Trailblazer Acquisition Corp. Unit,10.33,0.0,14,Uncategorized
+PLMKW,Plum Acquisition Corp. IV Warrants,0.35,0.0,47,Uncategorized
+PLMK,Plum Acquisition Corp. IV Class A Ordinary Shares,10.65,0.0,12,Uncategorized
+BLRK,Bluerock Acquisition Corp. Class A Ordinary Shares,10.125,0.0,36,Uncategorized
+BLRKU,Bluerock Acquisition Corp. Unit,10.47,0.0,100,Uncategorized
+BLRKW,Bluerock Acquisition Corp. Warrants,0.39,0.0,4,Uncategorized
+BKHAU,Black Hawk Acquisition Corporation Units,12.0,0.0,8,Uncategorized
+KFII,K&F Growth Acquisition Corp. II Class A Ordinary shares,10.66,0.0,17,Uncategorized
+KFIIR,K&F Growth Acquisition Corp. II Rights,0.1,0.0,300,Uncategorized
+KCHV,Kochav Defense Acquisition Corp. Class A Ordinary Shares,10.45,0.0,6,Uncategorized
+JONEU,Jones Ventures INTL Acquisition1 Corp Units,10.0,0.0,27,Uncategorized
+KCHVU,Kochav Defense Acquisition Corp. Units,10.52,0.0,2,Uncategorized
+NCOOW,Southern Cross Acquisition I Corp. Warrants,0.0306,0.0,350,Uncategorized
+NCO,Southern Cross Acquisition I Corp. Ordinary Shares,9.91,0.0,7,Uncategorized
+LATAU,Galata Acquisition Corp. II Units,10.3,0.0,9,Uncategorized
+KOYN,CSLM Digital Asset Acquisition Corp III Class A Ordinary Shares,10.23,0.0,80417,Uncategorized
+KOYNW,CSLM Digital Asset Acquisition Corp III Warrants,0.236,0.0,1000,Uncategorized
+KRAQ,KRAKacquisition Corp Class A Ordinary Shares,10.03,0.0,571,Uncategorized
+KRAQU,KRAKacquisition Corp Unit,10.1201,0.0,33,Uncategorized
+KRAQW,KRAKacquisition Corp Warrants,0.4,0.0,5902,Uncategorized
+ITHAW,ITHAX Acquisition Corp III Warrants,0.15,0.0,22494,Uncategorized
+SVCC,Stellar V Capital Corp. Class A Ordinary Shares,10.69,0.0,6,Uncategorized
+ITHA,ITHAX Acquisition Corp III Class A Ordinary Shares,10.06,0.0,6,Uncategorized
+NHIC,NewHold Investment Corp III Class A Ordinary Shares,10.085,0.0,48888,Uncategorized
+NHICW,NewHold Investment Corp III Warrants,1.01,0.0,1971,Uncategorized
+SOCA,Solarius Capital Acquisition Corp. Class A Ordinary Share,10.345,0.0,8,Uncategorized
+SOCAW,Solarius Capital Acquisition Corp. Warrant,0.1602,0.0,121100,Uncategorized
+MIAC,Meridian3 Industrials Acquisition Corp Class A Ordinary Shares,9.83,0.0,1715,Uncategorized
+MIACU,Meridian3 Industrials Acquisition Corp Units,9.98,0.0,2319,Uncategorized
+AFJKR,Aimei Health Technology Co. Ltd Right,0.15,0.0,8,Uncategorized
+AEFC,Aegon Funding Company LLC 5.10% Subordinated Notes due 2049,17.8631,0.0,5395,Uncategorized
+AFJK,Aimei Health Technology Co. Ltd Ordinary Share,12.5452,0.0,6769,Uncategorized
+LTGRW,Long Table Growth Corp. Warrants,0.2717,0.0,1490,Uncategorized
+LPCV,Launchpad Cadenza Acquisition Corp I Class A Ordinary Share,10.065,0.0,7,Uncategorized
+LPCVW,Launchpad Cadenza Acquisition Corp I Warrant,0.3201,0.0,488,Uncategorized
+LPAA,Launch One Acquisition Corp. Class A Ordinary shares,10.76,0.0,6,Uncategorized
+LPBB,Launch Two Acquisition Corp. Class A Ordinary Shares,10.82,0.0,58158,Uncategorized
+LGI,Lazard Global Total Return and Income Fund Common Stock,17.39,0.0,4661,Uncategorized
+LKSP,Lake Superior Acquisition Corp. Class A Ordinary Shares,10.23,0.0,9,Uncategorized
+MSDL,Morgan Stanley Direct Lending Fund Common Stock,14.69,0.0,137167,Uncategorized
+MIACW,Meridian3 Industrials Acquisition Corp Warrant,0.39,0.0,5,Uncategorized
+MESH,Meshflow Acquisition Corp. Class A Ordinary Shares,10.08,0.0,117,Uncategorized
+MESHW,Meshflow Acquisition Corp. Warrants,0.297,0.0,100,Uncategorized
+SPKLW,Spark I Acquisition Corp. Warrant,0.9701,0.0,128,Uncategorized
+MCN,XAI Madison Equity Premium Income Fund Common Shares,5.49,0.0,9369,Uncategorized
+SPEG,Silver Pegasus Acquisition Corp Class A Ordinary Shares,10.35,0.0,107,Uncategorized
+SPEGR,Silver Pegasus Acquisition Corp Rights.,0.18,0.0,1203,Uncategorized
+SPEGU,Silver Pegasus Acquisition Corp Unit,10.48,0.0,3,Uncategorized
+MBVI,M3-Brigade Acquisition VI Corp. Class A Ordinary Shares,10.2499,0.0,14,Uncategorized
+MACI,Melar Acquisition Corp. I Class A Ordinary Shares,11.02,0.0,3,Uncategorized
+SPKL,Spark I Acquisition Corp. Class A Ordinary Share,11.59,0.0,515,Uncategorized
+MCGAW,Yorkville Acquisition Corp. Warrant,0.34,0.0,630,Uncategorized
+SHOTU,RMG ML Sports Holdings Unit,9.95,0.0,5496,Uncategorized
+GHXI,Gores Holdings XI Inc. Class A Ordinary Shares,9.99,0.0,70,Uncategorized
+GHXIU,Gores Holdings XI Inc. Units,10.19,0.0,145,Uncategorized
+GECCH,Great Elm Capital Corp. 8.125% Notes Due 2029,25.41,0.0,136,Uncategorized
+GCGR,General Catalyst Global Resilience Merger Corp. Class A Ordinary Shares,10.135,0.0,8,Uncategorized
+FVAV,Fortress Value Acquisition Corp. V Class A Ordinary Shares,10.26,0.0,6,Uncategorized
 FWAC,Futurewave Acquisition Corporation Ordinary Shares,9.94,0.0,6,Uncategorized
 FWACR,Futurewave Acquisition Corporation Rights,0.1699,0.0,2,Uncategorized
-OFSSO,OFS Capital Corporation 7.50% Notes due 2028,25.45,0.0,324,Uncategorized
-GHXI,Gores Holdings XI Inc. Class A Ordinary Shares,9.99,0.0,123,Uncategorized
-LPCVW,Launchpad Cadenza Acquisition Corp I Warrant,0.3201,0.0,488,Uncategorized
-OCCIM,OFS Credit Company Inc. 7.875% Series F Term Preferred Stock,25.2,0.0,102,Uncategorized
-LPCV,Launchpad Cadenza Acquisition Corp I Class A Ordinary Share,10.065,0.0,1609,Uncategorized
-BEAG,Bold Eagle Acquisition Corp. Class A Ordinary Shares,10.71,0.0,17323,Uncategorized
-OHAC,Oceanhawk Acquisition Corp. Class A Ordinary Shares,9.98,0.0,6,Uncategorized
-OHACR,Oceanhawk Acquisition Corp. Rights,0.26,0.0,36,Uncategorized
-OIM,OneIM Acquisition Corp. Class A Ordinary Shares,10.13,0.0,8,Uncategorized
-ONCH,1RT Acquisition Corp. Class A Ordinary Share,10.32,0.0,16,Uncategorized
-ECCU,Eagle Point Credit Company 7.75% Notes due 2030,25.55,0.0,1842,Uncategorized
-BEAGR,Bold Eagle Acquisition Corp. Right,0.2,0.0,59600,Uncategorized
-LPAA,Launch One Acquisition Corp. Class A Ordinary shares,10.76,0.0,10,Uncategorized
-LPBB,Launch Two Acquisition Corp. Class A Ordinary Shares,10.82,0.0,108,Uncategorized
-TLACU,Three Lions Acquisition Corp. Units,10.01,0.0,50,Uncategorized
-TMTS,Spartacus Acquisition Corp. II Class A Ordinary Shares,10.06,0.0,113010,Uncategorized
-TMTSW,Spartacus Acquisition Corp. II Warrants,0.4,0.0,40,Uncategorized
-GHXIU,Gores Holdings XI Inc. Units,10.19,0.0,100,Uncategorized
-XTER,Karman Line Acquisition Corp. Class A Ordinary Shares,9.8199,0.0,240,Uncategorized
-GIWWR,GigCapital8 Corp. Rights,0.25,0.0,34,Uncategorized
-LTGRW,Long Table Growth Corp. Warrants,0.26,0.0,770,Uncategorized
-MIAC,Meridian3 Industrials Acquisition Corp Class A Ordinary Shares,9.84,0.0,114,Uncategorized
-MIACU,Meridian3 Industrials Acquisition Corp Units,10.015,0.0,19,Uncategorized
-MIACW,Meridian3 Industrials Acquisition Corp Warrant,0.3401,0.0,2000,Uncategorized
-CHAR,Charlton Aria Acquisition Corporation Class A Ordinary Shares,10.96,0.0,760,Uncategorized
-CHPG,ChampionsGate Acquisition Corporation Class A Ordinary Share,10.45,0.0,5141,Uncategorized
-CHPGR,ChampionsGate Acquisition Corporation Rights,0.1681,0.0,15152,Uncategorized
-CHPGU,ChampionsGate Acquisition Corporation Unit,10.48,0.0,1241,Uncategorized
-BLZRU,Trailblazer Acquisition Corp. Unit,10.33,0.0,1600,Uncategorized
-FSHP,Flag Ship Acquisition Corp. Ordinary Shares,11.545,0.0,409,Uncategorized
-FSHPR,Flag Ship Acquisition Corp. Right,0.09,0.0,1840,Uncategorized
-BLRKW,Bluerock Acquisition Corp. Warrants,0.39,0.0,4,Uncategorized
-NSAI,NorthStrive Acquisition Corp I. Class A Ordinary Shares,9.865,0.0,17467,Uncategorized
-NSAIR,NorthStrive Acquisition Corp I. Rights,0.1824,0.0,749,Uncategorized
-CEPV,Cantor Equity Partners V Inc. Class A Ordinary Shares,10.39,0.0,12,Uncategorized
-NTWO,Newbury Street II Acquisition Corp Class A Ordinary Shares,11.0,0.0,205688,Uncategorized
-NTWOW,Newbury Street II Acquisition Corp Warrant,1.12,0.0,6821,Uncategorized
-MBVIW,M3-Brigade Acquisition VI Corp. Warrant,0.35,0.0,101,Uncategorized
-SVCC,Stellar V Capital Corp. Class A Ordinary Shares,10.69,0.0,6,Uncategorized
-MCN,XAI Madison Equity Premium Income Fund Common Shares,5.58,0.0,32608,Uncategorized
-MESH,Meshflow Acquisition Corp. Class A Ordinary Shares,10.08,0.0,221,Uncategorized
-MESHU,Meshflow Acquisition Corp. Units,10.21,0.0,1,Uncategorized
-MESHW,Meshflow Acquisition Corp. Warrants,0.3101,0.0,837,Uncategorized
-MBVI,M3-Brigade Acquisition VI Corp. Class A Ordinary Shares,10.24,0.0,56,Uncategorized
-BIXIW,Bitcoin Infrastructure Acquisition Corp Ltd. Warrant,0.375,0.0,6,Uncategorized
-BLRK,Bluerock Acquisition Corp. Class A Ordinary Shares,10.11,0.0,108,Uncategorized
-BLRKU,Bluerock Acquisition Corp. Unit,10.23,0.0,2,Uncategorized
-MCGAW,Yorkville Acquisition Corp. Warrant,0.3401,0.0,2434,Uncategorized
-FVAV,Fortress Value Acquisition Corp. V Class A Ordinary Shares,10.26,0.0,264,Uncategorized
-BIXI,Bitcoin Infrastructure Acquisition Corp Ltd. Class A Ordinary Shares,10.09,0.0,166,Uncategorized
-ABR^D,Arbor Realty Trust 6.375% Series D Cumulative Redeemable Preferred Stock Liquidation Preference $25.00 per Share,15.45,,10198,Uncategorized
-ABR^E,Arbor Realty Trust 6.25% Series E Cumulative Redeemable Preferred Stock,15.25,,6821,Uncategorized
-ABR^F,Arbor Realty Trust 6.25% Series F Fixed-to-Floating Rate Cumulative Redeemable Preferred Stock Liquidation Preference $25.00 per share,22.3741,,425,Uncategorized
-ACP^A,abrdn Income Credit Strategies Fund 5.250% Series A Perpetual Preferred Stock,18.81,,2525,Uncategorized
-ACR^C,ACRES Commercial Realty Corp. 8.625% Fixed-to-Floating Series C Cumulative Redeemable Preferred Stock ,23.5,,17928,Uncategorized
-ACR^D,ACRES Commercial Realty Corp. 7.875% Series D Cumulative Redeemable Preferred Stock,19.19,,4281,Uncategorized
-ADC^A,Agree Realty Corporation Depositary Shares each representing 1/1000th of a 4.250% Series A Cumulative Redeemable Preferred Stock,15.8,,11973,Uncategorized
-AGM^D,Federal Agricultural Mortgage Corporation 5.700% Non-Cumulative Preferred Stock Series D,21.099,,507,Uncategorized
-AGM^E,Federal Agricultural Mortgage Corporation 5.750% Non-Cumulative Preferred Stock Series E,20.59,,394,Uncategorized
-AGM^F,Federal Agricultural Mortgage Corporation 5.250% Non-Cumulative Preferred Stock Series F,18.31,,6980,Uncategorized
-AGM^G,Federal Agricultural Mortgage Corporation 4.875% Non-Cumulative Preferred Stock Series G,17.2638,,11148,Uncategorized
-AGM^H,Federal Agricultural Mortgage Corporation 6.500% Non-Cumulative Preferred Stock Series H,23.3,,6,Uncategorized
-AGM^I,Federal Agricultural Mortgage Corporation 6.875% Non-Cumulative Preferred Stock Series I,24.91,,418,Uncategorized
-AHRT^A,AH Realty Trust Inc. 6.75% Series A Cumulative Redeemable Perpetual Preferred Stock,21.4,,221,Uncategorized
-AHT^D,Ashford Hospitality Trust Inc 8.45% Series D Cumulative Preferred Stock,6.2,,595,Uncategorized
-AHT^F,Ashford Hospitality Trust Inc 7.375% Series F Cumulative Preferred Stock,6.095,,9,Uncategorized
-AHT^G,Ashford Hospitality Trust Inc 7.375% Series G Cumulative Preferred Stock,5.775,,10,Uncategorized
-AHT^H,Ashford Hospitality Trust Inc 7.50% Series H Cumulative Preferred Stock,5.64,,3,Uncategorized
-AHT^I,Ashford Hospitality Trust Inc 7.50% Series I Cumulative Preferred Stock,5.96,,1752,Uncategorized
-ALB^A,Albemarle Corporation Depositary Shares each representing a 1/20th of 7.25% Series A Mandatory Convertible Preferred Stock,48.26,,12655,Uncategorized
-ALL^B,Allstate Corporation (The) 5.100% Fixed-to-Floating Rate Subordinated Debentures due 2053,25.5699,,16224,Uncategorized
-ALL^H,Allstate Corporation (The) Depositary Shares each representing a 1/1000th interest in a share of Fixed Rate Noncumulative Perpetual Preferred Stock Series H,18.3754,,56836,Uncategorized
-ALL^I,Allstate Corporation (The) Depositary Shares each representing a 1/1000th interest in a share of Fixed Rate Noncumulative Perpetual Preferred Stock Series I,17.1899,,12775,Uncategorized
-ALL^J,Allstate Corporation (The) Depositary Shares each representing a 1/1000th interest in a share of Fixed Rate Noncumulative Perpetual Preferred Stock Series J,25.8183,,18697,Uncategorized
-ALTG^A,Alta Equipment Group Inc. Depositary Shares (each representing 1/1000th in a share of 10% Series A Cumulative Perpetual Preferred Stock),25.9,,311,Uncategorized
-AMH^G,American Homes 4 Rent Series G cumulative redeemable perpetual preferred shares of beneficial interest,21.37,,2236,Uncategorized
-AMH^H,American Homes 4 Rent Series H cumulative redeemable perpetual Preferred Shares of Beneficial Interest,22.56,,12585,Uncategorized
-ANG^D,American National Group Inc. Depositary Shares each representing a 1/1000th interest in a share of 7.375% Fixed-Rate Non-Cumulative Preferred Stock Series D,23.24,,7226,Uncategorized
-ARES^B,Ares Management Corporation 6.75% Series B Mandatory Convertible Preferred Stock,42.5,,11212,Uncategorized
-ARR^C,ARMOUR Residential REIT Inc. 7% Series C Cumulative Redeemable Preferred Stock (liquidation preference $25.00 per share),20.54,,10290,Uncategorized
-ASB^E,Associated Banc-Corp Depositary Shares each representing a 1/40th interest in a share of 5.875% Non-Cumulative Perpetual Preferred Stock Series E,19.68,,5893,Uncategorized
-ASB^F,Associated Banc-Corp Depositary Shares each representing a 1/40th interest in a share of Associated Banc-Corp 5.625% Non-Cumulative Perpetual Preferred Stock Series F,18.82,,12510,Uncategorized
-AUB^A,Atlantic Union Bankshares Corporation Depositary Shares each representing a 1/400th ownership interest in a share of 6.875% Perpetual Non-Cumulative Preferred Stock Series A,23.9,,12470,Uncategorized
-BA^A,Boeing Company (The) Depositary Shares each representing a 1/20th interest in a share of 6.00% Series A Mandatory Convertible Preferred Stock par value $1.00,64.8,,4852,Uncategorized
-BAC^B,Bank of America Corporation Depositary Shares each representing a 1/1000th interest in a share of 6.000% Non-Cumulative Preferred Stock Series GG,23.3301,,44387,Uncategorized
-BAC^E,Bank of America Corporation Depositary Sh repstg 1/1000th Perp Pfd Ser E,18.45,,3239,Uncategorized
-BAC^K,Bank of America Corporation Depositary Shares each representing a 1/1000th interest in a share of 5.875% Non- Cumulative Preferred Stock Series HH,22.88,,25183,Uncategorized
-BAC^L,Bank of America Corporation Non Cumulative Perpetual Conv Pfd Ser L,1288.0001,,2094,Uncategorized
-BAC^M,Bank of America Corporation Depositary Shares each representing a 1/1000th interest in a share of 5.375% Non-Cumulative Preferred Stock Series KK,19.841,,47804,Uncategorized
-BAC^N,Bank of America Corporation Depositary shares each representing 1/1000th interest in a share of 5.000% Non-Cumulative Preferred Stock Series LL,18.4735,,56893,Uncategorized
-BAC^O,Bank of America Corporation Depositary shares each representing 1/1000th interest in a share of 4.375% Non-Cumulative Preferred Stock Series NN,16.3,,26908,Uncategorized
-BAC^P,Bank of America Corporation Depositary Shares each representing a 1/1000th interest in a share of 4.125% Non-Cumulative Preferred Stock Series PP,15.58,,32826,Uncategorized
-BAC^Q,Bank of America Corporation Depositary shares each representing 1/1000th interest in a share of 4.250% Non-Cumulative Preferred Stock Series QQ,15.775,,51347,Uncategorized
-BAC^S,Bank of America Corporation Depositary shares each representing 1/1000th interest in a share of 4.750% Non-Cumulative Preferred Stock Series SS,17.6,,40802,Uncategorized
-BANC^F,Banc of California Inc. Depositary Shares each representing a 1/40th interest in a share of 7.75% non-cumulative perpetual preferred stock Series F,25.15,,29027,Uncategorized
-BC^C,Brunswick Corporation 6.375% Notes due 2049,24.25,,3662,Uncategorized
-BCV^A,Bancroft Fund Limited 5.375% Series A Cumulative Preferred Shares,19.84,,3,Uncategorized
-BF/A,Brown Forman Corporation,26.99,,44922,Uncategorized
-BF/B,Brown Forman Corporation,26.6,,691420,Uncategorized
-BFH^A,Bread Financial Holdings Inc. Depositary Shares each representing a 1/40th interest in a share of 8.625% Non-Cumulative Perpetual Preferred Stock Series A,24.47,,774,Uncategorized
-BFH^B,Bread Financial Holdings Inc. Depositary Shares each representing a 1/40th interest in a share of 8.875% Fixed Rate Reset Non-Cumulative Perpetual Preferred Stock Series B,24.7,,4723,Uncategorized
-BFS^D,Saul Centers Inc. Depositary Shares each representing 1/100th of a share of 6.125% Series D Cumulative Redeemable Preferred Stock,20.5,,288,Uncategorized
-BFS^E,Saul Centers Inc. Depositary shares each representing a 1/100th fractional interest in a share of 6.000% Series E Cumulative Redeemable Preferred Stock,20.51,,627,Uncategorized
-BHR^B,Braemar Hotels & Resorts Inc. 5.50% Series B Cumulative Convertible Preferred Stock par value $0.01 per share,13.8,,3506,Uncategorized
-BHR^D,Braemar Hotels & Resorts Inc. 8.25% Series D Cumulative Preferred Stock  par value $0.01 per share,17.55,,1246,Uncategorized
-BIO/B,Bio-Rad Laboratories Inc.,365.08,,8,Uncategorized
-BML^G,Bank of America Corporation Depositary Shares (Each representing a 1/1200th interest in a share of Floating Rate Non-Cumulative Preferred Stock  Series 1),18.55,,152,Uncategorized
-BML^H,Bank of America Corporation Depositary Shares (Each representing a 1/1200th interest in a Share of Floating Rate Non-Cumulative Preferred Stock Series 2),18.56,,3502,Uncategorized
-BML^J,Bank of America Corporation Depositary Shares (Each representing a 1/1200th interest in a Share of Floating Rate Non-Cumulative Preferred Stock Series 4),19.5,,947,Uncategorized
-BML^L,Bank of America Corporation Depositary Shares (Each representing a 1/1200th Interest in a Share of Floating Rate Non-Cumulative Preferred Stock Series 5),19.28,,10417,Uncategorized
-BNY^K,The Bank Of New York Mellon Corporation  Depositary Shares each representing a 1/4000th interest in a share of Series K Noncumulative Perpetual Preferred Stock,24.7577,,20271,Uncategorized
-BOH^A,Bank of Hawaii Corporation Depositary Shares Each Representing a 1/40th Interest in a Share of 4.375% Fixed Rate Non-Cumulative Perpetual Preferred Stock Series A,15.175,,4584,Uncategorized
-BOH^B,Bank of Hawaii Corporation Depositary Shares Each Representing a 1/40th Interest in a Share of 8.000% Fixed Rate Non-Cumulative Perpetual Preferred Stock Series B,25.5135,,8646,Uncategorized
-BW^A,Babcock & Wilcox Enterprises Inc. 7.75% Series A Cumulative Perpetual Preferred Stock,22.29,,8328,Uncategorized
-C^N,Citigroup Capital XIII 7.875% Fixed rate Floating Rate trust Preferred Securities (TruPS),26.34,,92123,Uncategorized
-C^R,Citigroup Inc. Depositary Shares Each Representing a 1/1000th Interest in a Share of 6.250% Noncumulative Preferred Stock Series II,23.55,,65053,Uncategorized
-CDR^B,Cedar Realty Trust Inc. 7.25% Series B Cumulative Redeemable Preferred Stock,16.4555,,1745,Uncategorized
-CDR^C,Cedar Realty Trust Inc. 6.50% Series C Cumulative Redeemable Preferred Stock,15.3803,,984,Uncategorized
-CFG^E,Citizens Financial Group Inc. Depositary Shares Each Representing 1/40th Interest in a Share of 5.000% Fixed-Rate Non-Cumulative Perpetual Preferred Stock Series E,17.629,,21096,Uncategorized
-CFG^H,Citizens Financial Group Inc. Depositary Shares Each Representing a 1/40th Interest in a Share of 7.375% Fixed-Rate Non-Cumulative Perpetual Preferred Stock Series H,26.035,,14935,Uncategorized
-CFG^I,Citizens Financial Group Inc. Depositary Shares Each Representing a 1/40th Interest in a Share of 6.500% Fixed-Rate Reset Non-Cumulative Perpetual Preferred Stock Series I,24.67,,4065,Uncategorized
-CFR^B,Cullen/Frost Bankers Inc. Depositary Shares each representing a 1/40th ownership interest in a share of 4.450% non-cumulative perpetual preferred stock Series B,16.118,,3211,Uncategorized
-CIM^A,Chimera Investment Corporation 8.00% Series A Cumulative Redeemable Preferred Stock,20.7071,,1000,Uncategorized
-CIM^B,Chimera Investment Corporation 8.00% Series B Fixed-to-Floating Rate Cumulative Redeemable Preferred Stock,23.82,,4864,Uncategorized
-CIM^C,Chimera Investment Corporation 7.75% Series C Fixed-to-Floating Rate  Cumulative Redeemable  Preferred Stock,22.6,,3601,Uncategorized
-CIM^D,Chimera Investment Corporation 8.00% Series D Fixed-to-Floating Rate Cumulative Redeemable Preferred Stock,23.6,,2424,Uncategorized
-CLDT^A,Chatham Lodging Trust (REIT) 6.625% Series A Cumulative Redeemable Preferred Shares of Beneficial Interest,20.2732,,2432,Uncategorized
-CMS^B,CMS Energy Corporation Preferred Stock,76.82,,303,Uncategorized
-CMS^C,CMS Energy Corporation Depositary Shares each representing a 1/1000th interest in a share of 4.200% Cumulative Redeemable Perpetual Preferred Stock Series C,16.02,,6338,Uncategorized
-CNO^A,CNO Financial Group Inc. 5.125% Subordinated Debentures due 2060,16.35,,2153,Uncategorized
-CODI^A,Compass Diversified Holdings 7.250% Series A Preferred Shares representing beneficial interest in Compass Diversified Holdings,19.49,,1831,Uncategorized
-CODI^B,Compass Diversified Holdings 7.875% Series B Fixed-to-Floating Rate Cumulative Preferred Shares representing beneficial interests in Compass Diversified Holdings,22.225,,4177,Uncategorized
-CODI^C,Compass Diversified Holdings 7.875% Series C Cumulative Preferred Shares,21.82,,4327,Uncategorized
-COF^I,Capital One Financial Corporation Depositary shares each representing a 1/40th interest in a share of Fixed Rate Non-Cumulative Perpetual Preferred Stock Series I of the Issuer,17.305,,51093,Uncategorized
-COF^J,Capital One Financial Corporation Depositary Shares Each Representing a 1/40th Interest in a Share of Fixed Rate Non- Cumulative Perpetual Preferred Stock Series J,16.82,,71837,Uncategorized
-COF^K,Capital One Financial Corporation Depositary Shares Each Representing a 1/40th Ownership Interest in a Share of Fixed Rate Non-Cumulative Perpetual Preferred Stock Series K,16.06,,1156,Uncategorized
-COF^L,Capital One Financial Corporation Depositary Shares Each Representing a 1/40th Interest in a Share of Fixed Rate Non-Cumulative Perpetual Preferred Stock Series L,15.35,,21651,Uncategorized
-COF^N,Capital One Financial Corporation Depositary Shares Each Representing a 1/40th Ownership Interest in a Share of Fixed Rate Non-Cumulative Perpetual Preferred Stock Series N,15.17,,6647,Uncategorized
-CRD/A,Crawford & Company,12.46,,12823,Uncategorized
-CRD/B,Crawford & Company,11.8,,3281,Uncategorized
-CTA^A,EIDP Inc. Preferred Stock $3.50 Series,51.95,,191,Uncategorized
-CTA^B,EIDP Inc. Preferred Stock $4.50 Series,64.3,,3328,Uncategorized
-CTO^A,CTO Realty Growth Inc. 6.375% Series A Cumulative Redeemable Preferred Stock,20.15,,2625,Uncategorized
-DBRG^H,DigitalBridge Group Inc. 7.125% Series H ,15.02,,6205,Uncategorized
-DBRG^I,DigitalBridge Group Inc. 7.15% Series I ,15.0501,,27374,Uncategorized
-DBRG^J,DigitalBridge Group Inc. 7.125% Series J ,15.46,,10839,Uncategorized
-DCOM^,Dime Commercial Bancshares Inc. Preferred Stock Series A,16.9401,,6735,Uncategorized
-DLR^J,Digital Realty Trust Inc. 5.250% Series J Cumulative Redeemable Preferred Stock,18.76,,13128,Uncategorized
-DLR^K,Digital Realty Trust Inc. 5.850% Series K Cumulative Redeemable Preferred Stock par value $0.01 per share,21.17,,6870,Uncategorized
-DLR^L,Digital Realty Trust Inc. 5.200% Series L Cumulative Redeemable Preferred Stock,18.575,,17523,Uncategorized
-DUK^A,Duke Energy Corporation Depositary Shares each representing a 1/1000th interest in a share of 5.75% Series A Cumulative Redeemable Perpetual Preferred Stock,23.2,,61887,Uncategorized
-DX^C,Dynex Capital Inc. 6.900% Series C Fixed-to-Floating Rate Cumulative Redeemable Preferred Stock,25.915,,901,Uncategorized
-ECC^D,Eagle Point Credit Company 6.75% Series D Preferred Stock,18.23,,905,Uncategorized
-ECF^A,Ellsworth Growth and Income Fund Ltd. 5.25% Series A Cumulative Preferred Shares (Liquidation Preference $25.00 per share),19.81,,1036,Uncategorized
-EFC^B,Ellington Financial Inc. 6.250% Series B Fixed-Rate Reset Cumulative Redeemable Preferred Stock,25.21,,1015,Uncategorized
-EFC^C,Ellington Financial Inc. 8.625% Series C Fixed-Rate Reset Cumulative Redeemable Preferred Stock,25.7,,1637,Uncategorized
-EFC^D,Ellington Financial Inc. 7.00% Series D Cumulative Perpetual Redeemable Preferred Stock,23.77,,330,Uncategorized
-EP^C,El Paso Corporation Preferred Stock,50.21,,172,Uncategorized
-EPR^C,EPR Properties 5.75% Series C Cumulative Convertible Preferred Shares,26.0,,103,Uncategorized
-EPR^E,EPR Properties Series E Cumulative Conv Pfd Shs Ser E,32.07,,102,Uncategorized
-EPR^G,EPR Properties 5.750% Series G Cumulative Redeemable Preferred Shares,19.69,,1535,Uncategorized
-EQH^A,Equitable Holdings Inc. Depositary Shares,18.15,,21947,Uncategorized
-EQH^C,Equitable Holdings Inc. Depositary Shares each representing a 1/1000th interest in a share of Fixed Rate Noncumulative Perpetual Preferred Stock Series C,16.02,,5415,Uncategorized
-ET^I,Energy Transfer L.P. Series I Fixed Rate Perpetual Preferred Units,11.4,,17175,Uncategorized
-ETI^,Entergy Texas Inc 5.375% Series A Preferred Stock Cumulative No Par Value,23.08,,105,Uncategorized
-F^B,Ford Motor Company 6.20% Notes due June 1 2059,19.8601,,15295,Uncategorized
-F^C,Ford Motor Company 6% Notes due December 1 2059,19.5503,,19719,Uncategorized
-F^D,Ford Motor Company 6.500% Notes due August 15 2062,20.8699,,16830,Uncategorized
-FBRT^E,Franklin BSP Realty Trust Inc. 7.50% Series E Cumulative Redeemable Preferred Stock,19.42,,2766,Uncategorized
-FHN^E,First Horizon Corporation Depositary Shares each representing a 1/4000th interest in a share of Non-Cumulative Perpetual Preferred Stock Series E,23.1151,,1540,Uncategorized
-FHN^F,First Horizon Corporation Depositary Shares each representing 1/4000th Interest in a Share of Non-Cumulative Perpetual Preferred Stock Series F,16.11,,18431,Uncategorized
-FHN^H,First Horizon Corporation Depositary Shares each representing a 1/4000th interest in a share of Non-Cumulative Perpetual Preferred Stock Series H,23.47,,22463,Uncategorized
-FITB^A,Fifth Third Bancorp Depositary Shares each representing 1/40th share of Fifth Third 6.00% Non-Cumulative Perpetual Class B Preferred Stock Series A,21.445,,2851,Uncategorized
-FITB^I,Fifth Third Bancorp Depositary Share repstg 1/1000th Ownership Interest Perp Pfd Series I,25.535,,2733,Uncategorized
-FITB^K,Fifth Third Bancorp Depositary Shares each representing a 1/1000th ownership interest in a share of Non-Cumulative Perpetual Preferred Stock Series K,18.1,,17272,Uncategorized
-FITB^M,Fifth Third Bancorp Depositary Shares Representing a 1/40th Ownership Interest in a Share of 6.875% Fixed-Rate Reset Non-Cumulative Perpetual Preferred Stock Series M,25.66,,8531,Uncategorized
-FLG^A,Flagstar Bank N.A. Depositary shares each representing a 1/40th interest in a share of Fixed-to-Floating Rate Series A Noncumulative Perpetual Preferred Stock,23.755,,6898,Uncategorized
-FLG^U,Flagstar Bank N.A. Bifurcated Option Note Unit SecuritiES,39.82,,496,Uncategorized
-FOUR^A,Shift4 Payments Inc. 6.00% Series A Mandatory Convertible Preferred Stock,58.94,,1709,Uncategorized
-FRT^C,Federal Realty Investment Trust Depositary Shares each representing a 1/1000th interest in a 5.000% Series C Cumulative Redeemable Preferred Share,18.57,,7443,Uncategorized
-GAB^G,Gabelli Equity Trust Inc. (The) Series G Cumulative Preferred Stock,19.18,,454,Uncategorized
-GAB^H,Gabelli Equity Trust Inc. (The) Pfd Ser H,18.9001,,896,Uncategorized
-GAB^K,Gabelli Equity Trust Inc. (The) 5.00% Series K Cumulative Preferred Stock,18.85,,4875,Uncategorized
-GAM^B,General American Investors Company Inc. Cumulative Preferred Stock,24.08,,50222,Uncategorized
-GDV^H,The Gabelli Dividend & Income Trust 5.375% Series H Cumulative Preferred Shares,21.0,,8926,Uncategorized
-GDV^K,The Gabelli Dividend & Income Trust 4.250% Series K Cumulative Preferred Shares,16.79,,2561,Uncategorized
-GGN^B,GAMCO Global Gold Natural Reources & Income Trust 5.00% Series B Cumulative 25.00 Liquidation Preference,18.77,,594,Uncategorized
-GGT^E,Gabelli Multi-Media Trust Inc. (The) 5.125% Series E Cumulative Preferred Stock,19.98,,349,Uncategorized
+FSHP,Flag Ship Acquisition Corp. Ordinary Shares,11.305,0.0,6910,Uncategorized
+FSHPR,Flag Ship Acquisition Corp. Right,0.09,0.0,82,Uncategorized
+GCGRW,General Catalyst Global Resilience Merger Corp. Warrants,0.6699,0.0,4677,Uncategorized
+GPAT,GP-Act III Acquisition Corp. Class A Ordinary Share,10.98,0.0,6,Uncategorized
+GPATW,GP-Act III Acquisition Corp. Warrants,0.1501,0.0,1721,Uncategorized
+GPAC,General Purpose Acquisition Corp. Class A Ordinary Shares,10.07,0.0,24,Uncategorized
+GPACU,General Purpose Acquisition Corp. Units,10.18,0.0,100,Uncategorized
+GIWWR,GigCapital8 Corp. Rights,0.25,0.0,47,Uncategorized
+SHOTR,RMG ML Sports Holdings Rights,0.135,0.0,811,Uncategorized
+NTWOW,Newbury Street II Acquisition Corp Warrant,1.24,0.0,6107,Uncategorized
+SHOT,RMG ML Sports Holdings Class A Ordinary Shares,9.8501,0.0,10,Uncategorized
+OHACR,Oceanhawk Acquisition Corp. Rights,0.25,0.0,7500,Uncategorized
+OIM,OneIM Acquisition Corp. Class A Ordinary Shares,10.13,0.0,10,Uncategorized
+OIMAW,OneIM Acquisition Corp. Warrant,0.72,0.0,1102,Uncategorized
+OFSSO,OFS Capital Corporation 7.50% Notes due 2028,25.46,0.0,307,Uncategorized
+OCCIM,OFS Credit Company Inc. 7.875% Series F Term Preferred Stock,25.0391,0.0,1533,Uncategorized
+FACT,FACT II Acquisition Corp. Class A Ordinary Shares,10.72,0.0,2215,Uncategorized
+FJDIU,ARC Group Securities Acquisition I Units,9.995,0.0,252,Uncategorized
+FIGXW,FIGX Capital Acquisition Corp. Warrant,0.16,0.0,16,Uncategorized
+TVA,Texas Ventures Acquisition III Corp Class A Ordinary Share,10.55,0.0,844,Uncategorized
+OHAC,Oceanhawk Acquisition Corp. Class A Ordinary Shares,9.985,0.0,7,Uncategorized
+TVAI,Thayer Ventures Acquisition Corporation II Class A Ordinary Shares,10.39,0.0,20007,Uncategorized
+TVAIR,Thayer Ventures Acquisition Corporation II Rights,0.104,0.0,46155,Uncategorized
+TVIV,Texas Ventures Acquisition IV Corp Class A Ordinary Shares,9.945,0.0,3008,Uncategorized
+TVIVU,Texas Ventures Acquisition IV Corp Units,10.17,0.0,12,Uncategorized
+TVIVW,Texas Ventures Acquisition IV Corp Warrant,0.2216,0.0,950,Uncategorized
+TVACW,Texas Ventures Acquisition III Corp Warrants,0.25,0.0,6773,Uncategorized
+TDAC,Translational Development Acquisition Corp. Ordinary Shares,10.86,0.0,2195,Uncategorized
+TDACW,Translational Development Acquisition Corp. Warrants,1.6,0.0,72,Uncategorized
+IDAC,Iron Dome Acquisition I Corp. Class A Ordinary Shares,10.0,0.0,7,Uncategorized
+IEAGU,Infinite Eagle Acquisition Corp. Unit,10.37,0.0,100,Uncategorized
+GTENW,Gores Holdings X Inc. Warrants,0.6513,0.0,1002,Uncategorized
+HVMC,Highview Merger Corp. Class A Ordinary Share,10.26,0.0,7,Uncategorized
+IPHXU,Inflection Point Acquisition Corp. VIII Unit,10.099,0.0,1000,Uncategorized
+INAC,Indigo Acquisition Corp. Ordinary Shares,10.35,0.0,8,Uncategorized
+ILLUW,Illumination Acquisition Corp I Warrant,0.37,0.0,1287,Uncategorized
+TCGX,TCGX Acquisition Corp. Class A Ordinary Shares,13.3,0.0,2166,Uncategorized
+NOEM,CO2 Energy Transition Corp. Common Stock,10.68,0.0,110,Uncategorized
+NOEMR,CO2 Energy Transition Corp. Right,0.17,0.0,27736,Uncategorized
+NSAIW,NorthStrive Acquisition Corp I. Warrants,0.05,0.0,200,Uncategorized
+NOEMW,CO2 Energy Transition Corp. Warrant,0.12,0.0,1,Uncategorized
+TMTS,Spartacus Acquisition Corp. II Class A Ordinary Shares,10.06,0.0,6,Uncategorized
+GSHR,Gesher Acquisition Corp. II Class A Ordinary Shares,10.54,0.0,1510,Uncategorized
+GSRF,GSR IV Acquisition Corp. Class A ordinary share,10.23,0.0,6,Uncategorized
+GTEN,Gores Holdings X Inc. Class A ordinary shares,10.55,0.0,10,Uncategorized
+HLXC,Helix Acquisition Corp. III Class A Ordinary Shares,10.8,0.0,8,Uncategorized
+NSAIU,NorthStrive Acquisition Corp I. Units,10.02,0.0,2,Uncategorized
+HCIC,Hennessy Capital Investment Corp. VIII Class A Ordinary Shares,10.0,0.0,2106,Uncategorized
+HCICR,Hennessy Capital Investment Corp. VIII Share Rights,0.1398,0.0,180959,Uncategorized
+HACQU,HCM IV Acquisition Corp. Unit,10.15,0.0,14,Uncategorized
+TLACU,Three Lions Acquisition Corp. Units,10.01,0.0,15,Uncategorized
+NTWO,Newbury Street II Acquisition Corp Class A Ordinary Shares,10.95,0.0,53653,Uncategorized
+NSAI,NorthStrive Acquisition Corp I. Class A Ordinary Shares,9.87,0.0,1042,Uncategorized
+NSAIR,NorthStrive Acquisition Corp I. Rights,0.1824,0.0,10,Uncategorized
+ABR^D,Arbor Realty Trust 6.375% Series D Cumulative Redeemable Preferred Stock Liquidation Preference $25.00 per Share,15.4201,,9780,Uncategorized
+ABR^E,Arbor Realty Trust 6.25% Series E Cumulative Redeemable Preferred Stock,15.3,,29,Uncategorized
+ABR^F,Arbor Realty Trust 6.25% Series F Fixed-to-Floating Rate Cumulative Redeemable Preferred Stock Liquidation Preference $25.00 per share,22.28,,5431,Uncategorized
+ACP^A,abrdn Income Credit Strategies Fund 5.250% Series A Perpetual Preferred Stock,18.78,,3,Uncategorized
+ACR^C,ACRES Commercial Realty Corp. 8.625% Fixed-to-Floating Series C Cumulative Redeemable Preferred Stock ,23.4,,8086,Uncategorized
+ACR^D,ACRES Commercial Realty Corp. 7.875% Series D Cumulative Redeemable Preferred Stock,18.6301,,1372,Uncategorized
+ADC^A,Agree Realty Corporation Depositary Shares each representing 1/1000th of a 4.250% Series A Cumulative Redeemable Preferred Stock,15.82,,3168,Uncategorized
+AGM^D,Federal Agricultural Mortgage Corporation 5.700% Non-Cumulative Preferred Stock Series D,20.9324,,16,Uncategorized
+AGM^E,Federal Agricultural Mortgage Corporation 5.750% Non-Cumulative Preferred Stock Series E,20.7,,108,Uncategorized
+AGM^F,Federal Agricultural Mortgage Corporation 5.250% Non-Cumulative Preferred Stock Series F,18.68,,179,Uncategorized
+AGM^G,Federal Agricultural Mortgage Corporation 4.875% Non-Cumulative Preferred Stock Series G,17.3,,4759,Uncategorized
+AGM^H,Federal Agricultural Mortgage Corporation 6.500% Non-Cumulative Preferred Stock Series H,23.28,,102,Uncategorized
+AGM^I,Federal Agricultural Mortgage Corporation 6.875% Non-Cumulative Preferred Stock Series I,24.57,,924,Uncategorized
+AHRT^A,AH Realty Trust Inc. 6.75% Series A Cumulative Redeemable Perpetual Preferred Stock,21.6899,,5936,Uncategorized
+AHT^D,Ashford Hospitality Trust Inc 8.45% Series D Cumulative Preferred Stock,5.94,,3,Uncategorized
+AHT^F,Ashford Hospitality Trust Inc 7.375% Series F Cumulative Preferred Stock,6.095,,3,Uncategorized
+AHT^G,Ashford Hospitality Trust Inc 7.375% Series G Cumulative Preferred Stock,5.775,,18,Uncategorized
+AHT^H,Ashford Hospitality Trust Inc 7.50% Series H Cumulative Preferred Stock,5.96,,38,Uncategorized
+AHT^I,Ashford Hospitality Trust Inc 7.50% Series I Cumulative Preferred Stock,5.36,,206,Uncategorized
+ALB^A,Albemarle Corporation Depositary Shares each representing a 1/20th of 7.25% Series A Mandatory Convertible Preferred Stock,47.84,,106978,Uncategorized
+ALL^B,Allstate Corporation (The) 5.100% Fixed-to-Floating Rate Subordinated Debentures due 2053,25.58,,2617,Uncategorized
+ALL^H,Allstate Corporation (The) Depositary Shares each representing a 1/1000th interest in a share of Fixed Rate Noncumulative Perpetual Preferred Stock Series H,18.5,,11476,Uncategorized
+ALL^I,Allstate Corporation (The) Depositary Shares each representing a 1/1000th interest in a share of Fixed Rate Noncumulative Perpetual Preferred Stock Series I,17.2818,,3513,Uncategorized
+ALL^J,Allstate Corporation (The) Depositary Shares each representing a 1/1000th interest in a share of Fixed Rate Noncumulative Perpetual Preferred Stock Series J,25.79,,3345,Uncategorized
+ALTG^A,Alta Equipment Group Inc. Depositary Shares (each representing 1/1000th in a share of 10% Series A Cumulative Perpetual Preferred Stock),25.88,,62,Uncategorized
+AMH^G,American Homes 4 Rent Series G cumulative redeemable perpetual preferred shares of beneficial interest,21.0,,1086,Uncategorized
+AMH^H,American Homes 4 Rent Series H cumulative redeemable perpetual Preferred Shares of Beneficial Interest,22.0578,,3690,Uncategorized
+ANG^D,American National Group Inc. Depositary Shares each representing a 1/1000th interest in a share of 7.375% Fixed-Rate Non-Cumulative Preferred Stock Series D,23.31,,1351,Uncategorized
+ARES^B,Ares Management Corporation 6.75% Series B Mandatory Convertible Preferred Stock,40.67,,5019,Uncategorized
+ARR^C,ARMOUR Residential REIT Inc. 7% Series C Cumulative Redeemable Preferred Stock (liquidation preference $25.00 per share),20.5,,3803,Uncategorized
+ASB^E,Associated Banc-Corp Depositary Shares each representing a 1/40th interest in a share of 5.875% Non-Cumulative Perpetual Preferred Stock Series E,19.74,,376,Uncategorized
+ASB^F,Associated Banc-Corp Depositary Shares each representing a 1/40th interest in a share of Associated Banc-Corp 5.625% Non-Cumulative Perpetual Preferred Stock Series F,18.99,,2670,Uncategorized
+AUB^A,Atlantic Union Bankshares Corporation Depositary Shares each representing a 1/400th ownership interest in a share of 6.875% Perpetual Non-Cumulative Preferred Stock Series A,23.84,,31,Uncategorized
+BA^A,Boeing Company (The) Depositary Shares each representing a 1/20th interest in a share of 6.00% Series A Mandatory Convertible Preferred Stock par value $1.00,64.98,,5181,Uncategorized
+BAC^B,Bank of America Corporation Depositary Shares each representing a 1/1000th interest in a share of 6.000% Non-Cumulative Preferred Stock Series GG,23.27,,25338,Uncategorized
+BAC^E,Bank of America Corporation Depositary Sh repstg 1/1000th Perp Pfd Ser E,18.41,,5822,Uncategorized
+BAC^K,Bank of America Corporation Depositary Shares each representing a 1/1000th interest in a share of 5.875% Non- Cumulative Preferred Stock Series HH,22.8,,4627,Uncategorized
+BAC^L,Bank of America Corporation Non Cumulative Perpetual Conv Pfd Ser L,1265.8,,799,Uncategorized
+BAC^M,Bank of America Corporation Depositary Shares each representing a 1/1000th interest in a share of 5.375% Non-Cumulative Preferred Stock Series KK,19.67,,28108,Uncategorized
+BAC^N,Bank of America Corporation Depositary shares each representing 1/1000th interest in a share of 5.000% Non-Cumulative Preferred Stock Series LL,18.38,,33749,Uncategorized
+BAC^O,Bank of America Corporation Depositary shares each representing 1/1000th interest in a share of 4.375% Non-Cumulative Preferred Stock Series NN,16.16,,28586,Uncategorized
+BAC^P,Bank of America Corporation Depositary Shares each representing a 1/1000th interest in a share of 4.125% Non-Cumulative Preferred Stock Series PP,15.4448,,21104,Uncategorized
+BAC^Q,Bank of America Corporation Depositary shares each representing 1/1000th interest in a share of 4.250% Non-Cumulative Preferred Stock Series QQ,15.685,,35144,Uncategorized
+BAC^S,Bank of America Corporation Depositary shares each representing 1/1000th interest in a share of 4.750% Non-Cumulative Preferred Stock Series SS,17.4979,,19109,Uncategorized
+BANC^F,Banc of California Inc. Depositary Shares each representing a 1/40th interest in a share of 7.75% non-cumulative perpetual preferred stock Series F,25.14,,2478,Uncategorized
+BC^C,Brunswick Corporation 6.375% Notes due 2049,23.6,,2859,Uncategorized
+BCV^A,Bancroft Fund Limited 5.375% Series A Cumulative Preferred Shares,19.36,,552,Uncategorized
+BF/A,Brown Forman Corporation,26.65,,15886,Uncategorized
+BF/B,Brown Forman Corporation,26.29,,136093,Uncategorized
+BFH^A,Bread Financial Holdings Inc. Depositary Shares each representing a 1/40th interest in a share of 8.625% Non-Cumulative Perpetual Preferred Stock Series A,24.3,,1662,Uncategorized
+BFH^B,Bread Financial Holdings Inc. Depositary Shares each representing a 1/40th interest in a share of 8.875% Fixed Rate Reset Non-Cumulative Perpetual Preferred Stock Series B,24.72,,4713,Uncategorized
+BFS^D,Saul Centers Inc. Depositary Shares each representing 1/100th of a share of 6.125% Series D Cumulative Redeemable Preferred Stock,20.18,,269,Uncategorized
+BFS^E,Saul Centers Inc. Depositary shares each representing a 1/100th fractional interest in a share of 6.000% Series E Cumulative Redeemable Preferred Stock,20.52,,116,Uncategorized
+BHR^B,Braemar Hotels & Resorts Inc. 5.50% Series B Cumulative Convertible Preferred Stock par value $0.01 per share,13.61,,827,Uncategorized
+BHR^D,Braemar Hotels & Resorts Inc. 8.25% Series D Cumulative Preferred Stock  par value $0.01 per share,17.19,,1423,Uncategorized
+BIO/B,Bio-Rad Laboratories Inc.,365.08,,9,Uncategorized
+BML^G,Bank of America Corporation Depositary Shares (Each representing a 1/1200th interest in a share of Floating Rate Non-Cumulative Preferred Stock  Series 1),18.51,,813,Uncategorized
+BML^H,Bank of America Corporation Depositary Shares (Each representing a 1/1200th interest in a Share of Floating Rate Non-Cumulative Preferred Stock Series 2),18.39,,6092,Uncategorized
+BML^J,Bank of America Corporation Depositary Shares (Each representing a 1/1200th interest in a Share of Floating Rate Non-Cumulative Preferred Stock Series 4),19.545,,1112,Uncategorized
+BML^L,Bank of America Corporation Depositary Shares (Each representing a 1/1200th Interest in a Share of Floating Rate Non-Cumulative Preferred Stock Series 5),19.39,,1229,Uncategorized
+BNY^K,The Bank Of New York Mellon Corporation  Depositary Shares each representing a 1/4000th interest in a share of Series K Noncumulative Perpetual Preferred Stock,24.78,,4807,Uncategorized
+BOH^A,Bank of Hawaii Corporation Depositary Shares Each Representing a 1/40th Interest in a Share of 4.375% Fixed Rate Non-Cumulative Perpetual Preferred Stock Series A,15.11,,3359,Uncategorized
+BOH^B,Bank of Hawaii Corporation Depositary Shares Each Representing a 1/40th Interest in a Share of 8.000% Fixed Rate Non-Cumulative Perpetual Preferred Stock Series B,25.5,,414,Uncategorized
+BW^A,Babcock & Wilcox Enterprises Inc. 7.75% Series A Cumulative Perpetual Preferred Stock,22.11,,370,Uncategorized
+C^N,Citigroup Capital XIII 7.875% Fixed rate Floating Rate trust Preferred Securities (TruPS),26.265,,40864,Uncategorized
+C^R,Citigroup Inc. Depositary Shares Each Representing a 1/1000th Interest in a Share of 6.250% Noncumulative Preferred Stock Series II,23.555,,25121,Uncategorized
+CDR^B,Cedar Realty Trust Inc. 7.25% Series B Cumulative Redeemable Preferred Stock,16.2,,103,Uncategorized
+CDR^C,Cedar Realty Trust Inc. 6.50% Series C Cumulative Redeemable Preferred Stock,16.42,,1753,Uncategorized
+CFG^E,Citizens Financial Group Inc. Depositary Shares Each Representing 1/40th Interest in a Share of 5.000% Fixed-Rate Non-Cumulative Perpetual Preferred Stock Series E,17.55,,7227,Uncategorized
+CFG^H,Citizens Financial Group Inc. Depositary Shares Each Representing a 1/40th Interest in a Share of 7.375% Fixed-Rate Non-Cumulative Perpetual Preferred Stock Series H,26.06,,19485,Uncategorized
+CFG^I,Citizens Financial Group Inc. Depositary Shares Each Representing a 1/40th Interest in a Share of 6.500% Fixed-Rate Reset Non-Cumulative Perpetual Preferred Stock Series I,24.8335,,885,Uncategorized
+CFR^B,Cullen/Frost Bankers Inc. Depositary Shares each representing a 1/40th ownership interest in a share of 4.450% non-cumulative perpetual preferred stock Series B,16.2848,,6180,Uncategorized
+CIM^A,Chimera Investment Corporation 8.00% Series A Cumulative Redeemable Preferred Stock,20.75,,1274,Uncategorized
+CIM^B,Chimera Investment Corporation 8.00% Series B Fixed-to-Floating Rate Cumulative Redeemable Preferred Stock,23.8252,,512,Uncategorized
+CIM^C,Chimera Investment Corporation 7.75% Series C Fixed-to-Floating Rate  Cumulative Redeemable  Preferred Stock,22.32,,19895,Uncategorized
+CIM^D,Chimera Investment Corporation 8.00% Series D Fixed-to-Floating Rate Cumulative Redeemable Preferred Stock,23.6818,,1194,Uncategorized
+CLDT^A,Chatham Lodging Trust (REIT) 6.625% Series A Cumulative Redeemable Preferred Shares of Beneficial Interest,20.2,,114,Uncategorized
+CMS^B,CMS Energy Corporation Preferred Stock,76.77,,271,Uncategorized
+CMS^C,CMS Energy Corporation Depositary Shares each representing a 1/1000th interest in a share of 4.200% Cumulative Redeemable Perpetual Preferred Stock Series C,16.0,,2796,Uncategorized
+CNO^A,CNO Financial Group Inc. 5.125% Subordinated Debentures due 2060,16.45,,102,Uncategorized
+CODI^A,Compass Diversified Holdings 7.250% Series A Preferred Shares representing beneficial interest in Compass Diversified Holdings,19.39,,1516,Uncategorized
+CODI^B,Compass Diversified Holdings 7.875% Series B Fixed-to-Floating Rate Cumulative Preferred Shares representing beneficial interests in Compass Diversified Holdings,22.245,,713,Uncategorized
+CODI^C,Compass Diversified Holdings 7.875% Series C Cumulative Preferred Shares,21.725,,41,Uncategorized
+COF^I,Capital One Financial Corporation Depositary shares each representing a 1/40th interest in a share of Fixed Rate Non-Cumulative Perpetual Preferred Stock Series I of the Issuer,17.25,,17974,Uncategorized
+COF^J,Capital One Financial Corporation Depositary Shares Each Representing a 1/40th Interest in a Share of Fixed Rate Non- Cumulative Perpetual Preferred Stock Series J,16.72,,16214,Uncategorized
+COF^K,Capital One Financial Corporation Depositary Shares Each Representing a 1/40th Ownership Interest in a Share of Fixed Rate Non-Cumulative Perpetual Preferred Stock Series K,16.14,,2667,Uncategorized
+COF^L,Capital One Financial Corporation Depositary Shares Each Representing a 1/40th Interest in a Share of Fixed Rate Non-Cumulative Perpetual Preferred Stock Series L,15.265,,8024,Uncategorized
+COF^N,Capital One Financial Corporation Depositary Shares Each Representing a 1/40th Ownership Interest in a Share of Fixed Rate Non-Cumulative Perpetual Preferred Stock Series N,15.15,,610,Uncategorized
+CRD/A,Crawford & Company,12.45,,1787,Uncategorized
+CRD/B,Crawford & Company,11.6306,,2291,Uncategorized
+CTA^A,EIDP Inc. Preferred Stock $3.50 Series,50.5,,1027,Uncategorized
+CTA^B,EIDP Inc. Preferred Stock $4.50 Series,65.13,,406,Uncategorized
+CTO^A,CTO Realty Growth Inc. 6.375% Series A Cumulative Redeemable Preferred Stock,20.08,,186,Uncategorized
+DBRG^H,DigitalBridge Group Inc. 7.125% Series H ,14.95,,745,Uncategorized
+DBRG^I,DigitalBridge Group Inc. 7.15% Series I ,15.07,,185,Uncategorized
+DBRG^J,DigitalBridge Group Inc. 7.125% Series J ,15.4129,,1657,Uncategorized
+DCOM^,Dime Commercial Bancshares Inc. Preferred Stock Series A,16.775,,816,Uncategorized
+DLR^J,Digital Realty Trust Inc. 5.250% Series J Cumulative Redeemable Preferred Stock,18.84,,1922,Uncategorized
+DLR^K,Digital Realty Trust Inc. 5.850% Series K Cumulative Redeemable Preferred Stock par value $0.01 per share,20.761,,3034,Uncategorized
+DLR^L,Digital Realty Trust Inc. 5.200% Series L Cumulative Redeemable Preferred Stock,18.17,,4784,Uncategorized
+DUK^A,Duke Energy Corporation Depositary Shares each representing a 1/1000th interest in a share of 5.75% Series A Cumulative Redeemable Perpetual Preferred Stock,22.9601,,21128,Uncategorized
+DX^C,Dynex Capital Inc. 6.900% Series C Fixed-to-Floating Rate Cumulative Redeemable Preferred Stock,25.91,,335,Uncategorized
+ECC^D,Eagle Point Credit Company 6.75% Series D Preferred Stock,18.27,,254,Uncategorized
+ECF^A,Ellsworth Growth and Income Fund Ltd. 5.25% Series A Cumulative Preferred Shares (Liquidation Preference $25.00 per share),19.24,,4,Uncategorized
+EFC^B,Ellington Financial Inc. 6.250% Series B Fixed-Rate Reset Cumulative Redeemable Preferred Stock,25.3,,2623,Uncategorized
+EFC^C,Ellington Financial Inc. 8.625% Series C Fixed-Rate Reset Cumulative Redeemable Preferred Stock,25.7,,3,Uncategorized
+EFC^D,Ellington Financial Inc. 7.00% Series D Cumulative Perpetual Redeemable Preferred Stock,23.8208,,440,Uncategorized
+EP^C,El Paso Corporation Preferred Stock,49.62,,179,Uncategorized
+EPR^C,EPR Properties 5.75% Series C Cumulative Convertible Preferred Shares,26.095,,1024,Uncategorized
+EPR^E,EPR Properties Series E Cumulative Conv Pfd Shs Ser E,32.09,,2846,Uncategorized
+EPR^G,EPR Properties 5.750% Series G Cumulative Redeemable Preferred Shares,19.81,,10,Uncategorized
+EQH^A,Equitable Holdings Inc. Depositary Shares,18.0997,,14833,Uncategorized
+EQH^C,Equitable Holdings Inc. Depositary Shares each representing a 1/1000th interest in a share of Fixed Rate Noncumulative Perpetual Preferred Stock Series C,15.96,,5700,Uncategorized
+ET^I,Energy Transfer L.P. Series I Fixed Rate Perpetual Preferred Units,11.4,,19043,Uncategorized
+ETI^,Entergy Texas Inc 5.375% Series A Preferred Stock Cumulative No Par Value,22.28,,232,Uncategorized
+F^B,Ford Motor Company 6.20% Notes due June 1 2059,19.9004,,8845,Uncategorized
+F^C,Ford Motor Company 6% Notes due December 1 2059,19.52,,10716,Uncategorized
+F^D,Ford Motor Company 6.500% Notes due August 15 2062,20.8,,9460,Uncategorized
+FBRT^E,Franklin BSP Realty Trust Inc. 7.50% Series E Cumulative Redeemable Preferred Stock,19.4,,1745,Uncategorized
+FHN^E,First Horizon Corporation Depositary Shares each representing a 1/4000th interest in a share of Non-Cumulative Perpetual Preferred Stock Series E,23.45,,17918,Uncategorized
+FHN^F,First Horizon Corporation Depositary Shares each representing 1/4000th Interest in a Share of Non-Cumulative Perpetual Preferred Stock Series F,16.34,,614,Uncategorized
+FHN^H,First Horizon Corporation Depositary Shares each representing a 1/4000th interest in a share of Non-Cumulative Perpetual Preferred Stock Series H,23.4,,7406,Uncategorized
+FITB^A,Fifth Third Bancorp Depositary Shares each representing 1/40th share of Fifth Third 6.00% Non-Cumulative Perpetual Class B Preferred Stock Series A,21.675,,2735,Uncategorized
+FITB^I,Fifth Third Bancorp Depositary Share repstg 1/1000th Ownership Interest Perp Pfd Series I,25.545,,3029,Uncategorized
+FITB^K,Fifth Third Bancorp Depositary Shares each representing a 1/1000th ownership interest in a share of Non-Cumulative Perpetual Preferred Stock Series K,18.0,,3571,Uncategorized
+FITB^M,Fifth Third Bancorp Depositary Shares Representing a 1/40th Ownership Interest in a Share of 6.875% Fixed-Rate Reset Non-Cumulative Perpetual Preferred Stock Series M,25.76,,1840,Uncategorized
+FLG^A,Flagstar Bank N.A. Depositary shares each representing a 1/40th interest in a share of Fixed-to-Floating Rate Series A Noncumulative Perpetual Preferred Stock,23.57,,10536,Uncategorized
+FLG^U,Flagstar Bank N.A. Bifurcated Option Note Unit SecuritiES,39.82,,3,Uncategorized
+FOUR^A,Shift4 Payments Inc. 6.00% Series A Mandatory Convertible Preferred Stock,57.83,,341,Uncategorized
+FRT^C,Federal Realty Investment Trust Depositary Shares each representing a 1/1000th interest in a 5.000% Series C Cumulative Redeemable Preferred Share,18.4499,,3587,Uncategorized
+GAB^G,Gabelli Equity Trust Inc. (The) Series G Cumulative Preferred Stock,19.03,,345,Uncategorized
+GAB^H,Gabelli Equity Trust Inc. (The) Pfd Ser H,18.985,,222,Uncategorized
+GAB^K,Gabelli Equity Trust Inc. (The) 5.00% Series K Cumulative Preferred Stock,18.95,,3596,Uncategorized
+GAM^B,General American Investors Company Inc. Cumulative Preferred Stock,23.71,,25735,Uncategorized
+GDV^H,The Gabelli Dividend & Income Trust 5.375% Series H Cumulative Preferred Shares,20.93,,5,Uncategorized
+GDV^K,The Gabelli Dividend & Income Trust 4.250% Series K Cumulative Preferred Shares,16.7,,4793,Uncategorized
+GGN^B,GAMCO Global Gold Natural Reources & Income Trust 5.00% Series B Cumulative 25.00 Liquidation Preference,18.74,,1784,Uncategorized
+GGT^E,Gabelli Multi-Media Trust Inc. (The) 5.125% Series E Cumulative Preferred Stock,20.205,,102,Uncategorized
 GGT^G,Gabelli Multi-Media Trust Inc. (The) 5.125% Series G Cumulative Preferred Shares,19.9701,,3,Uncategorized
-GL^D,Globe Life Inc. 4.25% Junior Subordinated Debentures due 2061,14.7599,,8488,Uncategorized
-GLU^A,The Gabelli Global Utility and Income Trust Series A Cumulative Puttable and Callable Preferred Shares,54.7,,473,Uncategorized
-GNL^A,Global Net Lease Inc. 7.25% Series A Cumulative Redeemable Preferred Stock $0.01 par value per share,22.59,,2019,Uncategorized
-GNL^B,Global Net Lease Inc. 6.875% Series B Cumulative Redeemable Perpetual Preferred Stock,21.81,,2051,Uncategorized
-GNL^D,Global Net Lease Inc. 7.50% Series D Cumulative Redeemable Perpetual Preferred Stock,23.0,,3793,Uncategorized
-GNL^E,Global Net Lease Inc. 7.375% Series E Cumulative Redeemable Perpetual Preferred Stock,22.75,,4002,Uncategorized
-GNT^A,GAMCO Natural Resources Gold & Income Tust  5.20% Series A Cumulative Preferred Shares (Liquidation Preference $25.00 per share),19.29,,1128,Uncategorized
-GPMT^A,Granite Point Mortgage Trust Inc. 7.00% Series A Fixed-to-Floating Rate Cumulative Redeemable Preferred Stock,15.6901,,12848,Uncategorized
-GPUS^D,Hyperscale Data Inc. 13.00% Series D Cumulative Redeemable Perpetual Preferred Stock,19.9618,,266,Uncategorized
-GRBK^A,Green Brick Partners Inc. Depositary Shares (each representing a 1/1000th fractional interest in a share of 5.75% Series A Cumulative Perpetual Preferred Stock),21.03,,2318,Uncategorized
-GS^A,Goldman Sachs Group Inc. (The) Depositary Shares each representing 1/1000th Interest in a Share of Floating Rate Non-Cumulative Preferred Stock Series A,19.0387,,21602,Uncategorized
-GS^C,Goldman Sachs Group Inc. (The) Depositary Share repstg 1/1000th Preferred Series C,19.295,,17539,Uncategorized
-GS^D,Goldman Sachs Group Inc. (The) Dep Shs repstg 1/1000 Pfd Ser D Fltg,18.59,,31629,Uncategorized
-GUT^C,Gabelli Utility Trust (The) 5.375% Series C Cumulative Preferred Shares,20.57,,228,Uncategorized
-HEI/A,Heico Corporation,227.8,,122647,Uncategorized
-HFRO^A,Highland Opportunities and Income Fund 5.375% Series A Cumulative Preferred Shares,16.37,,3593,Uncategorized
-HFRO^B,Highland Opportunities and Income Fund 5.375% Series B Cumulative Preferred Shares,16.25,,2073,Uncategorized
-HIG^G,The Hartford Insurance Group Inc. Depositary Shares each representing a 1/1000th interest in a share of 6.000% Non-Cumulative Preferred Stock Series G,23.12,,17041,Uncategorized
-HL^B,Hecla Mining Company Preferred Stock,70.05,,378,Uncategorized
-HPE^C,Hewlett Packard Enterprise Company 7.625% Series C Mandatory Convertible Preferred Stock,141.9,,9410,Uncategorized
-HPP^C,Hudson Pacific Properties Inc. 4.750% Series C Cumulative Redeemable Preferred Stock,14.1,,1480,Uncategorized
-HVII,Hennessy Capital Investment Corp. VII Ordinary Shares,10.45,,14770,Uncategorized
-HVT/A,Haverty Furniture Companies Inc.,28.61,,81,Uncategorized
-IIPR^A,Innovative Industrial Properties Inc. 9.00% Series A Cumulative Redeemable Preferred Stock,24.945,,7881,Uncategorized
-INN^E,Summit Hotel Properties Inc. 6.250% Series E Cumulative Redeemable Preferred Stock,17.531,,680,Uncategorized
-INN^F,Summit Hotel Properties Inc. 5.875% Series F Cumulative Redeemable Preferred Stock $0.01 par value per share,16.71,,607,Uncategorized
-IVR^C,INVESCO MORTGAGE CAPITAL INC 7.5% Fixed-to-Floating Series C Cumulative Redeemable Preferred Stock Liquation Preference $25.00 per Share,24.085,,4668,Uncategorized
-JPM^C,J P Morgan Chase & Co Depositary Shares each representing a 1/400th interest in a share of 6.00% Non-Cumulative  Preferred Stock Series EE,24.075,,141402,Uncategorized
-JPM^D,J P Morgan Chase & Co Depositary Shares each representing a 1/400th  interest in a share of 5.75% Non-Cumulative  Preferred Stock Series DD,22.545,,71372,Uncategorized
-JPM^J,J P Morgan Chase & Co Depositary Shares each representing a 1/400th interest in a share of JPMorgan Chase & Co. 4.75% Non-Cumulative Preferred Stock Series GG,18.0448,,53218,Uncategorized
-JPM^K,J P Morgan Chase & Co Depositary Shares each representing a 1/400th interest in a share of 4.55% Non-Cumulative Preferred Stock Series JJ,17.311,,110685,Uncategorized
-JPM^L,J P Morgan Chase & Co Depositary Shares each representing a 1/400th interest in a share of 4.625% Non-Cumulative Preferred Stock Series LL,17.63,,78607,Uncategorized
-JPM^M,J P Morgan Chase & Co Depositary Shares each representing a 1/400th interest in a share of 4.20% Non-Cumulative Preferred Stock Series MM,16.36,,174828,Uncategorized
-JXN^A,Jackson Financial Inc. Depositary Shares each representing a 1/1000th interest in a share of Fixed-Rate Reset Noncumulative Perpetual Preferred Stock Series A,25.85,,8984,Uncategorized
-KEY^I,KeyCorp Depositary Shares Each Representing a 1/40th Ownership Interest in a Share of Fixed-to-Floating Rate Perpetual Non-Cumulative Preferred Stock Series E,24.97,,10218,Uncategorized
-KEY^J,KeyCorp Depositary Shares each representing a 1/40th ownership interest in a share of Fixed Rate Perpetual Non-Cumulative Preferred Stock Series F,20.41,,13520,Uncategorized
-KEY^K,KeyCorp Depositary Shares each representing a 1/40th ownership interest in a share of Fixed Rate Perpetual Non-Cumulative Preferred Stock Series G,20.3233,,5395,Uncategorized
-KEY^L,KeyCorp Depositary Shares each representing a 1/40th ownership interest in a share of Fixed Rate Perpetual Non-Cumulative Preferred Stock Series H,24.9977,,13248,Uncategorized
-KIM^L,Kimco Realty Corporation Class L Depositary Shares each of which represents a one-one thousandth fractional interest in a share of 5.125% Class L Cumulative Redeemable Preferred Stock liquidation preference $25000.00 per share,19.895,,16881,Uncategorized
-KIM^M,Kimco Realty Corporation Class M Depositary Shares each of which represents a one-one thousandth fractional interest in a share of 5.25% Class M Cumulative Redeemable Preferred Stock liquidation preference $25000.00 per share,20.15,,14194,Uncategorized
-KIM^N,Kimco Realty Corporation Depositary Shares each representing 1/1000th interest in a share of 7.25% Class N Cumulative Convertible Perpetual Preferred Stock,60.75,,3,Uncategorized
-KKR^D,KKR & Co. Inc. 6.25% Series D Mandatory Convertible Preferred Stock,45.14,,37786,Uncategorized
-KREF^A,KKR Real Estate Finance Trust Inc. 6.50% Series A Cumulative Redeemable Preferred Stock,18.17,,5063,Uncategorized
-LFT^A,Lument Finance Trust Inc. 7.875% Series A Cumulative Redeemable Preferred Stock,16.8,,2333,Uncategorized
-LNC^D,Lincoln National Corporation Depositary Shares Each Representing a 1/1000th Interest in a Share of 9.000% Non-Cumulative Preferred Stock Series D,26.05,,8433,Uncategorized
-LOB^A,Live Oak Bancshares Inc. Depositary Shares Each Representing a 1/40th Interest in a Share of 8.375% Fixed Rate Series A Non-Cumulative Perpetual Preferred Stock,25.33,,2392,Uncategorized
-LXP^C,LXP Industrial Trust 6.5% Series C Cumulative Convertible Preferred Stock,49.48,,332,Uncategorized
-MAA^I,Mid-America Apartment Communities Inc. 8.50% Series I Cumulative Redeemable Preferred Stock,51.05,,1481,Uncategorized
-MER^K,Bank of America Corporation Income Capital Obligation Notes initially due December 15 2066,24.18,,55468,Uncategorized
-MET^A,MetLife Inc. Preferred Series A Floating Rate,20.665,,11923,Uncategorized
-MET^E,MetLife Inc. Depositary Shares ,20.325,,57473,Uncategorized
-MET^F,MetLife Inc. Depositary Shares each representing a 1/1000th interest in a share of 4.75% Non-Cumulative Preferred Stock Series F,17.21,,69511,Uncategorized
-MFA^B,MFA Financial Inc. Preferred Series B,20.0451,,339,Uncategorized
-MFA^C,MFA Financial Inc. 6.50% Series C Fixed-to-Floating Rate Cumulative Redeemable Preferred Stock,22.7501,,18695,Uncategorized
-MITT^A,TPG Mortgage Investment Trust Inc. 8.25% Series A Cumulative Redeemable Preferred Stock,21.54,,1531,Uncategorized
-MITT^B,TPG Mortgage Investment Trust Inc. 8.00% Series B Cumulative Redeemable Preferred Stock,20.219,,2491,Uncategorized
-MITT^C,TPG Mortgage Investment Trust Inc. 8.00% Series C Fixed-to-Floating Rate Cumulative Redeemable Preferred Stock $0.01 par value per share,25.03,,3252,Uncategorized
-MS^A,Morgan Stanley Dep Shs repstg 1/1000 Pfd Ser A,18.7399,,37771,Uncategorized
-MS^E,Morgan Stanley DEPOSITARY SHARES REP 1/1000TH SHARES FIXED/FLTG PREFERRED STOCK SERIES E,25.39,,25375,Uncategorized
-MS^F,Morgan Stanley Dep Shs Rpstg 1/1000th Int Prd Ser F Fxd to Flag,25.27,,36207,Uncategorized
-MS^I,Morgan Stanley Depository Shares Representing 1/1000th Preferred Series 1 Fixed to Floating Non (Cum),24.1,,9866,Uncategorized
-MS^K,Morgan Stanley Depositary Shares each representing 1/1000th of a share of Fixed-to-Floating Rate Non-Cumulative Preferred Stock  Series K,21.99,,32312,Uncategorized
-MS^L,Morgan Stanley Depositary Shares each representing 1/1000th of a share of 4.875% Non-Cumulative Preferred Stock Series L,18.39,,13328,Uncategorized
-MS^O,Morgan Stanley Depositary Shares each representing 1/1000th of a share of 4.250% Non-Cumulative Preferred Stock Series O,16.1639,,28636,Uncategorized
-MS^P,Morgan Stanley Depositary Shares each representing 1/1000th of a share of 6.500% Non-Cumulative Preferred Stock Series P,24.83,,22740,Uncategorized
-MS^Q,Morgan Stanley Depositary Shares each representing 1/1000th of a share of 6.625% Non-Cumulative Preferred Stock Series Q,25.08,,11257,Uncategorized
-MTB^H,M&T Bank Corporation Perpetual Fixed-to-Floating Rate Non-Cumulative Preferred Stock Series H,24.99,,2615,Uncategorized
-MTB^J,M&T Bank Corporation Depositary Shares each representing a 1/400th ownership interest in a share of Perpetual 7.500% Non-Cumulative Preferred Stock Series J,25.5,,42742,Uncategorized
-MTB^K,M&T Bank Corporation Depositary Shares each representing a 1/400th interest in a share of Perpetual 6.350% Non-Cumulative Preferred Stock Series K,23.4,,44225,Uncategorized
-MTB^L,M&T Bank Corporation Depositary Shares each representing a 1/400th ownership interest in a share of Perpetual 6.625% Non-Cumulative Preferred Stock Series L,24.44,,9210,Uncategorized
-NCV^A,Virtus Convertible & Income Fund 5.625% Series A Cumulative Preferred Shares,19.84,,431,Uncategorized
-NCZ^A,Virtus Convertible & Income Fund II 5.50% Series A Cumulative Preferred Shares,19.3266,,1815,Uncategorized
-NEE^N,NextEra Energy Capital Holdings Inc. Series N Junior Subordinated Debentures due March 1 2079,19.82,,48380,Uncategorized
-NEE^S,NextEra Energy Inc. 7.299% Corporate Units,50.8,,5302,Uncategorized
-NEE^T,NextEra Energy Inc. 7.234% Corporate Units,47.568,,4649,Uncategorized
-NEE^U,NextEra Energy Inc. Series U Junior Subordinated Debentures due June 1 2085,22.76,,27580,Uncategorized
-NEE^V,NextEra Energy Inc. 7.375% Corporate Units,45.215,,160919,Uncategorized
-NEE^W,NextEra Energy Capital Holdings Inc. Series Z Junior Subordinated Debentures due April 15 2086,22.885,,51372,Uncategorized
-NGL^B,NGL ENERGY PARTNERS LP 9.00% Class B Fixed-to-Floating Rate Cumulative Redeemable Perpetual Preferred Units representing limited partnership interests,25.8829,,4951,Uncategorized
-NGL^C,NGL ENERGY PARTNERS LP 9.625% Class C Fixed-to-Floating Rate Cumulative  Redeemable Perpetual Preferred Units representing  limited partner interests,25.71,,7,Uncategorized
-NLY^F,Annaly Capital Management Inc 6.95% Series F,25.2,,17713,Uncategorized
-NLY^G,Annaly Capital Management Inc 6.50% Series G Fixed-to-Floating Rate Cumulative Redeemable Preferred Stock,25.22,,5470,Uncategorized
-NLY^I,Annaly Capital Management Inc 6.750% Series I Fixed-to-Floating Rate Cumulative Redeemable Preferred Stock,24.93,,49510,Uncategorized
-NLY^J,Annaly Capital Management Inc. 8.875% Series J Fixed-Rate Cumulative Redeemable Preferred Stock,25.8852,,12250,Uncategorized
-NREF^A,NexPoint Real Estate Finance Inc. 8.50% Series A Cumulative Redeemable Preferred Stock,24.72,,3283,Uncategorized
-NXDT^A,NexPoint Diversified Real Estate Trust 5.50% Series A Cumulative Preferred Shares ($25.00 liquidation preference per share),13.0915,,1673,Uncategorized
-OAK^A,Brookfield Oaktree Holdings LLC 6.625% Series A Preferred Units,20.17,,1920,Uncategorized
-OAK^B,Brookfield Oaktree Holdings LLC 6.550% Series B Preferred Units,19.91,,6270,Uncategorized
-OPP^A,RiverNorth/DoubleLine Strategic Opportunity Fund Inc. 4.375% Series A Cumulative Preferred Stock,15.1694,,2930,Uncategorized
-OPP^B,RiverNorth/DoubleLine Strategic Opportunity Fund Inc. 4.75% Series B Cumulative Preferred Stock,16.385,,2273,Uncategorized
-OPP^C,RiverNorth/DoubleLine Strategic Opportunity Fund Inc. 6.00% Series C Term Preferred Stock (Liquidation Preference $10.00 per share),10.11,,14,Uncategorized
-ORCL^D,Oracle Corporation Depositary Shares each representing a 1/2000th interest in a sh of 6.50% Series D Mandatory Convertible Preferred Stock,45.65,,529465,Uncategorized
-PBI^B,Pitney Bowes Inc 6.70% Notes Due 2043,21.67,,5224,Uncategorized
-PCG^A,Pacific Gas & Electric Co. 6% Preferred Stock,20.7,,3342,Uncategorized
-PCG^B,Pacific Gas & Electric Co. 5 1/2% Preferred Stock,18.85,,3,Uncategorized
-PCG^C,Pacific Gas & Electric Co. 5% 1st Preferred Stock,17.7565,,6,Uncategorized
-PCG^D,Pacific Gas & Electric Co. 5% 1st  Red. Preferred Stock,17.15,,5,Uncategorized
-PCG^E,Pacific Gas & Electric Co. 5% 1st A Preferred Stock,17.25,,19,Uncategorized
-PCG^G,Pacific Gas & Electric Co. 4.80% 1st Preferred Stock,16.5724,,4,Uncategorized
+GL^D,Globe Life Inc. 4.25% Junior Subordinated Debentures due 2061,14.7,,2047,Uncategorized
+GLU^B,The Gabelli Global Utility and Income Trust Series B Cumulative Puttable and Callable Preferred Shares,50.735,,18,Uncategorized
+GNL^A,Global Net Lease Inc. 7.25% Series A Cumulative Redeemable Preferred Stock $0.01 par value per share,22.35,,287,Uncategorized
+GNL^B,Global Net Lease Inc. 6.875% Series B Cumulative Redeemable Perpetual Preferred Stock,21.6,,121,Uncategorized
+GNL^D,Global Net Lease Inc. 7.50% Series D Cumulative Redeemable Perpetual Preferred Stock,22.68,,156,Uncategorized
+GNL^E,Global Net Lease Inc. 7.375% Series E Cumulative Redeemable Perpetual Preferred Stock,22.36,,1073,Uncategorized
+GNT^A,GAMCO Natural Resources Gold & Income Tust  5.20% Series A Cumulative Preferred Shares (Liquidation Preference $25.00 per share),19.53,,103,Uncategorized
+GPMT^A,Granite Point Mortgage Trust Inc. 7.00% Series A Fixed-to-Floating Rate Cumulative Redeemable Preferred Stock,15.51,,36,Uncategorized
+GPUS^D,Hyperscale Data Inc. 13.00% Series D Cumulative Redeemable Perpetual Preferred Stock,18.02,,780,Uncategorized
+GRBK^A,Green Brick Partners Inc. Depositary Shares (each representing a 1/1000th fractional interest in a share of 5.75% Series A Cumulative Perpetual Preferred Stock),21.333,,1114,Uncategorized
+GS^A,Goldman Sachs Group Inc. (The) Depositary Shares each representing 1/1000th Interest in a Share of Floating Rate Non-Cumulative Preferred Stock Series A,19.05,,8474,Uncategorized
+GS^C,Goldman Sachs Group Inc. (The) Depositary Share repstg 1/1000th Preferred Series C,19.36,,970,Uncategorized
+GS^D,Goldman Sachs Group Inc. (The) Dep Shs repstg 1/1000 Pfd Ser D Fltg,18.6,,6287,Uncategorized
+GUT^C,Gabelli Utility Trust (The) 5.375% Series C Cumulative Preferred Shares,20.74,,201,Uncategorized
+HEI/A,Heico Corporation,223.6,,40530,Uncategorized
+HFRO^A,Highland Opportunities and Income Fund 5.375% Series A Cumulative Preferred Shares,16.289,,479,Uncategorized
+HFRO^B,Highland Opportunities and Income Fund 5.375% Series B Cumulative Preferred Shares,16.1801,,4431,Uncategorized
+HIG^G,The Hartford Insurance Group Inc. Depositary Shares each representing a 1/1000th interest in a share of 6.000% Non-Cumulative Preferred Stock Series G,23.06,,2654,Uncategorized
+HL^B,Hecla Mining Company Preferred Stock,70.05,,10,Uncategorized
+HPE^C,Hewlett Packard Enterprise Company 7.625% Series C Mandatory Convertible Preferred Stock,146.09,,3457,Uncategorized
+HPP^C,Hudson Pacific Properties Inc. 4.750% Series C Cumulative Redeemable Preferred Stock,14.16,,234,Uncategorized
+HVII,Hennessy Capital Investment Corp. VII Ordinary Shares,10.04,,26688,Uncategorized
+HVT/A,Haverty Furniture Companies Inc.,29.15,,11,Uncategorized
+IIPR^A,Innovative Industrial Properties Inc. 9.00% Series A Cumulative Redeemable Preferred Stock,24.957,,1851,Uncategorized
+INN^E,Summit Hotel Properties Inc. 6.250% Series E Cumulative Redeemable Preferred Stock,17.45,,254,Uncategorized
+INN^F,Summit Hotel Properties Inc. 5.875% Series F Cumulative Redeemable Preferred Stock $0.01 par value per share,16.78,,3,Uncategorized
+IVR^C,INVESCO MORTGAGE CAPITAL INC 7.5% Fixed-to-Floating Series C Cumulative Redeemable Preferred Stock Liquation Preference $25.00 per Share,24.0937,,3534,Uncategorized
+JPM^C,J P Morgan Chase & Co Depositary Shares each representing a 1/400th interest in a share of 6.00% Non-Cumulative  Preferred Stock Series EE,23.9201,,24748,Uncategorized
+JPM^D,J P Morgan Chase & Co Depositary Shares each representing a 1/400th  interest in a share of 5.75% Non-Cumulative  Preferred Stock Series DD,22.46,,31767,Uncategorized
+JPM^J,J P Morgan Chase & Co Depositary Shares each representing a 1/400th interest in a share of JPMorgan Chase & Co. 4.75% Non-Cumulative Preferred Stock Series GG,17.92,,30285,Uncategorized
+JPM^K,J P Morgan Chase & Co Depositary Shares each representing a 1/400th interest in a share of 4.55% Non-Cumulative Preferred Stock Series JJ,17.22,,57567,Uncategorized
+JPM^L,J P Morgan Chase & Co Depositary Shares each representing a 1/400th interest in a share of 4.625% Non-Cumulative Preferred Stock Series LL,17.465,,41393,Uncategorized
+JPM^M,J P Morgan Chase & Co Depositary Shares each representing a 1/400th interest in a share of 4.20% Non-Cumulative Preferred Stock Series MM,16.189,,51760,Uncategorized
+JXN^A,Jackson Financial Inc. Depositary Shares each representing a 1/1000th interest in a share of Fixed-Rate Reset Noncumulative Perpetual Preferred Stock Series A,25.375,,4404,Uncategorized
+KEY^I,KeyCorp Depositary Shares Each Representing a 1/40th Ownership Interest in a Share of Fixed-to-Floating Rate Perpetual Non-Cumulative Preferred Stock Series E,25.05,,9659,Uncategorized
+KEY^J,KeyCorp Depositary Shares each representing a 1/40th ownership interest in a share of Fixed Rate Perpetual Non-Cumulative Preferred Stock Series F,20.38,,11318,Uncategorized
+KEY^K,KeyCorp Depositary Shares each representing a 1/40th ownership interest in a share of Fixed Rate Perpetual Non-Cumulative Preferred Stock Series G,20.2523,,5136,Uncategorized
+KEY^L,KeyCorp Depositary Shares each representing a 1/40th ownership interest in a share of Fixed Rate Perpetual Non-Cumulative Preferred Stock Series H,24.97,,5676,Uncategorized
+KIM^L,Kimco Realty Corporation Class L Depositary Shares each of which represents a one-one thousandth fractional interest in a share of 5.125% Class L Cumulative Redeemable Preferred Stock liquidation preference $25000.00 per share,19.97,,2494,Uncategorized
+KIM^M,Kimco Realty Corporation Class M Depositary Shares each of which represents a one-one thousandth fractional interest in a share of 5.25% Class M Cumulative Redeemable Preferred Stock liquidation preference $25000.00 per share,20.24,,14560,Uncategorized
+KIM^N,Kimco Realty Corporation Depositary Shares each representing 1/1000th interest in a share of 7.25% Class N Cumulative Convertible Perpetual Preferred Stock,60.75,,53,Uncategorized
+KKR^D,KKR & Co. Inc. 6.25% Series D Mandatory Convertible Preferred Stock,44.92,,6387,Uncategorized
+KREF^A,KKR Real Estate Finance Trust Inc. 6.50% Series A Cumulative Redeemable Preferred Stock,18.2,,6199,Uncategorized
+LFT^A,Lument Finance Trust Inc. 7.875% Series A Cumulative Redeemable Preferred Stock,17.0,,242,Uncategorized
+LNC^D,Lincoln National Corporation Depositary Shares Each Representing a 1/1000th Interest in a Share of 9.000% Non-Cumulative Preferred Stock Series D,26.03,,6882,Uncategorized
+LOB^A,Live Oak Bancshares Inc. Depositary Shares Each Representing a 1/40th Interest in a Share of 8.375% Fixed Rate Series A Non-Cumulative Perpetual Preferred Stock,24.9101,,1203,Uncategorized
+LXP^C,LXP Industrial Trust 6.5% Series C Cumulative Convertible Preferred Stock,49.25,,107,Uncategorized
+MAA^I,Mid-America Apartment Communities Inc. 8.50% Series I Cumulative Redeemable Preferred Stock,49.99,,6482,Uncategorized
+MER^K,Bank of America Corporation Income Capital Obligation Notes initially due December 15 2066,23.98,,60151,Uncategorized
+MET^A,MetLife Inc. Preferred Series A Floating Rate,20.6333,,14095,Uncategorized
+MET^E,MetLife Inc. Depositary Shares ,20.22,,22860,Uncategorized
+MET^F,MetLife Inc. Depositary Shares each representing a 1/1000th interest in a share of 4.75% Non-Cumulative Preferred Stock Series F,17.14,,33668,Uncategorized
+MFA^B,MFA Financial Inc. Preferred Series B,19.8,,3947,Uncategorized
+MFA^C,MFA Financial Inc. 6.50% Series C Fixed-to-Floating Rate Cumulative Redeemable Preferred Stock,22.7001,,10398,Uncategorized
+MITT^A,TPG Mortgage Investment Trust Inc. 8.25% Series A Cumulative Redeemable Preferred Stock,21.54,,25,Uncategorized
+MITT^B,TPG Mortgage Investment Trust Inc. 8.00% Series B Cumulative Redeemable Preferred Stock,20.05,,5,Uncategorized
+MITT^C,TPG Mortgage Investment Trust Inc. 8.00% Series C Fixed-to-Floating Rate Cumulative Redeemable Preferred Stock $0.01 par value per share,25.0,,877,Uncategorized
+MS^A,Morgan Stanley Dep Shs repstg 1/1000 Pfd Ser A,18.755,,3981,Uncategorized
+MS^E,Morgan Stanley DEPOSITARY SHARES REP 1/1000TH SHARES FIXED/FLTG PREFERRED STOCK SERIES E,25.41,,3416,Uncategorized
+MS^F,Morgan Stanley Dep Shs Rpstg 1/1000th Int Prd Ser F Fxd to Flag,25.27,,4482,Uncategorized
+MS^I,Morgan Stanley Depository Shares Representing 1/1000th Preferred Series 1 Fixed to Floating Non (Cum),24.04,,16248,Uncategorized
+MS^K,Morgan Stanley Depositary Shares each representing 1/1000th of a share of Fixed-to-Floating Rate Non-Cumulative Preferred Stock  Series K,21.949,,12350,Uncategorized
+MS^L,Morgan Stanley Depositary Shares each representing 1/1000th of a share of 4.875% Non-Cumulative Preferred Stock Series L,18.31,,16054,Uncategorized
+MS^O,Morgan Stanley Depositary Shares each representing 1/1000th of a share of 4.250% Non-Cumulative Preferred Stock Series O,16.045,,22216,Uncategorized
+MS^P,Morgan Stanley Depositary Shares each representing 1/1000th of a share of 6.500% Non-Cumulative Preferred Stock Series P,24.79,,4849,Uncategorized
+MS^Q,Morgan Stanley Depositary Shares each representing 1/1000th of a share of 6.625% Non-Cumulative Preferred Stock Series Q,25.125,,8312,Uncategorized
+MTB^H,M&T Bank Corporation Perpetual Fixed-to-Floating Rate Non-Cumulative Preferred Stock Series H,25.0353,,3555,Uncategorized
+MTB^J,M&T Bank Corporation Depositary Shares each representing a 1/400th ownership interest in a share of Perpetual 7.500% Non-Cumulative Preferred Stock Series J,25.58,,81554,Uncategorized
+MTB^K,M&T Bank Corporation Depositary Shares each representing a 1/400th interest in a share of Perpetual 6.350% Non-Cumulative Preferred Stock Series K,22.99,,36120,Uncategorized
+MTB^L,M&T Bank Corporation Depositary Shares each representing a 1/400th ownership interest in a share of Perpetual 6.625% Non-Cumulative Preferred Stock Series L,24.4,,15675,Uncategorized
+NCV^A,Virtus Convertible & Income Fund 5.625% Series A Cumulative Preferred Shares,19.75,,5862,Uncategorized
+NCZ^A,Virtus Convertible & Income Fund II 5.50% Series A Cumulative Preferred Shares,19.2614,,464,Uncategorized
+NEE^N,NextEra Energy Capital Holdings Inc. Series N Junior Subordinated Debentures due March 1 2079,19.69,,21879,Uncategorized
+NEE^S,NextEra Energy Inc. 7.299% Corporate Units,50.58,,5216,Uncategorized
+NEE^T,NextEra Energy Inc. 7.234% Corporate Units,47.5999,,4303,Uncategorized
+NEE^U,NextEra Energy Inc. Series U Junior Subordinated Debentures due June 1 2085,22.6,,10282,Uncategorized
+NEE^V,NextEra Energy Inc. 7.375% Corporate Units,45.02,,5912,Uncategorized
+NEE^W,NextEra Energy Capital Holdings Inc. Series Z Junior Subordinated Debentures due April 15 2086,22.7,,34640,Uncategorized
+NGL^B,NGL ENERGY PARTNERS LP 9.00% Class B Fixed-to-Floating Rate Cumulative Redeemable Perpetual Preferred Units representing limited partnership interests,25.92,,219,Uncategorized
+NGL^C,NGL ENERGY PARTNERS LP 9.625% Class C Fixed-to-Floating Rate Cumulative  Redeemable Perpetual Preferred Units representing  limited partner interests,25.71,,3,Uncategorized
+NLY^F,Annaly Capital Management Inc 6.95% Series F,25.2,,766,Uncategorized
+NLY^G,Annaly Capital Management Inc 6.50% Series G Fixed-to-Floating Rate Cumulative Redeemable Preferred Stock,25.17,,7065,Uncategorized
+NLY^I,Annaly Capital Management Inc 6.750% Series I Fixed-to-Floating Rate Cumulative Redeemable Preferred Stock,24.94,,36137,Uncategorized
+NLY^J,Annaly Capital Management Inc. 8.875% Series J Fixed-Rate Cumulative Redeemable Preferred Stock,25.83,,3671,Uncategorized
+NREF^A,NexPoint Real Estate Finance Inc. 8.50% Series A Cumulative Redeemable Preferred Stock,24.941,,561,Uncategorized
+NXDT^A,NexPoint Diversified Real Estate Trust 5.50% Series A Cumulative Preferred Shares ($25.00 liquidation preference per share),13.0,,3773,Uncategorized
+OAK^A,Brookfield Oaktree Holdings LLC 6.625% Series A Preferred Units,20.51,,2135,Uncategorized
+OAK^B,Brookfield Oaktree Holdings LLC 6.550% Series B Preferred Units,20.4,,1607,Uncategorized
+OPP^A,RiverNorth/DoubleLine Strategic Opportunity Fund Inc. 4.375% Series A Cumulative Preferred Stock,15.14,,505,Uncategorized
+OPP^B,RiverNorth/DoubleLine Strategic Opportunity Fund Inc. 4.75% Series B Cumulative Preferred Stock,16.37,,304,Uncategorized
+OPP^C,RiverNorth/DoubleLine Strategic Opportunity Fund Inc. 6.00% Series C Term Preferred Stock (Liquidation Preference $10.00 per share),10.18,,454,Uncategorized
+ORCL^D,Oracle Corporation Depositary Shares each representing a 1/2000th interest in a sh of 6.50% Series D Mandatory Convertible Preferred Stock,45.2001,,858048,Uncategorized
+PBI^B,Pitney Bowes Inc 6.70% Notes Due 2043,21.65,,1102,Uncategorized
+PCG^A,Pacific Gas & Electric Co. 6% Preferred Stock,20.6,,2412,Uncategorized
+PCG^B,Pacific Gas & Electric Co. 5 1/2% Preferred Stock,18.81,,403,Uncategorized
+PCG^C,Pacific Gas & Electric Co. 5% 1st Preferred Stock,17.7565,,47,Uncategorized
+PCG^D,Pacific Gas & Electric Co. 5% 1st  Red. Preferred Stock,17.18,,24,Uncategorized
+PCG^E,Pacific Gas & Electric Co. 5% 1st A Preferred Stock,17.25,,3,Uncategorized
+PCG^G,Pacific Gas & Electric Co. 4.80% 1st Preferred Stock,16.5724,,10,Uncategorized
 PCG^H,Pacific Gas & Electric Co. 4.50% 1st Preferred Stock,16.01,,3,Uncategorized
-PCG^I,Pacific Gas & Electric Co. 4.36% 1st Preferred Stock,15.23,,7666,Uncategorized
-PCG^X,PG&E Corp 6.000% Series A Mandatory Convertible Preferred Stock,34.63,,17441,Uncategorized
-PEB^E,Pebblebrook Hotel Trust 6.375% Series E Cumulative Redeemable Preferred Shares of Beneficial Interest,19.915,,178,Uncategorized
-PEB^F,Pebblebrook Hotel Trust 6.3% Series F Cumulative Redeemable Preferred Shares of Beneficial Interest,19.879,,3,Uncategorized
-PEB^G,Pebblebrook Hotel Trust 6.375% Series G Cumulative Redeemable Preferred Shares of Beneficial Interest,19.85,,468,Uncategorized
-PEB^H,Pebblebrook Hotel Trust 5.700% Series H Cumulative Redeemable Preferred Shares of Beneficial Interest,18.485,,356,Uncategorized
-PINE^A,Alpine Income Property Trust Inc. 8.00% Series A Cumulative Redeemable Preferred Stock,24.8233,,5049,Uncategorized
-PMT^A,PennyMac Mortgage Investment Trust 8.125% Series A Fixed-to-Floating Rate Cumulative Redeemable Preferred Shares of Beneficial Interest,22.23,,356,Uncategorized
-PMT^B,PennyMac Mortgage Investment Trust 8.00% Series B Fixed-to-Floating Rate Cumulative Redeemable Preferred Shares of Beneficial Interest,21.935,,3079,Uncategorized
-PMT^C,PennyMac Mortgage Investment Trust 6.75% Series C Cumulative Redeemable Preferred Shares of Beneficial Interest,17.35,,6721,Uncategorized
-PNFP^A,Pinnacle Financial Partners Inc. Fixed-to-Floating Rate Non-Cumulative Perpetual Preferred Stock Series A,25.33,,4760,Uncategorized
-PNFP^B,Pinnacle Financial Partners Inc. Fixed-to-Floating Rate Non-Cumulative Perpetual Preferred Stock Series B,26.09,,12305,Uncategorized
-PNFP^C,Pinnacle Financial Partners Inc. Fixed-to-Floating Rate Non-Cumulative Perpetual Preferred Stock Series C,23.87,,743,Uncategorized
-PSA^F,Public Storage Depositary Shares Each Representing 1/1000 of a 5.15% Cumulative Preferred Share of Beneficial Interest Series F par value $0.01 per share,18.78,,6447,Uncategorized
-PSA^G,Public Storage Depositary Shares Each Representing 1/1000 of a 5.05% Cumulative Preferred Share of Beneficial Interest Series G,18.57,,6405,Uncategorized
-PSA^H,Public Storage Depositary Shares Each Representing 1/1000 of a  5.60% Cumulative Preferred  Share of Beneficial Interest Series H,20.5,,8083,Uncategorized
-PSA^I,Public Storage Depositary Shares Each Representing 1/1000 of a 4.875% Cumulative Preferred Share of Beneficial Interest Series I par value $0.01 per share,17.885,,16226,Uncategorized
-PSA^J,Public Storage Depositary Shares Each Representing 1/1000 of a 4.700% Cumulative Preferred Share of Beneficial Interest Series J par value $0.01 per share,17.3268,,10966,Uncategorized
-PSA^K,Public Storage Depositary Shares Each Representing 1/1000 of a 4.75% Cumulative Preferred Share of Beneficial Interest Series K,17.28,,7827,Uncategorized
-PSA^L,Public Storage Depositary Shares Each Representing 1/1000 of a 4.625% Cumulative Preferred Share of Beneficial Interest Series L par value $0.01 per share,16.88,,18959,Uncategorized
-PSA^M,Public Storage Depositary Shares Each Representing 1/1000 of a 4.125% Cumulative Preferred Share of Beneficial Interest Series M,15.02,,9706,Uncategorized
-PSA^N,Public Storage Depositary Shares Each Representing 1/1000 of a 3.875% Cumulative Preferred Share of Beneficial Interest Series N,14.2425,,14383,Uncategorized
-PSA^O,Public Storage Depositary Shares Each Representing 1/1000 of a 3.900% Cumulative Preferred Share of Beneficial Interest Series O,14.25,,5703,Uncategorized
-PSA^P,Public Storage Depositary Shares Each Representing 1/1000 of a 4.000% Cumulative Preferred Share of Bene cial Interest Series P,14.5637,,22700,Uncategorized
-PSA^Q,Public Storage Depositary Shares Each Representing 1/1000 of a 3.950% Cumulative Preferred Share of Beneficial Interest Series Q par value $0.01 per share,14.405,,10889,Uncategorized
-PSA^R,Public Storage Depositary Shares Each Representing 1/1000 of a 4.00% Cumulative Preferred Share of Bene cial Interest Series R,14.5819,,29255,Uncategorized
-PSA^S,Public Storage Depositary Shares Each Representing 1/1000 of a 4.100% Cumulative Preferred Share of Beneficial Interest Series S,14.95,,11672,Uncategorized
-PSA^T,Public Storage 6.000% Cumulative Preferred Shares of beneficial interest Series T,22.0428,,9059,Uncategorized
-PSA^U,Public Storage 6.000% Cumulative Preferred Shares of Beneficial Interest Series U,23.04,,302,Uncategorized
-PSEC^A,Prospect Capital Corporation 5.35% Series A Fixed Rate Cumulative Perpetual Preferred Stock,15.5,,1878,Uncategorized
+PCG^I,Pacific Gas & Electric Co. 4.36% 1st Preferred Stock,15.23,,3,Uncategorized
+PCG^X,PG&E Corp 6.000% Series A Mandatory Convertible Preferred Stock,33.8,,2300,Uncategorized
+PEB^E,Pebblebrook Hotel Trust 6.375% Series E Cumulative Redeemable Preferred Shares of Beneficial Interest,20.13,,76,Uncategorized
+PEB^F,Pebblebrook Hotel Trust 6.3% Series F Cumulative Redeemable Preferred Shares of Beneficial Interest,19.85,,35,Uncategorized
+PEB^G,Pebblebrook Hotel Trust 6.375% Series G Cumulative Redeemable Preferred Shares of Beneficial Interest,19.83,,22,Uncategorized
+PEB^H,Pebblebrook Hotel Trust 5.700% Series H Cumulative Redeemable Preferred Shares of Beneficial Interest,18.43,,125,Uncategorized
+PINE^A,Alpine Income Property Trust Inc. 8.00% Series A Cumulative Redeemable Preferred Stock,24.86,,273,Uncategorized
+PMT^A,PennyMac Mortgage Investment Trust 8.125% Series A Fixed-to-Floating Rate Cumulative Redeemable Preferred Shares of Beneficial Interest,22.27,,4715,Uncategorized
+PMT^B,PennyMac Mortgage Investment Trust 8.00% Series B Fixed-to-Floating Rate Cumulative Redeemable Preferred Shares of Beneficial Interest,22.1487,,3077,Uncategorized
+PMT^C,PennyMac Mortgage Investment Trust 6.75% Series C Cumulative Redeemable Preferred Shares of Beneficial Interest,17.55,,3172,Uncategorized
+PNFP^A,Pinnacle Financial Partners Inc. Fixed-to-Floating Rate Non-Cumulative Perpetual Preferred Stock Series A,25.15,,3149,Uncategorized
+PNFP^B,Pinnacle Financial Partners Inc. Fixed-to-Floating Rate Non-Cumulative Perpetual Preferred Stock Series B,25.24,,7232,Uncategorized
+PNFP^C,Pinnacle Financial Partners Inc. Fixed-to-Floating Rate Non-Cumulative Perpetual Preferred Stock Series C,23.9,,629,Uncategorized
+PSA^F,Public Storage Depositary Shares Each Representing 1/1000 of a 5.15% Cumulative Preferred Share of Beneficial Interest Series F par value $0.01 per share,18.59,,5710,Uncategorized
+PSA^G,Public Storage Depositary Shares Each Representing 1/1000 of a 5.05% Cumulative Preferred Share of Beneficial Interest Series G,18.19,,11443,Uncategorized
+PSA^H,Public Storage Depositary Shares Each Representing 1/1000 of a  5.60% Cumulative Preferred  Share of Beneficial Interest Series H,20.02,,29113,Uncategorized
+PSA^I,Public Storage Depositary Shares Each Representing 1/1000 of a 4.875% Cumulative Preferred Share of Beneficial Interest Series I par value $0.01 per share,17.55,,4075,Uncategorized
+PSA^J,Public Storage Depositary Shares Each Representing 1/1000 of a 4.700% Cumulative Preferred Share of Beneficial Interest Series J par value $0.01 per share,17.01,,1474,Uncategorized
+PSA^K,Public Storage Depositary Shares Each Representing 1/1000 of a 4.75% Cumulative Preferred Share of Beneficial Interest Series K,16.82,,15026,Uncategorized
+PSA^L,Public Storage Depositary Shares Each Representing 1/1000 of a 4.625% Cumulative Preferred Share of Beneficial Interest Series L par value $0.01 per share,16.46,,35069,Uncategorized
+PSA^M,Public Storage Depositary Shares Each Representing 1/1000 of a 4.125% Cumulative Preferred Share of Beneficial Interest Series M,14.75,,4594,Uncategorized
+PSA^N,Public Storage Depositary Shares Each Representing 1/1000 of a 3.875% Cumulative Preferred Share of Beneficial Interest Series N,13.94,,5608,Uncategorized
+PSA^O,Public Storage Depositary Shares Each Representing 1/1000 of a 3.900% Cumulative Preferred Share of Beneficial Interest Series O,13.965,,7381,Uncategorized
+PSA^P,Public Storage Depositary Shares Each Representing 1/1000 of a 4.000% Cumulative Preferred Share of Bene cial Interest Series P,14.31,,42897,Uncategorized
+PSA^Q,Public Storage Depositary Shares Each Representing 1/1000 of a 3.950% Cumulative Preferred Share of Beneficial Interest Series Q par value $0.01 per share,14.17,,12293,Uncategorized
+PSA^R,Public Storage Depositary Shares Each Representing 1/1000 of a 4.00% Cumulative Preferred Share of Bene cial Interest Series R,14.34,,15278,Uncategorized
+PSA^S,Public Storage Depositary Shares Each Representing 1/1000 of a 4.100% Cumulative Preferred Share of Beneficial Interest Series S,14.75,,4612,Uncategorized
+PSA^T,Public Storage 6.000% Cumulative Preferred Shares of beneficial interest Series T,21.621,,280,Uncategorized
+PSA^U,Public Storage 6.000% Cumulative Preferred Shares of Beneficial Interest Series U,23.06,,23,Uncategorized
+PSEC^A,Prospect Capital Corporation 5.35% Series A Fixed Rate Cumulative Perpetual Preferred Stock,15.3501,,928,Uncategorized
 PW^A,Power REIT 7.75% Series A Cumulative Perpetual Preferred Stock,9.34,,29,Uncategorized
-QXO^B,QXO Inc.  Depositary Shares each representing a 1/20th interest in a share of 5.50% Series B Mandatory Convertible Preferred Stock,38.23,,4362,Uncategorized
-RC^C,Ready Capital Corporation 6.25% Series C Cumulative Convertible Preferred Stock,12.26,,4,Uncategorized
-RC^E,Ready Capital Corporation 6.50% Series E Cumulative Redeemable Preferred Stock,12.7,,1716,Uncategorized
-REXR^B,Rexford Industrial Realty Inc. 5.875% Series B Cumulative Redeemable Preferred Stock,21.65,,841,Uncategorized
-REXR^C,Rexford Industrial Realty Inc. 5.625% Series C Cumulative Redeemable Preferred Stock par value $0.01 per share,20.315,,6664,Uncategorized
-RF^C,Regions Financial Corporation Depositary Shares each Representing a 1/40th Interest in a  Share of 5.700% Fixed-to-Floating Rate Non-Cumulative  Perpetual Preferred Stock Series C,24.5743,,13062,Uncategorized
-RF^E,Regions Financial Corporation Depositary Shares Each Representing a 1/40th Interest in a Share of 4.45% Non-Cumulative Perpetual Preferred Stock Series E,15.595,,25417,Uncategorized
-RF^F,Regions Financial Corporation Depositary Shares Each Representing a 1/40th Interest in a Share of Non-Cumulative Perpetual Preferred Stock Series F,25.21,,14180,Uncategorized
-RITM^A,Rithm Capital Corp. 7.50% Series A Fixed-to-Floating Rate Cumulative Redeemable Preferred Stock,25.31,,2683,Uncategorized
-RITM^B,Rithm Capital Corp. 7.125% Series B Fixed-to-Floating Rate Cumulative Redeemable Preferred Stock,25.26,,5038,Uncategorized
-RITM^C,Rithm Capital Corp. 6.375% Series C Fixed-to-Floating Rate Cumulative Redeemable Preferred Stock,24.75,,11723,Uncategorized
-RITM^D,Rithm Capital Corp. 7.00% Fixed-Rate Reset Series D Cumulative Redeemable Preferred Stock,25.1199,,27878,Uncategorized
-RITM^E,Rithm Capital Corp. 8.75% Series E Fixed-Rate Cumulative Redeemable Preferred Stock,24.31,,35188,Uncategorized
-RITM^F,Rithm Capital Corp. 8.750% Series F Fixed-Rate Reset Cumulative Redeemable Preferred Stock,24.7201,,19964,Uncategorized
-RIV^A,RiverNorth Opportunities Fund Inc. 6.00% Series A Perpetual Preferred Stock,21.1,,2320,Uncategorized
-RLJ^A,RLJ Lodging Trust $1.95 Series A Cumulative Convertible  Preferred Shares,25.01,,17455,Uncategorized
-RPT^C,Rithm Property Trust Inc. 9.875% Series C Fixed-to-Floating Rate Cumulative Redeemable Preferred Stock,25.15,,2,Uncategorized
-RWT^A,Redwood Trust Inc. 10.00% Series A Fixed-Rate Reset Cumulative Redeemable Preferred Stock,23.61,,5151,Uncategorized
-SACH^A,Sachem Capital Corp. 7.75% Series A Cumulative Redeemable Preferred Stock,21.75,,557,Uncategorized
-SCE^G,SCE Trust II Trust Preferred Securities,16.78,,1383,Uncategorized
-SCE^L,SCE TRUST VI,16.3752,,5702,Uncategorized
-SCE^M,SCE Trust VII 7.50% Trust Preference Securities,23.35,,39507,Uncategorized
-SCE^N,SCE Trust VIII 6.95% Trust Preference Securities,22.03,,10813,Uncategorized
-SCHW^D,The Charles Schwab Corporation Depositary Shares each representing 1/40th interest in a share of 5.95% Non-Cumulative Perpetual Preferred Stock Series D,22.06,,52259,Uncategorized
-SCHW^J,The Charles Schwab Corporation Depositary Shares Each Representing a 1/40th Interest in a Share of 4.450% Non-Cumulative Perpetual Preferred Stock Series J,16.31,,32928,Uncategorized
-SF^B,Stifel Financial Corporation Depositary Shares Each Representing 1/1000th  Interest in a Share of 6.25% Non-Cumulative  Preferred Stock Series B,22.0127,,10855,Uncategorized
-SF^C,Stifel Financial Corporation Depositary Shares Each Representing 1/1000th Interest in a Share of 6.125% Non Cumulative Preferred Stock Series C,21.1399,,6541,Uncategorized
-SF^D,Stifel Financial Corporation Depositary Shares Each Representing 1/1000th Interest in a Share of 4.50% Non-Cumulative Preferred Stock Series D,15.3681,,5632,Uncategorized
-SHO^H,Sunstone Hotel Investors Inc. 6.125% Series H Cumulative Redeemable Preferred Stock,22.36,,1123,Uncategorized
-SHO^I,Sunstone Hotel Investors Inc. 5.70% Series I Cumulative Redeemable Preferred Stock,21.7,,9171,Uncategorized
-SLG^I,SL Green Realty Corporation Preferred Series I,21.3329,,3633,Uncategorized
-SPE^C,Special Opportunities Fund Inc. 2.75% Convertible Preferred Stock Series C,24.73,,260,Uncategorized
-SPG^J,Simon Property Group Inc. Simon Property Group 8 3/8% Series J Cumulative Redeemable Preferred Stock,55.78,,104,Uncategorized
-SRG^A,Seritage Growth Properties 7.00% Series A Cumulative Redeemable Preferred Shares of Beneficial Interest,20.71,,138,Uncategorized
-STT^G,State Street Corporation Depositary shares each representing a 1/4000th ownership interest in a share of Fixed-to-Floating Rate Non-Cumulative,19.8914,,38469,Uncategorized
-SYF^A,Synchrony Financial Depositary Shares each Representing a 1/40th Interest in a Share of 5.625% Fixed Rate Non-Cumulative Perpetual Preferred Stock Series A,18.4,,10216,Uncategorized
-SYF^B,Synchrony Financial Depositary Shares Each Representing a 1/40th Interest in a Share of 8.250% Fixed Rate Reset Non-Cumulative Perpetual Preferred Stock Series B,26.25,,11422,Uncategorized
-T^A,AT&T Inc. Depositary Shares each representing a 1/1000th interest in a share of 5.000% Perpetual Preferred Stock Series A,17.629,,56166,Uncategorized
-T^C,AT&T Inc. Depositary Shares each representing a 1/1000th interest in a share of 4.750% Perpetual Preferred Stock Series C,16.6943,,78312,Uncategorized
-TDS^U,Telephone and Data Systems Inc. Depositary Shares Each Representing a 1/1000th Interest in a 6.625% Series UU Cumulative Redeemable Perpetual Preferred Stock,20.72,,13868,Uncategorized
-TDS^V,Telephone and Data Systems Inc. Depositary Shares Each Representing a 1/1000th Interest in a 6.000% Series VV Cumulative Redeemable Perpetual Preferred Stock,18.86,,20832,Uncategorized
-TFC^I,Truist Financial Corporation Depositary Shares,17.7118,,9168,Uncategorized
-TFC^O,Truist Financial Corporation Depositary Shares Each Representing a 1/1000th Interest in a Share of Series O Non-Cumulative Perpetual Preferred Stock,19.1477,,30930,Uncategorized
-TFC^R,Truist Financial Corporation Depositary Shares each representing 1/1000th interest in a share of Series R Non-Cumulative Perpetual Preferred Stock,17.28,,42121,Uncategorized
-TFIN^,Triumph Financial Inc. Depositary Shares Each Representing a 1/40th Interest in a Share of 7.125% Series C Fixed-Rate Non-Cumulative Perpetual Preferred Stock,22.31,,102,Uncategorized
-TRTN^A,Triton International Limited 8.50% Series A Cumulative Redeemable Perpetual  Preference Shares,25.77,,448,Uncategorized
-TRTN^B,Triton International Limited 8.00% Series B Cumulative Redeemable Perpetual Preference Shares,25.1401,,3455,Uncategorized
-TRTN^C,Triton International Limited 7.375% Series C Cumulative Redeemable Perpetual Preference Shares,24.08,,6191,Uncategorized
-TRTN^D,Triton International Limited 6.875% Series D Cumulative Redeemable Perpetual Preference Shares,21.99,,2390,Uncategorized
-TRTN^E,Triton International Limited 5.75% Series E Cumulative Redeemable Perpetual Preference Shares,18.2401,,1307,Uncategorized
-TRTN^F,Triton International Limited 7.625% Series F Cumulative Redeemable Perpetual Preference Shares,23.855,,822,Uncategorized
-TRTN^G,Triton International Limited 7.500% Series G Cumulative Redeemable Perpetual Preference Shares,23.17,,11242,Uncategorized
-TRTX^C,TPG RE Finance Trust Inc. 6.25% Series C Cumulative Redeemable Preferred Stock $0.001 par value per share,18.145,,9256,Uncategorized
-TWO^A,Two Harbors Investments Corp 8.125% Series A Fixed-to-Floating Rate Cumulative Redeemable Preferred Stock ($25.00 liquidation preference per share),25.28,,5315,Uncategorized
-TWO^B,Two Harbors Investments Corp 7.625% Series B Fixed-to-Floating Rate Cumulative Redeemable Preferred Stock,25.2686,,6939,Uncategorized
-TWO^C,Two Harbors Investments Corp 7.25% Series C Fixed-to-Floating Rate Cumulative Redeemable Preferred Stock,25.33,,18570,Uncategorized
-TY^,Tri Continental Corporation Preferred Stock,41.47,,450,Uncategorized
-UMH^D,UMH Properties Inc. 6.375% Series D Cumulative Redeemable Preferred Stock Liquidation Preference $25 per share,21.3,,6299,Uncategorized
-USB^A,U.S. Bancorp Depositary Shares Each representing a 1/100th interest in a share of Series A Non-CumulativePerpetual Pfd Stock,760.04,,564,Uncategorized
-USB^H,U.S. Bancorp Depositary Shares repstg 1/1000th Pfd Ser B,18.3,,42678,Uncategorized
-USB^P,U.S. Bancorp Depositary Shares each representing a 1/1000th interest in a share of Series K Non-Cumulative Perpetual Preferred Stock,20.255,,25062,Uncategorized
-USB^Q,U.S. Bancorp Depositary Shares Each Representing a 1/1000th Interest in a Share of Series L Non-Cumulative Perpetual Preferred Stock,14.05,,19872,Uncategorized
-USB^R,U.S. Bancorp Depositary Shares Each Representing a 1/1000th Interest in a Share of Series M Non-Cumulative Perpetual Preferred Stock,14.8949,,23179,Uncategorized
-USB^S,U.S. Bancorp Depositary Shares each representing a 1/1000th interest in a share of Series O Non-Cumulative Perpetual Preferred Stock,16.63,,19514,Uncategorized
-VNO^L,Vornado Realty Trust Pfd Ser L %,17.0,,6213,Uncategorized
-VNO^M,Vornado Realty Trust 5.25% Series M Cumulative Redeemable Preferred Shares of Beneficial Interest liquidation preference $25.00 per share no par value per share,17.04,,589,Uncategorized
-VNO^N,Vornado Realty Trust 5.25% Series N Cumulative Redeemable Preferred Shares of Beneficial Interest liquidation preference $25.00 per share,16.8,,456,Uncategorized
-VNO^O,Vornado Realty Trust 4.45% Series O Cumulative Redeemable Preferred Shares Liquidation Preference $25.00 Per Share,14.131,,3823,Uncategorized
-VOYA^B,Voya Financial Inc. Depositary Shares each representing a 1/40th interest in a share of 5.35% Fixed-Rate Reset Non-Cumulative Preferred Stock Series B,23.5051,,6340,Uncategorized
-WAL^A,Western Alliance Bancorporation Depositary Shares Each Representing a 1/400th Interest in a Share of 4.250% Fixed-Rate Non-Cumulative Perpetual Preferred Stock Series A,25.03,,7202,Uncategorized
-WFC^A,Wells Fargo & Company Depositary Shares each representing a 1/1000th interest in a share of Non-Cumulative Perpetual Class A Preferred Stock Series AA,17.0082,,105732,Uncategorized
-WFC^C,Wells Fargo & Company Depositary Shares each representing a 1/1000th interest in a share of Non-Cumulative Perpetual Class A Preferred Stock Series CC,15.879,,54969,Uncategorized
-WFC^D,Wells Fargo & Company Depositary Shares each representing a 1/1000th interest in  a share of Non-Cumulative Perpetual Class A Preferred Stock Series DD,15.4701,,132887,Uncategorized
-WFC^L,Wells Fargo & Company 7.50% Non-Cumulative Perpetual Convertible Class A Preferred Stock Series L,1116.07,,3508,Uncategorized
-WFC^Y,Wells Fargo & Company Depositary Shares each representing a 1/1000th interest in a share of Non-Cumulative Perpetual Class A Preferred Stock Series Y,20.735,,28701,Uncategorized
-WFC^Z,Wells Fargo & Company Depositary Shares each representing a 1/1000th interest in a share of Non-Cumulative Perpetual Class A Preferred Stock Series Z,17.23,,165142,Uncategorized
-WHR^A,Whirlpool Corporation Depositary Shares each representing a 1/20th interest in a share of 8.50% Series A Mandatory Convertible Preferred Stock,30.97,,22013,Uncategorized
-WRB^E,W.R. Berkley Corporation 5.70% Subordinated Debentures due 2058,20.35,,6305,Uncategorized
-WRB^F,W.R. Berkley Corporation 5.10% Subordinated Debentures due 2059,17.87,,8713,Uncategorized
-WRB^G,W.R. Berkley Corporation 4.25% Subordinated Debentures due 2060,15.945,,4180,Uncategorized
-WRB^H,W.R. Berkley Corporation 4.125% Subordinated Debentures due 2061,15.285,,6388,Uncategorized
+QXO^B,QXO Inc.  Depositary Shares each representing a 1/20th interest in a share of 5.50% Series B Mandatory Convertible Preferred Stock,36.8,,8949,Uncategorized
+RC^C,Ready Capital Corporation 6.25% Series C Cumulative Convertible Preferred Stock,12.18,,102,Uncategorized
+RC^E,Ready Capital Corporation 6.50% Series E Cumulative Redeemable Preferred Stock,12.35,,611,Uncategorized
+REXR^B,Rexford Industrial Realty Inc. 5.875% Series B Cumulative Redeemable Preferred Stock,21.175,,3540,Uncategorized
+REXR^C,Rexford Industrial Realty Inc. 5.625% Series C Cumulative Redeemable Preferred Stock par value $0.01 per share,20.095,,1424,Uncategorized
+RF^C,Regions Financial Corporation Depositary Shares each Representing a 1/40th Interest in a  Share of 5.700% Fixed-to-Floating Rate Non-Cumulative  Perpetual Preferred Stock Series C,24.4101,,649,Uncategorized
+RF^E,Regions Financial Corporation Depositary Shares Each Representing a 1/40th Interest in a Share of 4.45% Non-Cumulative Perpetual Preferred Stock Series E,15.67,,7335,Uncategorized
+RF^F,Regions Financial Corporation Depositary Shares Each Representing a 1/40th Interest in a Share of Non-Cumulative Perpetual Preferred Stock Series F,25.1095,,4364,Uncategorized
+RITM^A,Rithm Capital Corp. 7.50% Series A Fixed-to-Floating Rate Cumulative Redeemable Preferred Stock,25.3351,,39,Uncategorized
+RITM^B,Rithm Capital Corp. 7.125% Series B Fixed-to-Floating Rate Cumulative Redeemable Preferred Stock,25.25,,1051,Uncategorized
+RITM^C,Rithm Capital Corp. 6.375% Series C Fixed-to-Floating Rate Cumulative Redeemable Preferred Stock,24.81,,2083,Uncategorized
+RITM^D,Rithm Capital Corp. 7.00% Fixed-Rate Reset Series D Cumulative Redeemable Preferred Stock,25.1301,,7408,Uncategorized
+RITM^E,Rithm Capital Corp. 8.75% Series E Fixed-Rate Cumulative Redeemable Preferred Stock,24.2878,,5757,Uncategorized
+RITM^F,Rithm Capital Corp. 8.750% Series F Fixed-Rate Reset Cumulative Redeemable Preferred Stock,24.7,,26364,Uncategorized
+RIV^A,RiverNorth Opportunities Fund Inc. 6.00% Series A Perpetual Preferred Stock,20.805,,2018,Uncategorized
+RLJ^A,RLJ Lodging Trust $1.95 Series A Cumulative Convertible  Preferred Shares,25.01,,700,Uncategorized
+RPT^C,Rithm Property Trust Inc. 9.875% Series C Fixed-to-Floating Rate Cumulative Redeemable Preferred Stock,25.15,,3,Uncategorized
+RWT^A,Redwood Trust Inc. 10.00% Series A Fixed-Rate Reset Cumulative Redeemable Preferred Stock,23.79,,427,Uncategorized
+SACH^A,Sachem Capital Corp. 7.75% Series A Cumulative Redeemable Preferred Stock,21.59,,1928,Uncategorized
+SCE^G,SCE Trust II Trust Preferred Securities,16.75,,3921,Uncategorized
+SCE^L,SCE TRUST VI,16.4499,,9870,Uncategorized
+SCE^M,SCE Trust VII 7.50% Trust Preference Securities,23.4223,,9816,Uncategorized
+SCE^N,SCE Trust VIII 6.95% Trust Preference Securities,22.01,,2741,Uncategorized
+SCHW^D,The Charles Schwab Corporation Depositary Shares each representing 1/40th interest in a share of 5.95% Non-Cumulative Perpetual Preferred Stock Series D,21.9564,,9973,Uncategorized
+SCHW^J,The Charles Schwab Corporation Depositary Shares Each Representing a 1/40th Interest in a Share of 4.450% Non-Cumulative Perpetual Preferred Stock Series J,16.21,,24457,Uncategorized
+SF^B,Stifel Financial Corporation Depositary Shares Each Representing 1/1000th  Interest in a Share of 6.25% Non-Cumulative  Preferred Stock Series B,22.3999,,18856,Uncategorized
+SF^C,Stifel Financial Corporation Depositary Shares Each Representing 1/1000th Interest in a Share of 6.125% Non Cumulative Preferred Stock Series C,21.27,,7333,Uncategorized
+SF^D,Stifel Financial Corporation Depositary Shares Each Representing 1/1000th Interest in a Share of 4.50% Non-Cumulative Preferred Stock Series D,15.7,,17712,Uncategorized
+SHO^H,Sunstone Hotel Investors Inc. 6.125% Series H Cumulative Redeemable Preferred Stock,22.35,,864,Uncategorized
+SHO^I,Sunstone Hotel Investors Inc. 5.70% Series I Cumulative Redeemable Preferred Stock,21.7,,3,Uncategorized
+SLG^I,SL Green Realty Corporation Preferred Series I,21.2146,,216,Uncategorized
+SPE^C,Special Opportunities Fund Inc. 2.75% Convertible Preferred Stock Series C,24.78,,2,Uncategorized
+SPG^J,Simon Property Group Inc. Simon Property Group 8 3/8% Series J Cumulative Redeemable Preferred Stock,55.75,,102,Uncategorized
+SRG^A,Seritage Growth Properties 7.00% Series A Cumulative Redeemable Preferred Shares of Beneficial Interest,20.35,,2331,Uncategorized
+STT^G,State Street Corporation Depositary shares each representing a 1/4000th ownership interest in a share of Fixed-to-Floating Rate Non-Cumulative,19.85,,20396,Uncategorized
+SYF^A,Synchrony Financial Depositary Shares each Representing a 1/40th Interest in a Share of 5.625% Fixed Rate Non-Cumulative Perpetual Preferred Stock Series A,18.345,,17993,Uncategorized
+SYF^B,Synchrony Financial Depositary Shares Each Representing a 1/40th Interest in a Share of 8.250% Fixed Rate Reset Non-Cumulative Perpetual Preferred Stock Series B,26.14,,426,Uncategorized
+T^A,AT&T Inc. Depositary Shares each representing a 1/1000th interest in a share of 5.000% Perpetual Preferred Stock Series A,17.53,,35569,Uncategorized
+T^C,AT&T Inc. Depositary Shares each representing a 1/1000th interest in a share of 4.750% Perpetual Preferred Stock Series C,16.62,,29694,Uncategorized
+TDS^U,Telephone and Data Systems Inc. Depositary Shares Each Representing a 1/1000th Interest in a 6.625% Series UU Cumulative Redeemable Perpetual Preferred Stock,20.301,,4294,Uncategorized
+TDS^V,Telephone and Data Systems Inc. Depositary Shares Each Representing a 1/1000th Interest in a 6.000% Series VV Cumulative Redeemable Perpetual Preferred Stock,18.5999,,10754,Uncategorized
+TFC^I,Truist Financial Corporation Depositary Shares,17.7372,,5470,Uncategorized
+TFC^O,Truist Financial Corporation Depositary Shares Each Representing a 1/1000th Interest in a Share of Series O Non-Cumulative Perpetual Preferred Stock,19.0,,9607,Uncategorized
+TFC^R,Truist Financial Corporation Depositary Shares each representing 1/1000th interest in a share of Series R Non-Cumulative Perpetual Preferred Stock,17.08,,12196,Uncategorized
+TFIN^,Triumph Financial Inc. Depositary Shares Each Representing a 1/40th Interest in a Share of 7.125% Series C Fixed-Rate Non-Cumulative Perpetual Preferred Stock,22.29,,551,Uncategorized
+TRTN^A,Triton International Limited 8.50% Series A Cumulative Redeemable Perpetual  Preference Shares,25.635,,486,Uncategorized
+TRTN^B,Triton International Limited 8.00% Series B Cumulative Redeemable Perpetual Preference Shares,25.0801,,1181,Uncategorized
+TRTN^C,Triton International Limited 7.375% Series C Cumulative Redeemable Perpetual Preference Shares,24.0766,,903,Uncategorized
+TRTN^D,Triton International Limited 6.875% Series D Cumulative Redeemable Perpetual Preference Shares,21.98,,1067,Uncategorized
+TRTN^E,Triton International Limited 5.75% Series E Cumulative Redeemable Perpetual Preference Shares,18.3,,45,Uncategorized
+TRTN^F,Triton International Limited 7.625% Series F Cumulative Redeemable Perpetual Preference Shares,23.855,,45,Uncategorized
+TRTN^G,Triton International Limited 7.500% Series G Cumulative Redeemable Perpetual Preference Shares,23.05,,16051,Uncategorized
+TRTX^C,TPG RE Finance Trust Inc. 6.25% Series C Cumulative Redeemable Preferred Stock $0.001 par value per share,18.11,,7382,Uncategorized
+TWO^A,Two Harbors Investments Corp 8.125% Series A Fixed-to-Floating Rate Cumulative Redeemable Preferred Stock ($25.00 liquidation preference per share),25.3,,474,Uncategorized
+TWO^B,Two Harbors Investments Corp 7.625% Series B Fixed-to-Floating Rate Cumulative Redeemable Preferred Stock,25.2639,,4867,Uncategorized
+TWO^C,Two Harbors Investments Corp 7.25% Series C Fixed-to-Floating Rate Cumulative Redeemable Preferred Stock,25.3342,,3618,Uncategorized
+TY^,Tri Continental Corporation Preferred Stock,41.55,,853,Uncategorized
+UMH^D,UMH Properties Inc. 6.375% Series D Cumulative Redeemable Preferred Stock Liquidation Preference $25 per share,21.1,,4600,Uncategorized
+USB^A,U.S. Bancorp Depositary Shares Each representing a 1/100th interest in a share of Series A Non-CumulativePerpetual Pfd Stock,767.0,,410,Uncategorized
+USB^H,U.S. Bancorp Depositary Shares repstg 1/1000th Pfd Ser B,18.31,,8943,Uncategorized
+USB^P,U.S. Bancorp Depositary Shares each representing a 1/1000th interest in a share of Series K Non-Cumulative Perpetual Preferred Stock,20.08,,5759,Uncategorized
+USB^Q,U.S. Bancorp Depositary Shares Each Representing a 1/1000th Interest in a Share of Series L Non-Cumulative Perpetual Preferred Stock,13.8401,,16235,Uncategorized
+USB^R,U.S. Bancorp Depositary Shares Each Representing a 1/1000th Interest in a Share of Series M Non-Cumulative Perpetual Preferred Stock,14.75,,15865,Uncategorized
+USB^S,U.S. Bancorp Depositary Shares each representing a 1/1000th interest in a share of Series O Non-Cumulative Perpetual Preferred Stock,16.4801,,4348,Uncategorized
+VNO^L,Vornado Realty Trust Pfd Ser L %,16.75,,4866,Uncategorized
+VNO^M,Vornado Realty Trust 5.25% Series M Cumulative Redeemable Preferred Shares of Beneficial Interest liquidation preference $25.00 per share no par value per share,16.77,,1017,Uncategorized
+VNO^N,Vornado Realty Trust 5.25% Series N Cumulative Redeemable Preferred Shares of Beneficial Interest liquidation preference $25.00 per share,16.6,,651,Uncategorized
+VNO^O,Vornado Realty Trust 4.45% Series O Cumulative Redeemable Preferred Shares Liquidation Preference $25.00 Per Share,13.8101,,4574,Uncategorized
+VOYA^B,Voya Financial Inc. Depositary Shares each representing a 1/40th interest in a share of 5.35% Fixed-Rate Reset Non-Cumulative Preferred Stock Series B,23.0,,3775,Uncategorized
+WAL^A,Western Alliance Bancorporation Depositary Shares Each Representing a 1/400th Interest in a Share of 4.250% Fixed-Rate Non-Cumulative Perpetual Preferred Stock Series A,24.9,,4732,Uncategorized
+WFC^A,Wells Fargo & Company Depositary Shares each representing a 1/1000th interest in a share of Non-Cumulative Perpetual Class A Preferred Stock Series AA,17.01,,44071,Uncategorized
+WFC^C,Wells Fargo & Company Depositary Shares each representing a 1/1000th interest in a share of Non-Cumulative Perpetual Class A Preferred Stock Series CC,15.85,,24946,Uncategorized
+WFC^D,Wells Fargo & Company Depositary Shares each representing a 1/1000th interest in  a share of Non-Cumulative Perpetual Class A Preferred Stock Series DD,15.44,,51455,Uncategorized
+WFC^L,Wells Fargo & Company 7.50% Non-Cumulative Perpetual Convertible Class A Preferred Stock Series L,1114.0,,2310,Uncategorized
+WFC^Y,Wells Fargo & Company Depositary Shares each representing a 1/1000th interest in a share of Non-Cumulative Perpetual Class A Preferred Stock Series Y,20.7977,,24696,Uncategorized
+WFC^Z,Wells Fargo & Company Depositary Shares each representing a 1/1000th interest in a share of Non-Cumulative Perpetual Class A Preferred Stock Series Z,17.205,,77125,Uncategorized
+WHR^A,Whirlpool Corporation Depositary Shares each representing a 1/20th interest in a share of 8.50% Series A Mandatory Convertible Preferred Stock,30.325,,10757,Uncategorized
+WRB^E,W.R. Berkley Corporation 5.70% Subordinated Debentures due 2058,20.02,,2060,Uncategorized
+WRB^F,W.R. Berkley Corporation 5.10% Subordinated Debentures due 2059,17.48,,3736,Uncategorized
+WRB^G,W.R. Berkley Corporation 4.25% Subordinated Debentures due 2060,15.61,,325,Uncategorized
+WRB^H,W.R. Berkley Corporation 4.125% Subordinated Debentures due 2061,15.14,,1793,Uncategorized
 WSO/B,Watsco Inc.,312.46,,9,Uncategorized
-XRN^A,Chiron Real Estate Inc. Series A Cumulative Redeemable Preferred Stock,25.37,,9358,Uncategorized
-XRN^B,Chiron Real Estate Inc. 8.00% Series B Cumulative Redeemable Preferred Stock $0.001 par value per share,25.5,,19248,Uncategorized
+XRN^A,Chiron Real Estate Inc. Series A Cumulative Redeemable Preferred Stock,25.0,,2898,Uncategorized
+XRN^B,Chiron Real Estate Inc. 8.00% Series B Cumulative Redeemable Preferred Stock $0.001 par value per share,25.4799,,55,Uncategorized
