@@ -74,7 +74,7 @@
       "sha256": "716135373834a42057f6f0fa96fb2bdc798becd05d0a45770f34afd5d4343faa"
     }
   },
-  "generatedAt": "2026-11-10T17:55:22Z",
+  "generatedAt": "2026-11-11T10:21:48Z",
   "provenance": {
     "note": null,
     "status": "generated-by-updater"
@@ -88,13 +88,13 @@
   "schemaVersion": 1,
   "sources": {
     "nasdaq": {
-      "fetchedAt": "2026-11-10T17:55:21Z",
+      "fetchedAt": "2026-11-11T10:21:47Z",
       "publishedUnitedStatesRows": 5395,
       "rowsFetched": 7179,
       "url": "https://api.nasdaq.com/api/screener/stocks"
     },
     "wikipediaSp500": {
-      "fetchedAt": "2026-11-10T17:55:22Z",
+      "fetchedAt": "2026-11-11T10:21:48Z",
       "symbolsFetched": 503,
       "symbolsMatched": 503,
       "url": "https://en.wikipedia.org/w/index.php?title=List_of_S%26P_500_companies&action=raw"
