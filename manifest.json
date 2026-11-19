@@ -3,98 +3,98 @@
   "files": {
     "by_industry/basic_materials.csv": {
       "rows": 48,
-      "sha256": "66653722fb483f0514665fc4d97685a40f45efc907c0634671cc282af48e5ebf"
+      "sha256": "c806dd26b60003724b747742a850cc88456ea8147350b2e6ced07dcfa89bdace"
     },
     "by_industry/consumer_discretionary.csv": {
       "rows": 731,
-      "sha256": "c9430e3739fce5f0e7c86433852efb1fa0f71f0ef2bdcaacff73463d63f97002"
+      "sha256": "3a53570c8e399c369d06f000dfbeaaf3fb7fb5660e276f5f05ad81ba97c882f8"
     },
     "by_industry/consumer_staples.csv": {
       "rows": 103,
-      "sha256": "13b5bfbccda7a85f888c64c8a6f5f821e60e6c66cc1340cc7f16a508badec814"
+      "sha256": "467c24dad0c30d90a0b41d70ea0b5d2c23ef09b7a5cddbc42f90d3ced1918018"
     },
     "by_industry/energy.csv": {
       "rows": 144,
-      "sha256": "3417b272946f857c63411ea776a2e8e6da94732aa863d624f7fe61c4b862f4ad"
+      "sha256": "ec383e1ccf2baa326b8fbe01d1befea896150445fb9d9a512d10bbbc6352b7c5"
     },
     "by_industry/finance.csv": {
-      "rows": 1502,
-      "sha256": "13c7d627b366ff2126e4949e2f70724d6b0efb6de58e0d3619232b8a991e44fd"
+      "rows": 1504,
+      "sha256": "4511f35713e2e7c02db06eabebc18841e01f2df5f97afe97a367d57ed6019610"
     },
     "by_industry/health_care.csv": {
-      "rows": 830,
-      "sha256": "9432efb9c2abe8fbf1f236544bfd1c8f213b1adc68b058dc8d4d974f7259ba7e"
+      "rows": 829,
+      "sha256": "9db11e641d330c8b7a1cd3106a5d3a60f7d3e17ecbbd4ca764dfa69a9a4693df"
     },
     "by_industry/industrials.csv": {
       "rows": 466,
-      "sha256": "5777cf5f78368b0ed01b6bc8bfa0af80af6575a17c828136d45fc62f932ca209"
+      "sha256": "29067339be3b5fe4c1b007958c67519be49e907bb9fdbf582f29023fc138c9a6"
     },
     "by_industry/miscellaneous.csv": {
       "rows": 58,
-      "sha256": "73adfea1ab3d53f1092ca0bbccd1791eac260565c014f95076d863c783b3bc75"
+      "sha256": "b3f85616aa7d378df4ab7485e3bfc1066a98424cf62b1599f7d16527517d5185"
     },
     "by_industry/real_estate.csv": {
       "rows": 245,
-      "sha256": "e7aefcb18c8bfd5fe797dcd55c2225d3508a9ed40cf0bab9d8477c46e8d01464"
+      "sha256": "e4de694b52c8e4c52f8c03a69f74cae7a51cb1ae1240d29ab1d6ab831f56a48f"
     },
     "by_industry/technology.csv": {
       "rows": 534,
-      "sha256": "2696c91febe316c37e16dbcbcf4e336f4584e3836b6ff3c4523fd8b94b403817"
+      "sha256": "4b6885893bb8bf97444f9f073f112759dd4541dcb63a86f70d25bd276ca84906"
     },
     "by_industry/telecommunications.csv": {
       "rows": 62,
-      "sha256": "1e7e24bbe62c5acec8a2219df2595d74a6ebad0a7f5c9dd03ce071013f4fab93"
+      "sha256": "c0668cdb0bc452beb617cc8b38e0f41866a4400cbbc5735b70b77c07dd6e910e"
     },
     "by_industry/uncategorized.csv": {
-      "rows": 601,
-      "sha256": "269d610e6cc0f4c0945d6fc56cf5970ee267c1c46c24c2c3cfae2cebbd1895fb"
+      "rows": 608,
+      "sha256": "95613b6c796046cb964249c5086d93ccdd394918ba072f1c2b6d9bd1c4f3f017"
     },
     "by_industry/utilities.csv": {
       "rows": 148,
-      "sha256": "d67acdcde71e0f4733d8be156a79634c817c42a5c8451b339405faea3ae06444"
+      "sha256": "51e7065bc31d159c1819c942fe5edcb146de7abfd8b75553dfdc1ff8abf45f51"
     },
     "tickers/all.csv": {
-      "rows": 5472,
-      "sha256": "03d11f24c6e54cb203df8e2a93bbc65d41539cffb933e530487f1603f5b1f7de"
+      "rows": 5480,
+      "sha256": "efb8f737db1ca4e03583508caf7b039550d55b52e1d46767cd2f3a61aaef8d81"
     },
     "tickers/sp500.csv": {
       "rows": 503,
-      "sha256": "deec3dceef512e2c58fcdb9a5c67c1e2e51292760906fc69f9c46090084f5cd7"
+      "sha256": "99ce0010ddeb3603036d1a48f50b2392db60b1eeabcf531d5ceb2e82eb1b19e9"
     },
     "tickers/top_100.csv": {
       "rows": 100,
-      "sha256": "a19863f389ed7da0d6076e12e56ea67c0aa2817eb135aac1940b4e5ec224b4f2"
+      "sha256": "ab445442c8049e354b5bfd300c46b538d715f5abfb8c77b2a125b7702e301280"
     },
     "tickers/top_200.csv": {
       "rows": 200,
-      "sha256": "04b307b5e20512618416f82e0f432b42b9cfac5e4093bdea7c1f24db634ade7f"
+      "sha256": "ebcf290114cd27d281b89ba474b0d03054a2cfad01ce4f6d00d74620d63ea8a0"
     },
     "tickers/top_50.csv": {
       "rows": 50,
-      "sha256": "df2d7dfb35552225d3861b0575229e81f3ecf9349d76c7cfe014e98e948d957f"
+      "sha256": "bc99eec2643687a5b8db17244a7eaf20e541efab198392283ba6123342388bfc"
     }
   },
-  "generatedAt": "2026-11-18T10:22:27Z",
+  "generatedAt": "2026-11-19T10:22:33Z",
   "provenance": {
     "note": null,
     "status": "generated-by-updater"
   },
   "quality": {
-    "missingMarketCapRows": 347,
-    "nonPositiveMarketCapRows": 895,
+    "missingMarketCapRows": 348,
+    "nonPositiveMarketCapRows": 904,
     "sp500MatchRate": 1.0,
-    "uncategorizedRows": 601
+    "uncategorizedRows": 608
   },
   "schemaVersion": 1,
   "sources": {
     "nasdaq": {
-      "fetchedAt": "2026-11-18T10:22:26Z",
-      "publishedUnitedStatesRows": 5472,
-      "rowsFetched": 7278,
+      "fetchedAt": "2026-11-19T10:22:31Z",
+      "publishedUnitedStatesRows": 5480,
+      "rowsFetched": 7291,
       "url": "https://api.nasdaq.com/api/screener/stocks"
     },
     "wikipediaSp500": {
-      "fetchedAt": "2026-11-18T10:22:27Z",
+      "fetchedAt": "2026-11-19T10:22:33Z",
       "symbolsFetched": 503,
       "symbolsMatched": 503,
       "url": "https://en.wikipedia.org/w/index.php?title=List_of_S%26P_500_companies&action=raw"
